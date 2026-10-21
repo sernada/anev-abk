@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANEV SINGKAT ABK</title>
+<style>
+:root{--navy:#103b70;--blue:#2168b5;--sky:#dff2ff;--line:#c7def5;--ink:#17324d;--muted:#5c7690}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink);background-image:linear-gradient(rgba(34,91,143,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(34,91,143,.055) 1px,transparent 1px),linear-gradient(135deg,#fbfdff 0%,#edf5fc 48%,#dceaf7 100%);background-size:26px 26px,26px 26px,100% 100%;min-height:100vh}
+.wrap{max-width:1440px;margin:auto;padding:26px 20px 62px}
+header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:22px;flex-wrap:wrap}
+.header-right{display:flex;align-items:center;gap:14px;margin-left:auto}
+.bagren-logo{display:block;width:82px;height:100px;object-fit:contain;flex:none;filter:drop-shadow(0 3px 5px #174d8626)}
+h1{font-family:"Montserrat","Segoe UI",Arial,sans-serif;font-weight:900;font-size:clamp(1.65rem,4vw,2.8rem);margin:0;color:#123b63;letter-spacing:.055em;text-transform:uppercase;-webkit-text-stroke:0;text-shadow:1px 1px 0 #e7ca68;line-height:1.2}
+.sub{color:#426789;margin:9px 0 0;font-weight:600;letter-spacing:.025em}
+.total{background:linear-gradient(135deg,#123f7d,#3689d9);color:#fff;padding:15px 22px;border-radius:18px;box-shadow:0 10px 24px #174ea626;min-width:220px;text-align:right}
+.total small{display:block;opacity:.9;font-size:.78rem;letter-spacing:.07em;font-weight:700}.total strong{display:block;font-size:2rem;margin-top:3px;font-family:"Bahnschrift",monospace}
+.card{background:#ffffffed;border:1px solid #fff;border-radius:20px;padding:20px;box-shadow:0 10px 28px #235a8c12;margin-bottom:18px}
+h2{font-size:1.05rem;margin:0 0 12px;color:#174b85;font-weight:800;letter-spacing:.025em}
+.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.months{display:flex;gap:8px;flex-wrap:wrap}
+button,.filelabel{border:0;border-radius:11px;padding:10px 15px;font-weight:800;cursor:pointer;transition:.15s;font-size:.9rem}
+.month{background:#e8f3ff;color:#245b91;border:1px solid #c5ddf6}.month.active{background:#2169b5;color:white;box-shadow:0 4px 10px #2169b533}
+.primary{background:linear-gradient(135deg,#1c62ad,#3993e6);color:#fff}.secondary{background:#edf5fd;color:#255783;border:1px solid #c9def2}
+button:hover,.filelabel:hover{filter:brightness(.97);transform:translateY(-1px)}
+textarea{width:100%;min-height:190px;resize:vertical;border:1px solid #bed8f0;border-radius:13px;padding:14px;font:14px/1.55 "Segoe UI",Tahoma,Arial,sans-serif;color:#203d57;background:#fbfdff;outline-color:#3987d1}
+.hint{font-size:.88rem;line-height:1.55;color:var(--muted);margin:10px 0 0}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.stat{padding:14px;border-radius:14px;background:#eff7ff;border:1px solid #d7eafa}.stat span{display:block;color:#5a7793;font-size:.8rem}.stat strong{display:block;color:#174b85;font-size:1.35rem;margin-top:5px;font-family:"Bahnschrift",monospace}
+.tablewrap{overflow:auto;border:1px solid #d7e6f5;border-radius:13px}table{border-collapse:collapse;width:100%;min-width:760px;font-size:.9rem;background:white}
+th{background:#eaf4ff;color:#174b85;text-align:left;position:sticky;top:0;font-weight:800}th,td{padding:11px 12px;border-bottom:1px solid #e4eef8;vertical-align:top}
+tbody tr:hover{background:#f7fbff}.missing{color:#b45309;font-weight:800}.pct{font-weight:900;color:#185fa8;white-space:nowrap}.full{color:#16794b}.empty{text-align:center;padding:26px;color:#68829a}
+footer{color:#456b8d;font-size:.8rem;text-align:center;margin-top:18px}
+.brandmark{position:fixed;left:18px;bottom:15px;z-index:5;display:flex;align-items:center;gap:10px;background:#eaf6ffdd;border:1px solid #ffffffc9;border-radius:15px;padding:8px 13px 8px 8px;box-shadow:0 5px 20px #174d8620;backdrop-filter:blur(6px)}
+.globe{width:44px;height:44px;position:relative;border-radius:50%;background:radial-gradient(circle at 30% 25%,#dffaff 0,#5fc5f0 35%,#1765ad 75%,#0b3b78 100%);box-shadow:inset -5px -4px 10px #072e6255,0 0 0 2px #8bd8ff;overflow:hidden;flex:none}
+.globe:before{content:"";position:absolute;inset:-8px 7px;border:1px solid #e3fbff;border-radius:50%;transform:rotate(25deg);box-shadow:0 0 0 5px #d7f7ff35}
+.globe:after{content:"";position:absolute;inset:-2px 12px;border:1px solid #e5fbff;border-radius:50%;animation:globeSpin 3.5s linear infinite}
+.globe-lines{position:absolute;inset:8px 0;border-top:1px solid #e5fbffb8;border-bottom:1px solid #e5fbffb8;border-radius:50%;animation:globeSpin 5s linear infinite}
+@keyframes globeSpin{from{transform:rotateY(0deg) rotate(0deg)}to{transform:rotateY(360deg) rotate(360deg)}}
+.brandtext{font-family:"Bahnschrift","Arial Narrow",monospace;font-weight:900;letter-spacing:.07em;font-size:.78rem;color:#164d85;text-transform:uppercase;line-height:1.4}
+.watermark{position:fixed;right:18px;bottom:16px;z-index:5;color:#174b85;background:#eaf6ffcc;border:1px solid #ffffffb8;border-radius:10px;padding:8px 12px;font-family:"Bahnschrift","Arial Narrow",monospace;font-size:.78rem;font-weight:900;letter-spacing:.045em;box-shadow:0 4px 14px #174d8618;backdrop-filter:blur(6px)}
+@media(max-width:700px){.wrap{padding:17px 12px 100px}.card{padding:15px}.stats{grid-template-columns:1fr}.header-right{width:100%;justify-content:flex-end;gap:10px}.bagren-logo{width:58px;height:72px}.total{text-align:left;flex:1;min-width:0;width:auto}.brandmark{left:8px;bottom:8px;padding:6px}.globe{width:34px;height:34px}.brandtext{font-size:.65rem}.watermark{right:8px;bottom:8px;font-size:.65rem;padding:7px}.sub{font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+.title-group{min-width:0}.title-line{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.tribrata{width:48px;height:58px;flex:none;filter:drop-shadow(0 2px 2px #174d8633)}
+.results-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:14px 0 10px}.results-label{font-weight:800;color:#174b85}.theme-toggle{background:#173b60;color:#fff;border:1px solid #345a7d;border-radius:11px;padding:9px 13px;font-weight:800;white-space:nowrap}
+body.dark-mode{--ink:#e5eef8;--muted:#a7bdd2;background-color:#10243a;background-image:linear-gradient(rgba(126,177,222,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(126,177,222,.075) 1px,transparent 1px),linear-gradient(135deg,#0c1726 0%,#122840 52%,#1b3b5e 100%);background-size:26px 26px,26px 26px,100% 100%;color:var(--ink)}
+body.dark-mode .card{background:#172b40ed;border-color:#294761;box-shadow:0 10px 28px #00000025}body.dark-mode h2,body.dark-mode .results-label{color:#b9dcff}body.dark-mode .sub,body.dark-mode .hint,body.dark-mode footer{color:#a7bdd2}
+body.dark-mode .stat{background:#203950;border-color:#34516a}body.dark-mode .stat span{color:#b1c7db}body.dark-mode .stat strong{color:#d7eaff}
+body.dark-mode .tablewrap{border-color:#34516a}body.dark-mode table{background:#172b40;color:#e5eef8}body.dark-mode th{background:#24425e;color:#e2f1ff}body.dark-mode td,body.dark-mode th{border-bottom-color:#34516a}body.dark-mode tbody tr:hover{background:#203950}body.dark-mode .empty{color:#a7bdd2}
+body.dark-mode textarea{background:#102236;color:#e5eef8;border-color:#34516a}body.dark-mode .secondary,body.dark-mode .month{background:#203950;color:#d8eaff;border-color:#34516a}body.dark-mode .month.active{background:#2169b5;color:#fff}body.dark-mode .total{background:linear-gradient(135deg,#0a2a50,#1d5a91)}
+body.dark-mode .brandmark,body.dark-mode .watermark{background:#142b40e8;border-color:#34516a;color:#e0efff}body.dark-mode .brandtext{color:#e0efff}
+@media(max-width:700px){.title-line{gap:9px}.tribrata{width:35px;height:43px}.results-toolbar{align-items:flex-start}.theme-toggle{padding:8px 10px;font-size:.82rem}}
+
+/* Panel tambahan ANEV — menyesuaikan tema lama */
+.feature-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}
+.feature-card{background:#f0f7ff;border:1px solid #d7eafa;border-radius:14px;padding:14px;min-width:0}
+.feature-card small{display:block;color:#5a7793;font-size:.78rem;font-weight:700}
+.feature-card strong{display:block;color:#174b85;font-size:1.35rem;margin-top:5px;overflow-wrap:anywhere}
+.filterbar{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.filterbar input,.filterbar select,.history-controls input{border:1px solid #bed8f0;border-radius:10px;padding:10px 12px;font:inherit;background:#fbfdff;color:#203d57;min-width:180px}
+.rank-list{display:grid;gap:10px;margin-top:12px}
+.rank-row{display:grid;grid-template-columns:minmax(110px,1fr) minmax(100px,2fr) 64px;gap:10px;align-items:center}
+.rank-name{font-size:.88rem;font-weight:700;overflow-wrap:anywhere}
+.rank-track{height:9px;background:#dceaf7;border-radius:99px;overflow:hidden}
+.rank-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#2b8a55,#6acb8c)}
+.rank-pct{text-align:right;font-weight:900;color:#185fa8;font-size:.88rem}
+.history-controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.validation-list{margin:10px 0 0;padding-left:22px;color:#9a5a08;font-size:.88rem;line-height:1.5}
+.validation-ok{color:#16794b;font-size:.88rem;font-weight:700;margin-top:10px}
+body.dark-mode .feature-card{background:#203950;border-color:#34516a}
+body.dark-mode .feature-card small{color:#b1c7db}
+body.dark-mode .feature-card strong{color:#d7eaff}
+body.dark-mode .filterbar input,body.dark-mode .filterbar select,body.dark-mode .history-controls input{background:#102236;color:#e5eef8;border-color:#34516a}
+body.dark-mode .rank-track{background:#34516a}
+body.dark-mode .rank-pct{color:#d7eaff}
+@media(max-width:900px){.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.feature-grid{grid-template-columns:1fr 1fr}.rank-row{grid-template-columns:minmax(85px,1fr) minmax(60px,1.2fr) 55px;gap:7px}.filterbar input,.filterbar select{width:100%;min-width:0}}
+@media print{
+  body,body.dark-mode{background:#fff!important;color:#111!important}
+  .wrap{max-width:none;padding:0}
+  header{margin-bottom:12px}
+  .card{box-shadow:none;border:1px solid #bbb;background:#fff!important;break-inside:avoid;padding:12px}
+  .actions,.toolbar,.results-toolbar .theme-toggle,.brandmark,.watermark,#inputCard,#historyCard,#validationCard,.no-print{display:none!important}
+  .total{background:#eee!important;color:#111!important;box-shadow:none}
+  h1{color:#123b63!important;text-shadow:none!important}
+  table{min-width:0;font-size:10pt}
+  th{position:static;background:#eee!important;color:#111!important}
+  th,td{border:1px solid #bbb!important;padding:6px}
+  .wrap>header,.wrap>#resultsCard,.wrap>#dashboardCard,.wrap>#reportCard{display:block}
+  #dashboardCard,#reportCard,#resultsCard{break-inside:auto;margin-bottom:10px}
+  .chart-panel,.feature-card,.stat{background:#fff!important;border:1px solid #bbb!important;box-shadow:none!important}
+  .rank-fill,.progress-fill{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .report-content{font-size:10.5pt;line-height:1.5}
+  .report-section{break-inside:avoid}
+  footer{color:#555}
+}
+
+
+
+/* iOS-inspired glass UI — visual-only overrides; existing IDs and behavior stay intact */
+:root{
+  --glass-border:rgba(255,255,255,.72);
+  --glass-shadow:0 18px 48px rgba(37,83,133,.10),inset 0 1px 0 rgba(255,255,255,.72);
+  --glass-blur:blur(22px) saturate(155%);
+}
+body{
+  background-color:#edf4fc;
+  background-image:
+    radial-gradient(ellipse at 12% 8%,rgba(123,190,255,.27),transparent 35%),
+    radial-gradient(ellipse at 88% 18%,rgba(195,218,255,.42),transparent 32%),
+    linear-gradient(rgba(69,125,184,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(69,125,184,.045) 1px,transparent 1px),
+    linear-gradient(145deg,#f8fbff 0%,#edf4fc 52%,#e3edf9 100%);
+  background-size:auto,auto,24px 24px,24px 24px,auto;
+  background-attachment:fixed;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  letter-spacing:.005em;
+}
+.wrap{max-width:1500px;padding-top:30px}
+header{align-items:center;margin-bottom:26px;gap:24px}
+h1{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:850;letter-spacing:-.045em;font-size:clamp(1.85rem,4.2vw,3rem);color:#173b62;text-shadow:none}
+.sub{color:#607d9b;font-weight:500;letter-spacing:0}
+.bagren-logo{width:76px;height:88px;filter:drop-shadow(0 8px 14px rgba(31,75,120,.12))}
+.tribrata{filter:drop-shadow(0 5px 8px rgba(177,139,25,.17))}
+.total{background:linear-gradient(145deg,rgba(255,255,255,.76),rgba(224,239,255,.70));color:#173e68;border:1px solid rgba(255,255,255,.88);border-radius:23px;box-shadow:0 12px 32px rgba(32,78,128,.12),inset 0 1px 0 rgba(255,255,255,.95);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);padding:17px 22px}
+.total small{color:#6b83a0;opacity:1;font-weight:750;letter-spacing:.055em}
+.total strong{color:#155ca2;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.04em}
+.card{background:rgba(255,255,255,.56);border:1px solid var(--glass-border);border-radius:25px;padding:23px;box-shadow:var(--glass-shadow);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);margin-bottom:20px}
+h2{font-size:1.02rem;color:#214f7c;letter-spacing:-.01em;font-weight:750;margin-bottom:15px}
+button,.filelabel{border-radius:13px;padding:10px 15px;font-weight:700;letter-spacing:0;box-shadow:0 2px 5px rgba(24,68,111,.035);transition:transform .16s ease,box-shadow .16s ease,background .16s ease}
+button:active,.filelabel:active{transform:scale(.975)}
+.primary{background:linear-gradient(135deg,#236fbe,#4a9be7);box-shadow:0 6px 16px rgba(40,119,194,.19)}
+.secondary,.month{background:rgba(245,250,255,.74);color:#315c83;border:1px solid rgba(190,214,239,.85)}
+.month.active{background:linear-gradient(135deg,#2169b5,#438fda);box-shadow:0 5px 14px rgba(33,105,181,.22)}
+textarea,.filterbar input,.filterbar select,.history-controls input{background:rgba(255,255,255,.66);border:1px solid rgba(185,210,237,.82);border-radius:15px;box-shadow:inset 0 1px 2px rgba(28,65,102,.025);color:#203d57}
+textarea{min-height:190px;padding:16px;line-height:1.6}
+.stat,.feature-card{background:rgba(244,249,255,.68);border:1px solid rgba(255,255,255,.9);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.85)}
+.stat span,.feature-card small{color:#7188a2;font-weight:600}
+.stat strong,.feature-card strong{color:#1d5f9c;letter-spacing:-.025em}
+.tablewrap{border:1px solid rgba(255,255,255,.9);border-radius:19px;background:rgba(255,255,255,.42);box-shadow:0 8px 22px rgba(40,81,124,.06);overflow:auto;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+table{background:rgba(255,255,255,.42);font-size:.9rem;border-collapse:separate;border-spacing:0}
+th{background:rgba(224,239,253,.84);color:#214f7c;letter-spacing:.01em;font-weight:750;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+th,td{padding:13px 14px;border-bottom:1px solid rgba(195,215,237,.54)}
+tbody tr{transition:background .15s ease}
+tbody tr:hover{background:rgba(222,239,255,.52)}
+tbody tr:last-child td{border-bottom:0}
+.results-toolbar{margin-top:17px}
+.results-label{color:#244f79;font-weight:750}
+.theme-toggle{background:rgba(35,69,105,.92);border:1px solid rgba(255,255,255,.28);border-radius:13px;box-shadow:0 5px 14px rgba(23,54,88,.13)}
+.brandmark,.watermark{background:rgba(246,251,255,.67);border:1px solid rgba(255,255,255,.88);border-radius:17px;box-shadow:0 12px 32px rgba(29,69,110,.11),inset 0 1px 0 rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%)}
+.brandtext,.watermark{color:#315c83}
+footer{color:#7187a0}
+body.dark-mode{
+  background-color:#101a2b;
+  background-image:radial-gradient(ellipse at 10% 6%,rgba(39,99,164,.28),transparent 36%),radial-gradient(ellipse at 88% 18%,rgba(46,75,121,.25),transparent 32%),linear-gradient(rgba(155,191,231,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(155,191,231,.045) 1px,transparent 1px),linear-gradient(145deg,#101827 0%,#14243a 54%,#1b304b 100%);
+  background-size:auto,auto,24px 24px,24px 24px,auto;background-attachment:fixed;
+}
+body.dark-mode .card{background:rgba(22,39,60,.60);border-color:rgba(160,190,222,.18);box-shadow:0 18px 48px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.045);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%)}
+body.dark-mode h1{color:#f2d77d;text-shadow:none}
+body.dark-mode .sub,body.dark-mode .hint,body.dark-mode footer{color:#a8bed5}
+body.dark-mode .total{background:linear-gradient(145deg,rgba(31,56,83,.88),rgba(22,42,65,.84));border-color:rgba(177,207,238,.2);color:#e4f0ff;box-shadow:0 12px 32px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.06)}
+body.dark-mode .total small{color:#a9c2dc}body.dark-mode .total strong{color:#d7eaff}
+body.dark-mode .stat,body.dark-mode .feature-card{background:rgba(33,56,80,.68);border-color:rgba(170,201,231,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.035)}
+body.dark-mode .tablewrap{background:rgba(18,34,53,.48);border-color:rgba(160,190,222,.18);box-shadow:0 8px 22px rgba(0,0,0,.12)}
+body.dark-mode table{background:rgba(19,35,54,.55);color:#e3edf8}
+body.dark-mode th{background:rgba(42,66,91,.88);color:#e2efff}
+body.dark-mode td,body.dark-mode th{border-bottom-color:rgba(155,185,215,.14)}
+body.dark-mode tbody tr:hover{background:rgba(65,100,137,.25)}
+body.dark-mode .results-label{color:#d5e8fb}
+body.dark-mode textarea,body.dark-mode .filterbar input,body.dark-mode .filterbar select,body.dark-mode .history-controls input{background:rgba(13,29,47,.72);color:#e5eef8;border-color:rgba(151,183,215,.22)}
+body.dark-mode .secondary,body.dark-mode .month{background:rgba(40,63,86,.72);color:#d9eaff;border-color:rgba(151,183,215,.22)}
+body.dark-mode .month.active{background:linear-gradient(135deg,#2169b5,#438fda);color:#fff}
+body.dark-mode .brandmark,body.dark-mode .watermark{background:rgba(21,39,59,.72);border-color:rgba(160,190,222,.18);color:#dcecff;box-shadow:0 12px 32px rgba(0,0,0,.18)}
+body.dark-mode .brandtext{color:#dcecff}
+@media(max-width:700px){
+ .wrap{padding:16px 11px 100px}
+ .card{padding:16px;border-radius:21px}
+ header{gap:15px}
+ .title-line{gap:8px}
+ h1{font-size:clamp(1.6rem,7vw,2.2rem);letter-spacing:-.04em}
+ .bagren-logo{width:54px;height:66px}
+ .total{padding:13px 15px;border-radius:19px}
+ .tablewrap{border-radius:16px}
+ th,td{padding:11px 12px}
+ .brandmark,.watermark{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+}
+@media(prefers-reduced-transparency:reduce){.card,.tablewrap,.total,.brandmark,.watermark{backdrop-filter:none;-webkit-backdrop-filter:none;background-color:rgba(255,255,255,.94)}body.dark-mode .card,body.dark-mode .tablewrap,body.dark-mode .total,body.dark-mode .brandmark,body.dark-mode .watermark{background-color:rgba(20,37,57,.96)}}
+
+
+
+/* Liquid Glass refinement: stronger glass reflections, edge highlights and tactile controls */
+.card,.total,.stat,.feature-card,.tablewrap,.brandmark,.watermark,textarea,.filterbar input,.filterbar select,.history-controls input,button,.filelabel{
+  position:relative;
+  isolation:isolate;
+}
+.card,.total,.stat,.feature-card,.tablewrap,.brandmark,.watermark,button,.filelabel,textarea,.filterbar input,.filterbar select,.history-controls input{
+  overflow:hidden;
+}
+.card{
+  background:linear-gradient(145deg,rgba(255,255,255,.73) 0%,rgba(255,255,255,.38) 38%,rgba(228,241,255,.46) 100%);
+  border-color:rgba(255,255,255,.92);
+  box-shadow:0 22px 55px rgba(35,83,135,.12),inset 0 1.5px 0 rgba(255,255,255,.98),inset 0 -1px 0 rgba(255,255,255,.34);
+}
+.card::before,.total::before,.stat::before,.feature-card::before,.tablewrap::before,.brandmark::before,.watermark::before{
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;z-index:3;
+  background:linear-gradient(118deg,rgba(255,255,255,.66) 0%,rgba(255,255,255,.24) 10%,transparent 29%,transparent 68%,rgba(255,255,255,.13) 84%,rgba(255,255,255,.30) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 1px 0 0 rgba(255,255,255,.34),inset -1px 0 0 rgba(255,255,255,.24);
+}
+.card::after,.total::after{
+  content:"";position:absolute;pointer-events:none;top:-65%;left:-24%;width:70%;height:115%;transform:rotate(22deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.19),rgba(255,255,255,.035),transparent);
+  filter:blur(7px);z-index:1;
+}
+.total{background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(211,232,255,.56));box-shadow:0 16px 36px rgba(32,78,128,.16),inset 0 1.5px 0 rgba(255,255,255,1),inset 0 -1px 0 rgba(255,255,255,.38)}
+.stat,.feature-card{background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(228,240,253,.43));border-color:rgba(255,255,255,.96);box-shadow:0 9px 24px rgba(38,81,126,.07),inset 0 1px 0 rgba(255,255,255,.98)}
+button,.filelabel{
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:0 7px 18px rgba(37,81,127,.11),inset 0 1.5px 0 rgba(255,255,255,.68),inset 0 -1px 0 rgba(20,70,120,.06);
+}
+button::before,.filelabel::before{
+  content:"";position:absolute;inset:0 0 auto;height:54%;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(180deg,rgba(255,255,255,.48),rgba(255,255,255,.12) 48%,transparent);
+}
+.primary{background:linear-gradient(145deg,rgba(80,163,238,.96),rgba(30,104,190,.94));border-color:rgba(255,255,255,.55);box-shadow:0 8px 20px rgba(38,116,194,.24),inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 0 rgba(13,66,127,.2)}
+.secondary,.month{background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(225,239,253,.56));border-color:rgba(255,255,255,.92);box-shadow:0 5px 15px rgba(34,74,116,.08),inset 0 1px 0 rgba(255,255,255,.98)}
+.month.active{background:linear-gradient(145deg,rgba(90,169,239,.98),rgba(28,100,184,.96));box-shadow:0 7px 18px rgba(33,105,181,.25),inset 0 1px 0 rgba(255,255,255,.62)}
+button:hover,.filelabel:hover{filter:brightness(1.035);box-shadow:0 10px 22px rgba(37,81,127,.15),inset 0 1.5px 0 rgba(255,255,255,.8)}
+button:active,.filelabel:active{transform:translateY(1px) scale(.975);box-shadow:inset 0 2px 7px rgba(18,57,95,.16),0 2px 7px rgba(37,81,127,.08)}
+.tablewrap{background:linear-gradient(145deg,rgba(255,255,255,.58),rgba(222,238,255,.29));border-color:rgba(255,255,255,.96);box-shadow:0 14px 34px rgba(40,81,124,.09),inset 0 1px 0 rgba(255,255,255,.98)}
+.tablewrap::before{background:linear-gradient(115deg,rgba(255,255,255,.32),transparent 24%,transparent 70%,rgba(255,255,255,.13));}
+table{position:relative;z-index:1;background:rgba(255,255,255,.25)}
+th{background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(214,233,252,.72));box-shadow:inset 0 1px 0 rgba(255,255,255,.98);border-bottom-color:rgba(255,255,255,.9)}
+td{background:rgba(255,255,255,.15)}
+tbody tr:nth-child(even) td{background:rgba(226,239,253,.19)}
+tbody tr:hover td{background:rgba(255,255,255,.52)}
+textarea,.filterbar input,.filterbar select,.history-controls input{background:linear-gradient(145deg,rgba(255,255,255,.80),rgba(237,246,255,.52));border-color:rgba(255,255,255,.95);box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 5px 14px rgba(38,81,126,.045)}
+.theme-toggle{background:linear-gradient(145deg,rgba(66,107,151,.96),rgba(25,57,91,.95));border-color:rgba(255,255,255,.48);box-shadow:0 8px 18px rgba(22,52,85,.22),inset 0 1px 0 rgba(255,255,255,.45)}
+body.dark-mode .card{background:linear-gradient(145deg,rgba(49,72,98,.78),rgba(20,37,58,.64) 52%,rgba(34,57,81,.69));border-color:rgba(220,239,255,.28);box-shadow:0 22px 55px rgba(0,0,0,.24),inset 0 1.5px 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(255,255,255,.04)}
+body.dark-mode .card::before,body.dark-mode .total::before,body.dark-mode .stat::before,body.dark-mode .feature-card::before,body.dark-mode .tablewrap::before,body.dark-mode .brandmark::before,body.dark-mode .watermark::before{background:linear-gradient(118deg,rgba(255,255,255,.23),rgba(255,255,255,.07) 12%,transparent 32%,transparent 70%,rgba(255,255,255,.07) 88%,rgba(255,255,255,.16));box-shadow:inset 0 1px 0 rgba(255,255,255,.27),inset 1px 0 0 rgba(255,255,255,.08),inset -1px 0 0 rgba(255,255,255,.08)}
+body.dark-mode .total{background:linear-gradient(145deg,rgba(58,88,119,.86),rgba(24,45,69,.85));border-color:rgba(220,239,255,.27);box-shadow:0 16px 36px rgba(0,0,0,.23),inset 0 1.5px 0 rgba(255,255,255,.22)}
+body.dark-mode .stat,body.dark-mode .feature-card{background:linear-gradient(145deg,rgba(57,81,107,.78),rgba(29,48,70,.70));border-color:rgba(220,239,255,.2);box-shadow:0 9px 24px rgba(0,0,0,.13),inset 0 1px 0 rgba(255,255,255,.15)}
+body.dark-mode button,body.dark-mode .filelabel{border-color:rgba(221,239,255,.18);box-shadow:0 7px 18px rgba(0,0,0,.2),inset 0 1.5px 0 rgba(255,255,255,.15)}
+body.dark-mode .secondary,body.dark-mode .month{background:linear-gradient(145deg,rgba(59,83,108,.88),rgba(30,49,71,.83));border-color:rgba(220,239,255,.18);box-shadow:0 5px 15px rgba(0,0,0,.13),inset 0 1px 0 rgba(255,255,255,.16)}
+body.dark-mode .tablewrap{background:linear-gradient(145deg,rgba(32,52,74,.75),rgba(14,29,46,.64));border-color:rgba(220,239,255,.22);box-shadow:0 14px 34px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.13)}
+body.dark-mode table{background:rgba(15,29,45,.30)}
+body.dark-mode th{background:linear-gradient(180deg,rgba(65,91,119,.96),rgba(39,62,87,.94));box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
+body.dark-mode td{background:rgba(16,32,49,.20)}body.dark-mode tbody tr:nth-child(even) td{background:rgba(81,111,142,.09)}body.dark-mode tbody tr:hover td{background:rgba(104,145,185,.18)}
+body.dark-mode textarea,body.dark-mode .filterbar input,body.dark-mode .filterbar select,body.dark-mode .history-controls input{background:linear-gradient(145deg,rgba(31,51,73,.91),rgba(17,33,51,.88));border-color:rgba(220,239,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 5px 14px rgba(0,0,0,.12)}
+@media(prefers-reduced-motion:reduce){button,.filelabel,tbody tr{transition:none}}
+
+/* Readability fix: keep glass reflections behind table content, never over text */
+.tablewrap{isolation:isolate;position:relative}
+.tablewrap::before{z-index:0;opacity:.28}
+.tablewrap table{position:relative;z-index:1}
+.tablewrap th,.tablewrap td{position:relative;z-index:1;opacity:1;text-shadow:none}
+.tablewrap th{color:#214f7c;background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(220,237,253,.92))}
+.tablewrap td{color:#243b50;background:rgba(255,255,255,.76)}
+.tablewrap tbody tr:nth-child(even) td{background:rgba(236,245,255,.80)}
+body.dark-mode .tablewrap th{color:#f0f7ff;background:linear-gradient(180deg,rgba(54,79,105,.99),rgba(35,57,81,.98))}
+body.dark-mode .tablewrap td{color:#edf5ff;background:rgba(18,35,53,.94)}
+body.dark-mode .tablewrap tbody tr:nth-child(even) td{background:rgba(33,53,74,.96)}
+body.dark-mode .tablewrap tbody tr:hover td{background:rgba(65,100,137,.48)}
+
+
+/* Liquid-glass executive heading: cool silver-blue, subtle highlight and reflection */
+h1{position:relative;display:inline-block;isolation:isolate;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:780;letter-spacing:-.055em;line-height:1.08;color:transparent;background:linear-gradient(180deg,#ffffff 0%,#e6f4ff 18%,#a9c9e7 43%,#f7fcff 54%,#9dbbda 76%,#dcecff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-stroke:.35px rgba(222,241,255,.65);filter:drop-shadow(0 2px 7px rgba(112,174,224,.20));text-shadow:0 1px 0 rgba(255,255,255,.10)}
+h1::after{content:attr(data-text);position:absolute;left:0;top:calc(100% + 1px);transform:scaleY(-.43);transform-origin:top;opacity:.20;pointer-events:none;background:linear-gradient(180deg,#c8e7ff 0%,#8eafd0 65%,transparent 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:blur(.35px);mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent);-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent)}
+body.dark-mode h1{background-image:linear-gradient(180deg,#ffffff 0%,#e5f4ff 22%,#b9d9f6 45%,#f8fcff 55%,#9ec5eb 78%,#e0efff 100%);filter:drop-shadow(0 2px 10px rgba(130,190,240,.18))}
+@media(max-width:700px){h1{letter-spacing:-.045em}h1::after{top:calc(100% + 0px)}}
+
+/* Final polish: compact corner badges and elegant Liquid Glass title */
+h1{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif!important;
+  font-weight:750!important;letter-spacing:-.045em!important;line-height:1.08!important;
+  color:transparent!important;
+  background-image:linear-gradient(180deg,#f7fbff 0%,#d9e8f7 24%,#a9c5df 48%,#f4f9ff 56%,#91b0ce 78%,#d8e8f7 100%)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.12),0 5px 18px rgba(125,166,205,.13)!important;
+  filter:none!important;
+}
+body:not(.dark-mode) h1{background-image:linear-gradient(180deg,#466783 0%,#294965 28%,#8baac5 48%,#f8fbff 54%,#426887 78%,#7898b5 100%)!important}
+.brandmark{
+  left:14px!important;bottom:14px!important;right:auto!important;top:auto!important;
+  display:inline-flex!important;width:max-content!important;max-width:min(250px,calc(50vw - 22px))!important;
+  min-width:0!important;flex:0 0 auto!important;align-items:center!important;gap:9px!important;
+  padding:8px 12px 8px 8px!important;border-radius:16px!important;overflow:hidden!important;
+}
+.brandmark .globe{width:38px!important;height:38px!important;flex:0 0 38px!important}
+.brandmark .brandtext{display:block!important;width:auto!important;min-width:0!important;white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-size:11px!important;font-weight:750!important;letter-spacing:.075em!important;line-height:1.35!important}
+.watermark{
+  left:auto!important;top:auto!important;right:14px!important;bottom:14px!important;
+  display:block!important;width:max-content!important;max-width:min(290px,calc(50vw - 22px))!important;
+  min-width:0!important;white-space:normal!important;overflow-wrap:anywhere!important;text-align:center!important;
+  padding:9px 13px!important;border-radius:14px!important;box-sizing:border-box!important;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-size:11px!important;
+  font-weight:650!important;letter-spacing:.035em!important;line-height:1.35!important;
+}
+.brandmark,.watermark{isolation:isolate}
+.brandmark::before,.watermark::before{pointer-events:none!important;z-index:0!important}
+.brandmark>* ,.watermark{position:relative;z-index:1}
+@media(max-width:700px){
+ .brandmark{left:8px!important;bottom:8px!important;max-width:calc(50vw - 14px)!important;padding:6px 8px 6px 6px!important;gap:7px!important}
+ .brandmark .globe{width:30px!important;height:30px!important;flex-basis:30px!important}
+ .brandmark .brandtext{font-size:9px!important;letter-spacing:.045em!important}
+ .watermark{right:8px!important;bottom:8px!important;max-width:calc(50vw - 14px)!important;padding:7px 9px!important;font-size:9px!important;letter-spacing:.02em!important}
+ h1{font-size:clamp(1.55rem,7vw,2.35rem)!important}
+}
+
+
+/* Minimal, elegant Liquid Glass finish */
+h1{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif!important;
+  font-size:clamp(2rem,4vw,2.65rem)!important;font-weight:720!important;
+  letter-spacing:-.045em!important;line-height:1.08!important;
+  color:#dce9f6!important;background:none!important;
+  -webkit-text-fill-color:#dce9f6!important;-webkit-text-stroke:0!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.16),0 0 18px rgba(175,210,240,.08)!important;
+  filter:none!important;
+}
+h1::after{content:none!important;display:none!important}
+body:not(.dark-mode) h1{color:#34536f!important;-webkit-text-fill-color:#34536f!important;text-shadow:0 1px 0 rgba(255,255,255,.7)!important}
+/* Both corner panels stay fixed independently, never stack under one another */
+.brandmark{position:fixed!important;left:14px!important;right:auto!important;bottom:14px!important;top:auto!important;width:max-content!important;max-width:230px!important}
+.watermark{position:fixed!important;left:auto!important;right:14px!important;bottom:14px!important;top:auto!important;width:max-content!important;max-width:280px!important;white-space:nowrap!important;overflow-wrap:normal!important;text-align:right!important}
+.brandmark::before,.watermark::before{pointer-events:none!important}
+.brandmark>*{position:relative!important;z-index:1!important}
+.watermark{z-index:6!important;display:block!important}
+@media(max-width:700px){
+ h1{font-size:clamp(1.55rem,6.8vw,2.15rem)!important;letter-spacing:-.04em!important}
+ .brandmark{left:8px!important;bottom:8px!important;max-width:calc(50vw - 18px)!important}
+ .watermark{right:8px!important;bottom:8px!important;max-width:calc(50vw - 18px)!important;white-space:normal!important;text-align:right!important;font-size:9px!important;padding:6px 8px!important}
+}
+
+
+/* Final title contrast fix for both Liquid Glass themes */
+h1{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
+  font-weight:760 !important;
+  letter-spacing:-.045em !important;
+  color:#244968 !important;
+  background:none !important;
+  -webkit-background-clip:border-box !important;
+  background-clip:border-box !important;
+  -webkit-text-fill-color:currentColor !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.78),0 5px 16px rgba(39,78,116,.10) !important;
+  filter:none !important;
+  line-height:1.18 !important;
+  display:block;
+}
+body.dark-mode h1{
+  color:#e1edf8 !important;
+  -webkit-text-fill-color:currentColor !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.10),0 5px 18px rgba(0,0,0,.22) !important;
+}
+
+
+/* Definitive theme-aware title fix: no clipped gradient or dark rectangle */
+h1, body:not(.dark-mode) h1, body.dark-mode h1{
+  display:inline-block!important;
+  background:transparent!important;
+  background-image:none!important;
+  background-color:transparent!important;
+  -webkit-background-clip:border-box!important;
+  background-clip:border-box!important;
+  -webkit-text-fill-color:currentColor!important;
+  -webkit-text-stroke:0!important;
+  box-shadow:none!important;
+  filter:none!important;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font-weight:720!important;
+  letter-spacing:-.045em!important;
+  line-height:1.12!important;
+  text-shadow:none!important;
+}
+h1::before,h1::after{content:none!important;display:none!important;background:none!important}
+body:not(.dark-mode) h1{color:#54728e!important;text-shadow:0 1px 0 rgba(255,255,255,.65)!important}
+body.dark-mode h1{color:#e1edf8!important;text-shadow:0 1px 0 rgba(255,255,255,.08),0 2px 12px rgba(160,200,235,.10)!important}
+
+/* Status colors: missing dates in orange, complete status in green, in both themes */
+.tablewrap td.missing,
+.tablewrap tbody td.missing,
+body.dark-mode .tablewrap td.missing,
+body.dark-mode .tablewrap tbody td.missing {
+  color: #c56a12 !important;
+  font-weight: 800 !important;
+}
+.tablewrap td.full,
+.tablewrap tbody td.full,
+body.dark-mode .tablewrap td.full,
+body.dark-mode .tablewrap tbody td.full {
+  color: #16804a !important;
+  font-weight: 800 !important;
+}
+
+/* Laporan ANEV, grafik progres, dan tata letak cetak PDF */
+.chart-panel{margin-top:22px;padding:16px;border:1px solid rgba(185,210,237,.65);border-radius:18px;background:rgba(246,250,255,.42)}
+.chart-panel h3{font-size:.96rem;margin:0;color:var(--ink)}
+.progress-chart{display:grid;gap:12px;margin-top:14px}
+.progress-row{display:grid;grid-template-columns:minmax(125px,1fr) minmax(90px,2.2fr) 44px;gap:10px;align-items:center}
+.progress-label{font-size:.86rem;font-weight:700}.progress-track{height:12px;border-radius:99px;background:rgba(115,145,176,.18);overflow:hidden}
+.progress-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#4a91cf,#75b7e8)}
+.progress-value{text-align:right;font-size:.84rem;font-weight:800;font-variant-numeric:tabular-nums}
+.report-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.report-content{line-height:1.65;color:var(--ink)}.report-content p{margin:8px 0}.report-section{padding:12px 14px;border-radius:14px;background:rgba(246,250,255,.48);border:1px solid rgba(185,210,237,.55);margin:10px 0}
+.report-section h3{font-size:.94rem;margin:0 0 7px}.report-section ul{margin:6px 0;padding-left:21px}.report-meta{font-size:.86rem;color:var(--muted)}
+body.dark-mode .chart-panel,body.dark-mode .report-section{background:rgba(25,44,65,.52);border-color:rgba(160,190,222,.18)}
+body.dark-mode .progress-track{background:rgba(155,185,215,.18)}
+@media(max-width:600px){.progress-row{grid-template-columns:minmax(90px,1fr) minmax(65px,1.2fr) 40px;gap:7px}.chart-panel{padding:12px}.report-head{display:block}.report-head button{margin-top:10px}}
+@media print{
+  @page{size:A4 portrait;margin:12mm}
+  html,body{width:auto!important;height:auto!important;min-height:0!important;margin:0!important;padding:0!important;background:#fff!important;color:#111!important;overflow:visible!important}
+  body,body.dark-mode{font-family:Arial,sans-serif!important;font-size:9.5pt!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .wrap{display:block!important;position:static!important;width:auto!important;max-width:none!important;margin:0!important;padding:0!important;overflow:visible!important}
+  header{display:flex!important;position:static!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;flex-wrap:nowrap!important;margin:0 0 12px!important;padding:0 0 8px!important;border-bottom:1px solid #244f79!important;break-inside:avoid!important}
+  h1{font-size:20pt!important;color:#173d60!important;text-shadow:none!important;line-height:1.15!important}
+  .sub{font-size:8pt!important;color:#444!important}
+  .header-right{display:flex!important;align-items:center!important;gap:8px!important}
+  .bagren-logo{max-width:38px!important;max-height:48px!important;object-fit:contain!important}
+  .total{min-width:110px!important;padding:7px!important;background:#f1f5f9!important;color:#111!important;box-shadow:none!important;border:1px solid #bbb!important}
+  .total strong{font-size:16pt!important;color:#111!important}
+  .card{display:block!important;position:static!important;width:auto!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;visibility:visible!important;opacity:1!important;break-inside:auto!important;page-break-inside:auto!important;margin:0 0 10px!important;padding:10px!important;border:1px solid #c7cdd3!important;border-radius:4px!important;background:#fff!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  .card::before,.card::after,.feature-card::before,.stat::before,.chart-panel::before{display:none!important;content:none!important}
+  #inputCard,#historyCard,#validationCard,.actions,.toolbar,.results-toolbar .theme-toggle,.brandmark,.watermark,.no-print,.filterbar{display:none!important}
+  #dashboardCard,#reportCard,#resultsCard{display:block!important;break-inside:auto!important}
+  #dashboardCard .feature-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px!important}
+  .feature-card,.stat{display:block!important;break-inside:avoid!important;padding:7px!important;border:1px solid #ccc!important;border-radius:3px!important;background:#fff!important;box-shadow:none!important}
+  .feature-card strong,.stat strong{color:#111!important}
+  .rank-row,.progress-row{display:grid!important;break-inside:avoid!important;page-break-inside:avoid!important}
+  .rank-track,.progress-track{background:#e5e7eb!important}
+  .rank-fill{background:#4b83b5!important}.progress-fill{background:#5795c8!important}
+  .chart-panel,.report-section{display:block!important;position:static!important;overflow:visible!important;break-inside:avoid!important;border:1px solid #ccc!important;border-radius:4px!important;background:#fff!important;box-shadow:none!important;padding:8px!important;margin:7px 0!important}
+  .report-content{display:block!important;font-size:9pt!important;line-height:1.4!important;color:#111!important}
+  .report-section h3{color:#173d60!important}
+  .report-meta{color:#444!important}
+  table{display:table!important;width:100%!important;min-width:0!important;border-collapse:collapse!important;font-size:8.5pt!important;table-layout:auto!important}
+  thead{display:table-header-group!important}tbody{display:table-row-group!important}tr{break-inside:avoid!important;page-break-inside:avoid!important}
+  th,td{position:static!important;opacity:1!important;text-shadow:none!important;border:1px solid #aaa!important;padding:5px!important;color:#111!important;background:#fff!important;overflow-wrap:anywhere!important}
+  th{background:#e9eef3!important;font-weight:700!important}
+  .tablewrap{position:static!important;display:block!important;width:100%!important;max-width:none!important;overflow:visible!important;border:0!important;border-radius:0!important;background:#fff!important;box-shadow:none!important;backdrop-filter:none!important}
+  .tablewrap::before{display:none!important}
+  footer{position:static!important;color:#555!important;margin-top:8px!important}
+}
+
+
+/* Mobile/tablet layout: keep desktop untouched; swipe wide result tables horizontally */
+.print-only{display:none}
+@media screen and (max-width:700px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .wrap{width:100%;max-width:100%;padding:14px 10px 92px}
+  header{gap:12px;align-items:flex-start}
+  .title-group{width:100%;min-width:0}
+  .header-right{width:100%;max-width:100%;justify-content:space-between;flex-wrap:wrap}
+  .total{min-width:0;flex:1 1 150px}
+  .toolbar,.months,.actions,.results-toolbar,.history-controls{max-width:100%;flex-wrap:wrap}
+  button,.filelabel{max-width:100%;white-space:normal}
+  .card{max-width:100%;min-width:0;padding:13px;border-radius:17px}
+  .tablewrap{display:block;width:100%;max-width:100%;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;touch-action:pan-x pan-y;scrollbar-width:thin}
+  .tablewrap table{width:max-content;min-width:760px;max-width:none;table-layout:auto}
+  .tablewrap td,.tablewrap th{white-space:nowrap;padding:10px 11px}
+  #resultsCard .tablewrap table{min-width:700px}
+  #resultsCard .tablewrap td:nth-child(2){min-width:170px;white-space:nowrap}
+  .tablewrap::after{content:"Geser tabel ke samping untuk melihat kolom lainnya →";display:block;position:sticky;left:0;width:max-content;max-width:100%;padding:5px 8px;font-size:.72rem;color:var(--muted);background:rgba(225,239,252,.8);border-radius:0 7px 0 0}
+  body.dark-mode .tablewrap::after{background:rgba(22,40,60,.92);color:#c3d6e8}
+  .feature-grid{grid-template-columns:1fr!important}
+  .rank-row{grid-template-columns:minmax(85px,1fr) minmax(65px,1fr) 48px;gap:6px}
+  .progress-row{grid-template-columns:minmax(85px,1fr) minmax(55px,1fr) 38px;gap:6px}
+  .chart-panel{max-width:100%;overflow-x:auto}
+  .brandmark{max-width:calc(50vw - 16px)!important}
+  .watermark{max-width:calc(50vw - 16px)!important;white-space:normal!important;overflow-wrap:anywhere!important}
+}
+@media print{
+  .print-only{display:block!important}
+  .formal-report-head{text-align:center;margin:0 0 14px;padding:0 0 8px;color:#111;break-after:avoid}
+  .formal-report-head h2{margin:4px 0;font-size:14pt!important;color:#111!important;letter-spacing:.02em}
+  .formal-report-head h3{margin:3px 0 7px;font-size:11pt;color:#222}
+  .formal-report-head p{margin:5px 0;font-size:9pt}
+  .formal-rule{height:1px;background:#333;margin:5px 0}
+  .formal-signature{margin:18px 8mm 0 auto;width:68mm;text-align:center;font-size:9pt;line-height:1.5;color:#111;break-inside:avoid}
+  .signature-place{text-align:left;margin-bottom:8px}
+  .signature-space{height:22mm}
+  .signature-name{font-weight:bold;text-decoration:underline}
+  #reportCard .report-head button{display:none!important}
+  #reportCard{break-before:avoid!important}
+}
+
+
+/* Quick link to SI-ABK portal: compact glass button above the bottom-right watermark */
+.abk-portal-button{position:fixed!important;right:14px!important;bottom:66px!important;top:auto!important;left:auto!important;z-index:20!important;display:flex!important;align-items:center!important;justify-content:center!important;width:54px!important;height:54px!important;padding:7px!important;border-radius:17px!important;box-sizing:border-box!important;background:rgba(245,250,255,.72)!important;border:1px solid rgba(255,255,255,.9)!important;box-shadow:0 10px 28px rgba(28,62,95,.16),inset 0 1px 0 rgba(255,255,255,.9)!important;backdrop-filter:blur(18px) saturate(150%)!important;-webkit-backdrop-filter:blur(18px) saturate(150%)!important;transition:transform .18s ease,box-shadow .18s ease!important}
+.abk-portal-button:hover{transform:translateY(-2px)!important;box-shadow:0 13px 30px rgba(28,62,95,.22),inset 0 1px 0 rgba(255,255,255,.95)!important}
+.abk-portal-button:active{transform:scale(.96)!important}
+.abk-portal-button img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important}
+body.dark-mode .abk-portal-button{background:rgba(24,42,62,.78)!important;border-color:rgba(180,210,240,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.12)!important}
+@media(max-width:700px){.abk-portal-button{right:8px!important;bottom:54px!important;width:46px!important;height:46px!important;padding:6px!important;border-radius:14px!important}}
+@media print{.abk-portal-button{display:none!important}}
+
+
+/* Corner panel BAGREN dikembalikan ke posisi semula: pojok kiri bawah */
+.brandmark{position:fixed!important;left:14px!important;right:auto!important;bottom:14px!important;top:auto!important;width:max-content!important;max-width:230px!important}
+@media(max-width:700px){.brandmark{left:8px!important;right:auto!important;bottom:8px!important;max-width:calc(50vw - 16px)!important}}
+
+/* Tribrata portal button belongs in the header, immediately left of BAGREN planning logo */
+.header-right .abk-portal-button{position:relative!important;inset:auto!important;flex:0 0 52px!important;width:52px!important;height:52px!important;margin:0 2px 0 0!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:6px!important;border-radius:15px!important;z-index:2!important}
+.header-right .abk-portal-button img{width:100%!important;height:100%!important;object-fit:contain!important}
+@media(max-width:700px){.header-right .abk-portal-button{flex-basis:38px!important;width:38px!important;height:38px!important;padding:4px!important;border-radius:11px!important;margin-right:0!important}.header-right{align-items:center!important}}
+@media print{.header-right .abk-portal-button{display:none!important}}
+
+/* Tombol kunci dashboard di pojok kanan atas */
+.lock-dashboard{flex:0 0 auto;width:42px;height:42px;display:flex;align-items:center;justify-content:center;padding:9px;border:1px solid #ffffff38;border-radius:13px;background:linear-gradient(145deg,#ffffff20,#ffffff0a);color:var(--text,#eaf4ff);box-shadow:0 5px 16px #0002;cursor:pointer;transition:transform .15s ease,background .15s ease,border-color .15s ease}
+.lock-dashboard svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lock-dashboard:hover{transform:translateY(-1px);background:#4c8edb30;border-color:#77baff88}
+.lock-dashboard:active{transform:scale(.94)}
+/* Keep the lock control fixed in the top-right corner, like the bottom-right watermark. */
+.lock-dashboard{position:fixed!important;top:16px!important;right:16px!important;z-index:10050!important;width:44px;height:44px;flex:none!important}
+@media(max-width:700px){.lock-dashboard{top:10px!important;right:10px!important;width:38px;height:38px;padding:8px;border-radius:11px}}
+@media print{.lock-dashboard{display:none!important}}
+/* PIN gate: dashboard remains hidden until PIN is accepted */
+#pinGate{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:22px;background:radial-gradient(ellipse at top,#214d78 0%,#101c2b 52%,#080d15 100%);color:#eef6ff;font-family:"Segoe UI",Arial,sans-serif}
+.pin-panel{width:min(100%,390px);padding:30px 26px 26px;border:1px solid #ffffff26;border-radius:26px;background:linear-gradient(145deg,#ffffff17,#ffffff08);box-shadow:0 24px 70px #0008,inset 0 1px #ffffff20;text-align:center;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.pin-logo{width:100px;height:108px;object-fit:contain;display:block;margin:0 auto 15px;filter:drop-shadow(0 5px 12px #0005)}
+.pin-title{font-size:1.22rem;font-weight:800;letter-spacing:.01em;margin:0 0 18px;color:#f5f9ff}
+#pinInput{display:block;width:100%;height:54px;border:1px solid #ffffff35;border-radius:14px;background:#071321a8;color:#fff;text-align:center;font-size:1.55rem;letter-spacing:.48em;font-weight:800;outline:none;padding:8px 14px}
+#pinInput:focus{border-color:#76baff;box-shadow:0 0 0 3px #4c9de833}
+.pin-error{min-height:20px;margin:10px 0 12px;color:#ffb4a9;font-size:.85rem;font-weight:600}
+.pin-submit{width:100%;height:47px;border:1px solid #79b8ff55;border-radius:13px;background:linear-gradient(135deg,#1e66ad,#378de0);color:white;font-size:.95rem;font-weight:800;box-shadow:0 8px 18px #0003}
+.pin-keypad{display:none;grid-template-columns:repeat(3,1fr);gap:9px;margin:0 0 14px}
+.pin-key{height:48px;border:1px solid #ffffff22;border-radius:12px;background:#ffffff12;color:#fff;font-size:1.15rem;font-weight:750;box-shadow:inset 0 1px #ffffff0b}
+.pin-key:active{transform:scale(.97);background:#3989d866}
+@media(max-width:700px){#pinGate{padding:18px}.pin-panel{padding:25px 20px 22px;border-radius:23px}.pin-logo{width:88px;height:94px;margin-bottom:12px}.pin-keypad{display:grid}#pinInput{letter-spacing:.38em;height:50px}.pin-submit{height:45px}}
+
+
+/* Mode presentasi pimpinan: layar penuh bergaya slide persentase */
+#presentationBtn{letter-spacing:.01em}
+.presentation-mode{display:none;position:fixed;inset:0;z-index:20000;overflow:auto;color:#eaf4ff;background:radial-gradient(ellipse at 50% 35%,#254d75 0%,#142c46 48%,#091827 100%);font-family:"Segoe UI",Tahoma,Arial,sans-serif;padding:clamp(22px,4vw,52px);}
+.presentation-mode.active{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100dvh}
+.presentation-exit{position:absolute;top:20px;right:22px;background:#ffffff16;border:1px solid #ffffff40;color:#fff;border-radius:12px;padding:10px 15px;z-index:2}
+.presentation-brand{position:absolute;top:25px;left:clamp(20px,4vw,52px);font-weight:900;letter-spacing:.15em;font-size:clamp(.75rem,1.4vw,1rem);color:#bcdcff}
+.presentation-brand span{display:block;font-size:.72em;letter-spacing:.25em;margin-top:6px;color:#8faecb}
+.presentation-main{width:min(100%,1100px);display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 0 30px}.pres-slide{display:none;width:100%;animation:slideIn .45s ease both}.pres-slide.current{display:flex;flex-direction:column;align-items:center;gap:14px}.pres-table-wrap{width:100%;max-height:62vh;overflow:auto;border:1px solid #ffffff30;border-radius:16px;background:#ffffff0b}.pres-table{width:100%;border-collapse:collapse;text-align:left;font-size:clamp(.72rem,1.15vw,.95rem)}.pres-table th,.pres-table td{padding:9px 12px;border-bottom:1px solid #ffffff18}.pres-table th{position:sticky;top:0;background:#183957;color:#cbe4ff}.pres-table td:last-child,.pres-table th:last-child{text-align:right}.pres-slide-title{font-size:clamp(1.15rem,2.5vw,2rem);font-weight:900;letter-spacing:.04em}.pres-slide-sub{color:#b9cee2;font-size:.9rem}.pres-nav{position:absolute;bottom:42px;display:flex;align-items:center;gap:12px;z-index:3}.pres-nav button{border:1px solid #ffffff40;background:#ffffff16;color:white;border-radius:12px;padding:9px 15px}.pres-dots{color:#c5d9ed;font-weight:800;min-width:85px;text-align:center}.pres-bars{width:min(100%,850px);display:flex;flex-direction:column;gap:10px;text-align:left}.pres-bar-row{display:grid;grid-template-columns:minmax(110px,220px) 1fr 70px;gap:10px;align-items:center}.pres-bar-track{height:14px;background:#ffffff18;border-radius:20px;overflow:hidden}.pres-bar-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#55aaff,#69e0ac);animation:growBar 1s ease both}.pres-reco{max-width:900px;text-align:left;background:#ffffff10;border:1px solid #ffffff25;border-radius:16px;padding:18px;line-height:1.65}@keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes growBar{from{width:0}}
+.presentation-kicker{font-size:clamp(.9rem,2vw,1.35rem);font-weight:800;letter-spacing:.19em;color:#c6d9ee}
+.presentation-meter{width:clamp(230px,34vw,370px);aspect-ratio:1;position:relative;margin:20px 0 25px}
+.presentation-meter svg{width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
+.meter-track,.meter-arc{fill:none;stroke-width:12}
+.meter-track{stroke:#ffffff16}
+.meter-arc{stroke:#63d79a;stroke-linecap:round;stroke-dasharray:640.9;stroke-dashoffset:640.9;transition:stroke-dashoffset .8s ease}
+.presentation-number{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px}
+.presentation-number strong{font-size:clamp(3.6rem,9vw,6.5rem);line-height:1;font-weight:900;letter-spacing:-.055em;text-shadow:0 8px 35px #0005}
+.presentation-number span{font-size:clamp(.8rem,1.5vw,1rem);color:#c3d7eb;font-weight:700;letter-spacing:.06em}
+.presentation-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,2vw,22px);width:min(100%,900px)}
+.presentation-stats>div{padding:clamp(14px,2vw,24px);border:1px solid #ffffff25;border-radius:20px;background:linear-gradient(145deg,#ffffff16,#ffffff08);box-shadow:0 14px 35px #0002;backdrop-filter:blur(14px)}
+.presentation-stats strong{display:block;font-size:clamp(1.6rem,4vw,3rem);font-weight:900;color:#fff}
+.presentation-stats span{display:block;margin-top:6px;color:#bfd3e8;font-size:clamp(.72rem,1.3vw,.95rem);font-weight:700}
+#presentationCaption{color:#b9cee2;margin:24px 0 0;font-size:clamp(.8rem,1.5vw,1rem)}
+.presentation-footer{position:absolute;bottom:12px;left:20px;right:20px;text-align:center;font-size:.68rem;letter-spacing:.2em;color:#7797b6;font-weight:800}
+body.presentation-open{overflow:hidden}
+@media(max-width:600px){.presentation-mode{padding:18px}.presentation-brand{top:18px;left:18px}.presentation-exit{top:15px;right:15px;padding:8px 10px;font-size:.78rem}.presentation-main{padding-top:75px}.presentation-stats{grid-template-columns:1fr;max-width:360px}.pres-nav{bottom:35px}.pres-table-wrap{max-height:55vh}.pres-bar-row{grid-template-columns:minmax(80px,110px) 1fr 52px;gap:6px}.pres-table th,.pres-table td{padding:7px 8px}.presentation-stats>div{display:flex;align-items:center;justify-content:space-between;text-align:right;padding:12px 16px}.presentation-stats span{margin:0;text-align:left;max-width:55%}.presentation-meter{width:min(66vw,280px);margin:18px 0}.presentation-footer{font-size:.55rem;bottom:10px}}
+@media print{.presentation-mode{display:none!important}}
+
+</style>
+</head>
+<body>
+<div id="pinGate" role="dialog" aria-modal="true" aria-labelledby="pinPrompt">
+  <form class="pin-panel" id="pinForm" autocomplete="off">
+    <img class="pin-logo" src="https://restabesmakassar.sulsel.polri.go.id/wp-content/uploads/2026/04/logo-perencanaan.png" alt="Logo Perencanaan BAGREN">
+    <p class="pin-title" id="pinPrompt">Masukkan PIN untuk memulai Fitur</p>
+    <input id="pinInput" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="••••" aria-label="Masukkan PIN" autocomplete="off" required>
+    <div class="pin-error" id="pinError" aria-live="polite"></div>
+    <div class="pin-keypad" id="pinKeypad" aria-label="Tombol angka PIN">
+      <button class="pin-key" type="button" data-digit="1">1</button><button class="pin-key" type="button" data-digit="2">2</button><button class="pin-key" type="button" data-digit="3">3</button>
+      <button class="pin-key" type="button" data-digit="4">4</button><button class="pin-key" type="button" data-digit="5">5</button><button class="pin-key" type="button" data-digit="6">6</button>
+      <button class="pin-key" type="button" data-digit="7">7</button><button class="pin-key" type="button" data-digit="8">8</button><button class="pin-key" type="button" data-digit="9">9</button>
+      <button class="pin-key" type="button" data-action="clear">Hapus</button><button class="pin-key" type="button" data-digit="0">0</button><button class="pin-key" type="button" data-action="backspace">⌫</button>
+    </div>
+    <button class="pin-submit" type="submit">Masuk Dashboard</button>
+  </form>
+</div>
+<div class="wrap">
+<header>
+  <div class="title-group"><div class="title-line"><h1 data-text="ANEV SINGKAT ABK">ANEV SINGKAT ABK</h1></div><p class="sub">Pemeriksa kelengkapan pengisian harian · Tempel data langsung dari Excel</p><div class="actions no-print" style="margin-top:12px"><button type="button" class="primary" id="presentationBtn">▣ Mode Presentasi Pimpinan</button></div></div>
+  <div class="header-right"><a class="abk-portal-button no-print" href="https://abk.polri.go.id/" target="_blank" rel="noopener noreferrer" aria-label="Buka portal SI-ABK Polri" title="Buka portal SI-ABK Polri"><img src="https://tribratanews.sumut.polri.go.id/wp-content/uploads/2026/03/tribrata_PNG_12-removebg-preview-1.png" alt="Logo Tribrata"></a><img class="bagren-logo" src="https://restabesmakassar.sulsel.polri.go.id/wp-content/uploads/2026/04/logo-perencanaan.png" alt="Logo Perencanaan BAGREN" title="Logo Perencanaan BAGREN"><div class="total"><small>TOTAL PERSENTASE PENGISIAN</small><strong id="overall">—%</strong><small id="overallDetail">Belum ada data</small></div><button type="button" id="lockDashboardBtn" class="lock-dashboard no-print" aria-label="Kunci dashboard dan kembali ke halaman PIN" title="Kunci dashboard"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><circle cx="12" cy="15" r="1"></circle></svg></button></div>
+</header>
+<section class="card">
+  <h2>1. Pilih format bulan</h2>
+  <div class="toolbar"><div class="months" role="group" aria-label="Format bulan">
+    <button class="month active" data-days="31">31 hari</button><button class="month" data-days="30">30 hari</button><button class="month" data-days="29">29 hari</button><button class="month" data-days="28">28 hari</button><button type="button" class="secondary" id="currentMonthBtn">BULAN INI</button>
+  </div><span id="monthNote" class="hint">Menghitung tanggal 1–31.</span></div>
+</section>
+<section class="card" id="inputCard">
+  <h2>2. Tempel data dari Excel</h2>
+  <p class="hint">Di Excel, salin seluruh tabel mulai dari <b>B1 sampai AF55</b>, lalu tempel di kotak ini. Format salinan Excel (tab antar kolom) akan dibaca otomatis. Baris pertama dianggap sebagai header tanggal, dan kolom pertama setiap baris data dianggap nama satker. Tanda seperti ✓, ✔, √, X, atau isi teks dihitung terisi; sel kosong dihitung belum diisi.</p>
+  <textarea id="paste" spellcheck="false" placeholder="Klik di sini lalu tekan Ctrl+V untuk menempelkan data dari Excel..."></textarea>
+  <div class="actions">
+    <button class="primary" id="analyze">Periksa pengisian</button><button class="secondary" id="demo">Muat contoh data</button><button class="secondary" id="clear">Bersihkan</button>
+    <label class="filelabel secondary" for="file" style="display:inline-flex;align-items:center">Buka file CSV/TSV</label><input id="file" type="file" accept=".csv,.tsv,.txt" hidden>
+  </div>
+  <p class="hint">Baris Pembatas BAG/Polsek tidak dihitung dan Baris dengan nama “Satker” .</p>
+</section>
+
+<section class="card" id="dashboardCard">
+  <h2>Dashboard dan ranking satker</h2>
+  <p class="hint">Ringkasan dihitung dari semua satker yang valid. Ranking diurutkan dari persentase tertinggi.</p>
+  <div class="feature-grid">
+    <div class="feature-card"><small>Rata-rata pengisian satker</small><strong id="avgPct">—%</strong></div>
+    <div class="feature-card"><small>Satker lengkap 100%</small><strong id="completeCount">0</strong></div>
+    <div class="feature-card"><small>Satker perlu tindak lanjut</small><strong id="followupCount">0</strong></div>
+    <div class="feature-card"><small>Total tanggal belum terisi</small><strong id="missingTotal">0</strong></div>
+  </div>
+  <div class="rank-list" id="ranking"><p class="hint">Hasil ranking akan tampil setelah data diperiksa.</p></div>
+  <div class="chart-panel" id="progressChartPanel">
+    <h3>Grafik distribusi progres</h3>
+    <p class="hint">Sebaran satker menurut tingkat penyelesaian pengisian.</p>
+    <div id="progressChart" class="progress-chart"><p class="hint">Grafik akan tampil setelah data diperiksa.</p></div>
+  </div>
+</section>
+<div class="print-only formal-report-head" aria-hidden="true">
+  <div class="formal-rule"></div>
+  <h2>LAPORAN HASIL ANALISIS DAN EVALUASI (ANEV)</h2>
+  <h3>PEMERIKSAAN KELENGKAPAN PENGISIAN SI-ABK</h3>
+  <p>Periode: <span id="printPeriod">Sesuai periode pemeriksaan</span></p>
+  <div class="formal-rule"></div>
+</div>
+<section class="card" id="reportCard">
+  <div class="report-head"><div><h2>4. Laporan ANEV otomatis</h2><p class="hint">Narasi dibuat dari hasil pemeriksaan saat ini dan dapat disalin ke dokumen laporan.</p></div><button type="button" class="secondary no-print" id="copyReport">Salin narasi laporan</button></div>
+  <div id="reportContent" class="report-content"><p class="hint">Periksa data terlebih dahulu untuk membuat laporan otomatis.</p></div>
+</section>
+<section class="card" id="validationCard">
+  <h2>Validasi data otomatis</h2>
+  <p class="hint">Pemeriksaan mencakup struktur kolom, kode/nama satker ganda, dan baris yang bentuknya berbeda. Sel tanggal kosong tetap dihitung sebagai kekurangan pengisian, bukan sebagai kesalahan format.</p>
+  <div id="validationResults" class="hint">Tempel data lalu klik “Periksa pengisian” untuk menjalankan validasi.</div>
+</section>
+<section class="card" id="historyCard">
+  <h2>Riwayat anev bulanan</h2>
+  <p class="hint">Simpan ringkasan hasil per bulan pada browser ini. Riwayat tetap lokal di perangkat dan dapat ikut dicadangkan melalui Backup JSON.</p>
+  <div class="history-controls">
+    <label for="historyMonth">Periode:</label><input id="historyMonth" type="month">
+    <button class="primary" id="saveHistory">Simpan hasil bulan ini</button>
+    <button class="secondary" id="exportHistory">Export riwayat CSV</button>
+  </div>
+  <div class="tablewrap" style="margin-top:12px"><table style="min-width:650px"><thead><tr><th>Periode</th><th>Satker</th><th>Rata-rata</th><th>Sel terisi</th><th>Sel kosong</th><th>Disimpan</th><th>Aksi</th></tr></thead><tbody id="historyRows"><tr><td colspan="7" class="empty">Belum ada riwayat tersimpan.</td></tr></tbody></table></div>
+</section>
+
+<section class="card" id="resultsCard">
+  <h2>3. Hasil pemeriksaan</h2>
+  <div class="stats"><div class="stat"><span>Jumlah satker/baris dihitung</span><strong id="rowsCount">0</strong></div><div class="stat"><span>Total sel tanggal yang seharusnya diisi</span><strong id="cellsCount">0</strong></div><div class="stat"><span>Sel tanggal sudah terisi</span><strong id="filledCount">0</strong></div></div>
+  <p class="hint">Kolom “Tanggal kosong” menampilkan hasil seperti <b>2, 7</b>. Persentase per satker dihitung dari jumlah tanggal terisi ÷ jumlah hari pada format bulan yang dipilih. Persentase total adalah gabungan seluruh satker yang dihitung.</p>
+  <div class="results-toolbar"><span class="results-label">Rincian pengisian satker</span><button type="button" id="themeToggle" class="theme-toggle" aria-pressed="false">☾ Mode gelap</button></div>
+  <div class="filterbar no-print"><input id="searchSatker" type="search" placeholder="Cari nama/kode satker..." aria-label="Cari satker"><select id="statusFilter" aria-label="Filter status"><option value="all">Semua status</option><option value="complete">Lengkap 100%</option><option value="incomplete">Belum 100%</option><option value="low">Di bawah 80%</option></select><select id="sortFilter" aria-label="Urutkan hasil"><option value="source">Urutan data asli</option><option value="pct-desc">Persentase tertinggi</option><option value="pct-asc">Persentase terendah</option><option value="name">Nama satker A–Z</option></select></div>
+  <div class="tablewrap"><table><thead><tr><th>Nama Satker</th><th>Tanggal kosong</th><th>Terisi</th><th>Persentase</th></tr></thead><tbody id="results"><tr><td colspan="4" class="empty">Tempel data Excel, lalu klik “Periksa pengisian”.</td></tr></tbody></table></div>
+  <div class="actions no-print"><button class="primary" id="copyResults">Salin hasil (tab-delimited)</button><button class="secondary" id="copySummary">Salin ringkasan tanggal kosong</button><button class="primary" id="exportExcel">Export Excel (.xls)</button><button class="secondary" id="printPdf">Cetak / Simpan PDF</button><button class="secondary" id="backupJson">Backup JSON</button><label class="filelabel secondary" for="restoreJson" style="display:inline-flex;align-items:center">Restore JSON</label><input id="restoreJson" type="file" accept=".json,application/json" hidden></div><p id="status" class="hint" aria-live="polite"></p>
+</section>
+<div class="print-only formal-signature" aria-hidden="true">
+  <div class="signature-place">Sragen, ................................</div>
+  <div>Mengetahui,</div>
+  <div>Pejabat yang berwenang</div>
+  <div class="signature-space"></div>
+  <div class="signature-name">................................................</div>
+  <div>NIP/NRP. ....................................</div>
+</div>
+<footer>SI-ABK · Berjalan langsung di browser, data tidak dikirim ke server.</footer>
+</div>
+<div class="brandmark" aria-label="Globe berputar, BAGREN Polres Sragen"><div class="globe"><div class="globe-lines"></div></div><div class="brandtext">BAGREN<br>POLRES SRAGEN</div></div>
+<div class="watermark">Bripda Satria Putra Pratama</div>
+<div id="presentationMode" class="presentation-mode" aria-hidden="true">
+  <button type="button" id="exitPresentation" class="presentation-exit" aria-label="Keluar dari mode presentasi">✕ Keluar Presentasi</button>
+  <div class="presentation-brand">BAGREN · POLRES SRAGEN <span>ANEV SINGKAT ABK</span></div>
+  <div class="presentation-main" id="presentationSlides">
+    <section class="pres-slide current" data-slide="0"><div class="presentation-kicker">TOTAL PERSENTASE PENGISIAN SI-ABK</div><div class="presentation-meter"><svg viewBox="0 0 240 240" aria-hidden="true"><circle class="meter-track" cx="120" cy="120" r="102"></circle><circle id="presentationArc" class="meter-arc" cx="120" cy="120" r="102"></circle></svg><div class="presentation-number"><strong id="presentationPercent">—%</strong><span id="presentationFilled">Belum ada data</span></div></div><div class="presentation-stats"><div><strong id="presentationSatker">0</strong><span>Satker diperiksa</span></div><div><strong id="presentationComplete">0</strong><span>Satker lengkap</span></div><div><strong id="presentationMissing">0</strong><span>Tanggal belum terisi</span></div></div><div id="presOverallBars" class="pres-bars"></div><p id="presentationCaption">Tempel dan periksa data untuk menampilkan capaian.</p></section>
+    <section class="pres-slide" data-slide="1"><div class="pres-slide-title">KETERISIAN · SAT / BAG / SI / SIE</div><div class="pres-slide-sub">Ringkasan per satfung, tanpa data polsek</div><div id="presUnitTable" class="pres-table-wrap"></div></section>
+    <section class="pres-slide" data-slide="2"><div class="pres-slide-title">KETERISIAN · POLSEK</div><div class="pres-slide-sub">Ringkasan keterisian, kekosongan, dan persentase</div><div id="presPolsekTable" class="pres-table-wrap"></div></section>
+    <section class="pres-slide" data-slide="3"><div class="pres-slide-title">RANKING KINERJA PENGISIAN</div><div class="pres-slide-sub">Ranking dipisah antara Sat / Bag / Si / Sie dan Polsek</div><div style="width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px"><div><h3>Sat / Bag / Si / Sie</h3><div id="presUnitRanking" class="pres-table-wrap"></div></div><div><h3>Polsek</h3><div id="presPolsekRanking" class="pres-table-wrap"></div></div></div></section>
+    <section class="pres-slide" data-slide="4"><div class="pres-slide-title">TANGGAL PALING BANYAK BELUM DIISI</div><div class="pres-slide-sub">Diurutkan dari tanggal dengan kekosongan terbanyak</div><div id="presDateRanking" class="pres-table-wrap"></div></section>
+    <section class="pres-slide" data-slide="5"><div class="pres-slide-title">KESIMPULAN & REKOMENDASI TINDAK LANJUT</div><div id="presConclusion" class="pres-reco"></div></section>
+  </div>
+  <div class="pres-nav"><button type="button" id="presPrev">← Sebelumnya</button><span id="presDots" class="pres-dots">SLIDE 1 / 6</span><button type="button" id="presNext">Berikutnya →</button><button type="button" id="presAuto">▶ Putar otomatis</button></div>
+  <div class="presentation-footer">BRIPDA SATRIA PUTRA PRATAMA · BAGREN POLRES SRAGEN</div>
+</div>
+<script>
+'use strict';
+let days=31, parsedRows=[], filteredRows=[], sourceRowCount=0, validationMessages=[];
+const $=id=>document.getElementById(id);
+const EXCLUDED_CODES=['038050000000000000','038050005000000000','038050006000000000','038050007000000000','038050019000000000','038050020000000000'];
+const STORAGE_KEY='anevSingkatABK_v2_history';
+const DRAFT_KEY='anevSingkatABK_v2_draft';
+function isExcludedRow(row){
+  const name=String(row?.[0]??'').replace(/\u00a0/g,' ').trim();
+  if(!name || /^satker$/i.test(name)) return true;
+  return EXCLUDED_CODES.some(code=>name.includes(code));
+}
+function norm(v){return String(v??'').trim()}
+function isFilled(v){const s=norm(v);return s!==''&&!['-','—','–','na','n/a'].includes(s.toLowerCase())}
+function fmt(n){return Number(n).toLocaleString('id-ID',{minimumFractionDigits:Number(n)%1?2:0,maximumFractionDigits:2})}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function parseText(text){return text.replace(/\r/g,'').split('\n').filter(line=>line.trim()!=='').map(line=>line.split('\t'))}
+function getHistory(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');return Array.isArray(x)?x:[]}catch(e){return []}}
+function setHistory(items){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(items));return true}catch(e){$('status').textContent='Riwayat tidak dapat disimpan. Penyimpanan browser mungkin penuh atau dinonaktifkan.';return false}}
+function renderHistory(){
+ const items=getHistory().sort((a,b)=>b.period.localeCompare(a.period));
+ $('historyRows').innerHTML=items.length?items.map((x,i)=>`<tr><td>${escapeHtml(x.period)}</td><td>${x.rows}</td><td>${fmt(x.avg)}%</td><td>${x.filled}</td><td>${x.missing}</td><td>${escapeHtml(x.savedAt||'-')}</td><td><button class="secondary" data-delete-history="${escapeHtml(x.period)}" type="button">Hapus</button></td></tr>`).join(''):'<tr><td colspan="7" class="empty">Belum ada riwayat tersimpan.</td></tr>';
+ $('historyRows').querySelectorAll('[data-delete-history]').forEach(btn=>btn.addEventListener('click',()=>{const period=btn.dataset.deleteHistory;if(!confirm('Hapus riwayat periode '+period+'?'))return;setHistory(getHistory().filter(x=>x.period!==period));renderHistory();}));
+}
+function validateRows(rows,maxCols,header){
+ const msgs=[];
+ if(rows.length<2)msgs.push('Data hanya memiliki header atau belum ada baris satker.');
+ if(maxCols<days+1)msgs.push(`Struktur data memiliki ${Math.max(0,maxCols-1)} kolom tanggal; format bulan yang dipilih memerlukan ${days} tanggal. Tanggal yang tidak tersedia akan dianggap kosong.`);
+ const widths=new Map();rows.forEach((r,i)=>{if(r.length)widths.set(r.length,(widths.get(r.length)||0)+1)});
+ if(widths.size>1)msgs.push('Jumlah kolom antarbaris tidak seragam. Pastikan seluruh tabel Excel disalin sampai kolom tanggal terakhir.');
+ const names=new Map();rows.slice(1).forEach(r=>{if(isExcludedRow(r))return;const n=norm(r[0]).toLocaleLowerCase('id-ID');if(n)names.set(n,(names.get(n)||0)+1)});
+ const dup=[...names].filter(([,n])=>n>1).map(([n])=>n);
+ if(dup.length)msgs.push(`Ada nama satker ganda (${dup.length} nama). Periksa kemungkinan baris terduplikasi.`);
+ if(!header.some((h,i)=>i>0&&Number(norm(h).replace(/[^\d]/g,''))>=1&&Number(norm(h).replace(/[^\d]/g,''))<=31))msgs.push('Header tanggal tidak terdeteksi jelas; sistem memakai urutan kolom sebagai tanggal 1, 2, 3, dan seterusnya.');
+ const unknown=rows.slice(1).filter(r=>!isExcludedRow(r)&&norm(r[0])).length;
+ if(!unknown)msgs.push('Tidak ditemukan baris satker yang bisa dihitung. Pastikan nama satker berada di kolom pertama dan header berada di baris pertama.');
+ return msgs;
+}
+function analyze(){
+ const raw=$('paste').value;
+ if(!raw.trim()){$('status').textContent='Tempel data Excel terlebih dahulu.';return}
+ let rows=parseText(raw);sourceRowCount=rows.length;
+ const maxCols=Math.max(0,...rows.map(r=>r.length));rows=rows.map(r=>{while(r.length<maxCols)r.push('');return r});
+ const header=rows[0]||[];let dateCols=[];
+ for(let c=1;c<header.length;c++){const h=norm(header[c]).replace(/[^\d]/g,'');const n=Number(h);if(n>=1&&n<=31)dateCols.push({col:c,day:n})}
+ if(!dateCols.length){for(let c=1;c<Math.min(maxCols,days+1);c++)dateCols.push({col:c,day:c})}
+ dateCols=dateCols.filter(d=>d.day<=days);
+ validationMessages=validateRows(rows,maxCols,header);
+ parsedRows=[];let totalCells=0,totalFilled=0;
+ const presentDays=new Set(dateCols.map(d=>d.day));
+ rows.slice(1).forEach((r,idx)=>{
+   const name=norm(r[0]);if(isExcludedRow(r))return;
+   let missing=[],filled=0;
+   dateCols.forEach(d=>{if(isFilled(r[d.col]))filled++;else missing.push(d.day)});
+   for(let d=1;d<=days;d++)if(!presentDays.has(d))missing.push(d);
+   missing=[...new Set(missing)].sort((a,b)=>a-b);
+   const pct=days?Math.round(filled/days*10000)/100:0;
+   totalCells+=days;totalFilled+=filled;parsedRows.push({name,missing,filled,pct,sourceIndex:idx});
+ });
+ const overall=totalCells?Math.round(totalFilled/totalCells*10000)/100:0;
+ $('overall').textContent=totalCells?`${fmt(overall)}%`:'—%';$('overallDetail').textContent=totalCells?`${totalFilled.toLocaleString('id-ID')} dari ${totalCells.toLocaleString('id-ID')} sel tanggal terisi`:'Belum ada data';
+ $('rowsCount').textContent=parsedRows.length.toLocaleString('id-ID');$('cellsCount').textContent=totalCells.toLocaleString('id-ID');$('filledCount').textContent=totalFilled.toLocaleString('id-ID');
+ renderResults();renderDashboard();renderProgressChart();renderReport();renderValidation();
+ $('status').textContent=`Selesai. Format ${days} hari; ${parsedRows.length} satker dihitung. Baris “Satker” dan enam kode pengecualian diabaikan.`;
+ try{localStorage.setItem(DRAFT_KEY,JSON.stringify({days,paste:raw}))}catch(e){}
+}
+function applyFilters(){
+ const q=norm($('searchSatker').value).toLocaleLowerCase('id-ID'),status=$('statusFilter').value,sort=$('sortFilter').value;
+ filteredRows=parsedRows.filter(r=>{
+  const match=!q||r.name.toLocaleLowerCase('id-ID').includes(q);
+  const state=status==='complete'?r.pct>=100:status==='incomplete'?r.pct<100:status==='low'?r.pct<80:true;
+  return match&&state;
+ });
+ if(sort==='pct-desc')filteredRows.sort((a,b)=>b.pct-a.pct||a.name.localeCompare(b.name,'id'));
+ else if(sort==='pct-asc')filteredRows.sort((a,b)=>a.pct-b.pct||a.name.localeCompare(b.name,'id'));
+ else if(sort==='name')filteredRows.sort((a,b)=>a.name.localeCompare(b.name,'id'));
+}
+function renderResults(){
+ applyFilters();
+ $('results').innerHTML=filteredRows.length?filteredRows.map(r=>`<tr><td>${escapeHtml(r.name)}</td><td class="${r.missing.length?'missing':'full'}">${r.missing.length?r.missing.join(', '):'Lengkap'}</td><td>${r.filled} / ${days}</td><td class="pct ${r.pct>=100?'full':''}">${fmt(r.pct)}%</td></tr>`).join(''):`<tr><td colspan="4" class="empty">${parsedRows.length?'Tidak ada satker yang sesuai pencarian/filter.':'Tidak ada baris satker yang terbaca. Pastikan kolom pertama berisi nama satker.'}</td></tr>`;
+}
+function renderDashboard(){
+ const n=parsedRows.length,avg=n?parsedRows.reduce((s,r)=>s+r.pct,0)/n:0,complete=parsedRows.filter(r=>r.pct>=100).length,follow= n-complete,missing=parsedRows.reduce((s,r)=>s+r.missing.length,0);
+ $('avgPct').textContent=n?fmt(avg)+'%':'—%';$('completeCount').textContent=complete.toLocaleString('id-ID');$('followupCount').textContent=follow.toLocaleString('id-ID');$('missingTotal').textContent=missing.toLocaleString('id-ID');
+ const top=[...parsedRows].sort((a,b)=>b.pct-a.pct||a.name.localeCompare(b.name,'id')).slice(0,10);
+ $('ranking').innerHTML=top.length?'<h3 style="font-size:.95rem;margin:8px 0 0;color:var(--ink)">10 satker teratas</h3>'+top.map((r,i)=>`<div class="rank-row"><div class="rank-name">${i+1}. ${escapeHtml(r.name)}</div><div class="rank-track"><div class="rank-fill" style="width:${Math.max(0,Math.min(100,r.pct))}%"></div></div><div class="rank-pct">${fmt(r.pct)}%</div></div>`).join(''):'<p class="hint">Hasil ranking akan tampil setelah data diperiksa.</p>';
+}
+function buildReportText(){
+ const n=parsedRows.length;
+ if(!n)return '';
+ const avg=parsedRows.reduce((s,r)=>s+r.pct,0)/n;
+ const complete=parsedRows.filter(r=>r.pct>=100);
+ const incomplete=parsedRows.filter(r=>r.pct<100).sort((a,b)=>a.pct-b.pct||a.name.localeCompare(b.name,'id'));
+ const missing=parsedRows.reduce((s,r)=>s+r.missing.length,0);
+ const now=new Date();
+ const selectedPeriod=$('historyMonth')?.value||now.toISOString().slice(0,7);
+ const periodDate=new Date(selectedPeriod+'-01T12:00:00');
+ const period=Number.isNaN(periodDate.getTime())?now.toLocaleDateString('id-ID',{month:'long',year:'numeric'}):periodDate.toLocaleDateString('id-ID',{month:'long',year:'numeric'});
+ const generatedAt=now.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+ const top=[...parsedRows].sort((a,b)=>b.pct-a.pct||a.name.localeCompare(b.name,'id')).slice(0,3);
+ const bottom=incomplete.slice(0,5);
+ const overall=parsedRows.reduce((s,r)=>s+r.filled,0)/(n*days)*100;
+ const pctText=x=>fmt(x)+'%';
+ const out=[];
+ out.push(`<p class="report-meta">Periode laporan: <strong>${escapeHtml(period)}</strong> · Dibuat: ${escapeHtml(generatedAt)} · Cakupan tanggal: 1–${days} · Jumlah satker: ${n}</p>`);
+ out.push(`<div class="report-section"><h3>Ringkasan hasil</h3><p>Berdasarkan pemeriksaan data SI-ABK, dari <strong>${n} satker</strong> yang dihitung, sebanyak <strong>${complete.length} satker (${pctText(complete.length/n*100)})</strong> telah melengkapi seluruh tanggal yang diperiksa, sedangkan <strong>${incomplete.length} satker (${pctText(incomplete.length/n*100)})</strong> masih memerlukan tindak lanjut. Rata-rata persentase pengisian per satker adalah <strong>${pctText(avg)}</strong>, dengan tingkat pengisian gabungan sebesar <strong>${pctText(overall)}</strong>. Total tanggal yang belum terisi sebanyak <strong>${missing}</strong>.</p></div>`);
+ out.push(`<div class="report-section"><h3>Satker dengan progres tertinggi</h3><ul>${top.map(r=>`<li>${escapeHtml(r.name)} — ${pctText(r.pct)} (${r.missing.length?`tanggal kosong: ${r.missing.join(', ')}`:'lengkap'})</li>`).join('')}</ul></div>`);
+ out.push(`<div class="report-section"><h3>Prioritas tindak lanjut</h3>${bottom.length?`<p>Satker dengan persentase terendah yang perlu diprioritaskan untuk pengecekan dan pengisian:</p><ul>${bottom.map(r=>`<li>${escapeHtml(r.name)} — ${pctText(r.pct)}, tanggal kosong: ${r.missing.length?r.missing.join(', '):'tidak ada'}</li>`).join('')}</ul>`:'<p>Seluruh satker telah mencapai 100% pada tanggal yang diperiksa.</p>'}<p>Satfung dan jajaran polsek agar melakukan pengecekan ulang serta melengkapi tanggal yang masih kosong. Apabila terdapat kendala teknis atau kesalahan sistem, agar segera dikoordinasikan untuk mendapatkan bantuan dan tindak lanjut.</p></div>`);
+ out.push(`<p class="report-meta">Catatan: laporan ini disusun otomatis berdasarkan data yang ditempelkan dan hasil pemeriksaan pada aplikasi. Pastikan kesesuaian dengan data sumber sebelum digunakan sebagai laporan resmi.</p>`);
+ return out.join('');
+}
+function renderReport(){ $('reportContent').innerHTML=buildReportText()||'<p class="hint">Periksa data terlebih dahulu untuk membuat laporan otomatis.</p>'; const p=$('printPeriod'); if(p){ const d=new Date(); p.textContent=d.toLocaleDateString('id-ID',{month:'long',year:'numeric'}); } }
+function renderProgressChart(){
+ const n=parsedRows.length;
+ if(!n){$('progressChart').innerHTML='<p class="hint">Grafik akan tampil setelah data diperiksa.</p>';return;}
+ const groups=[{label:'100% lengkap',count:parsedRows.filter(r=>r.pct>=100).length},{label:'80–99%',count:parsedRows.filter(r=>r.pct>=80&&r.pct<100).length},{label:'50–79%',count:parsedRows.filter(r=>r.pct>=50&&r.pct<80).length},{label:'Di bawah 50%',count:parsedRows.filter(r=>r.pct<50).length}];
+ $('progressChart').innerHTML=groups.map(g=>`<div class="progress-row"><div class="progress-label">${g.label}</div><div class="progress-track"><div class="progress-fill" style="width:${g.count/n*100}%"></div></div><div class="progress-value">${g.count}</div></div>`).join('')+`<p class="hint">Jumlah satker per kategori; total ${n} satker. Grafik ranking di atas menampilkan 10 satker dengan persentase tertinggi.</p>`;
+}
+function renderValidation(){
+ $('validationResults').innerHTML=validationMessages.length?'<ul class="validation-list">'+validationMessages.map(m=>`<li>${escapeHtml(m)}</li>`).join('')+'</ul>':'<p class="validation-ok">✓ Struktur dasar data terlihat baik. Tetap periksa apakah hasilnya sesuai dengan sumber Excel.</p>';
+}
+function fallbackCopy(text){const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove()}
+async function copyText(text){try{await navigator.clipboard.writeText(text)}catch(e){fallbackCopy(text)}}
+function downloadBlob(content,type,name){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function exportExcel(){
+ if(!parsedRows.length){$('status').textContent='Periksa data terlebih dahulu sebelum export.';return}
+ const rows=[['Nama Satker','Tanggal kosong','Tanggal terisi','Jumlah hari','Persentase'],...parsedRows.map(r=>[r.name,r.missing.length?r.missing.join(', '):'Lengkap',r.filled,days,fmt(r.pct)+'%'])];
+ const table='<table border="1"><thead>'+rows.slice(0,1).map(r=>'<tr>'+r.map(v=>'<th>'+escapeHtml(v)+'</th>').join('')+'</tr>').join('')+'</thead><tbody>'+rows.slice(1).map(r=>'<tr>'+r.map(v=>'<td>'+escapeHtml(v)+'</td>').join('')+'</tr>').join('')+'</tbody></table>';
+ const doc='\ufeff<html><head><meta charset="utf-8"></head><body><h2>ANEV SINGKAT ABK</h2><p>Format bulan: '+days+' hari</p>'+table+'</body></html>';
+ downloadBlob(doc,'application/vnd.ms-excel;charset=utf-8','Laporan_ANEV_ABK.xls');$('status').textContent='Laporan Excel berhasil disiapkan. File .xls dapat dibuka dengan Microsoft Excel atau LibreOffice.';
+}
+function saveHistory(){
+ if(!parsedRows.length){$('status').textContent='Periksa data terlebih dahulu sebelum menyimpan riwayat.';return}
+ const period=$('historyMonth').value;
+ if(!period){$('status').textContent='Pilih periode bulan dan tahun terlebih dahulu.';return}
+ const filled=parsedRows.reduce((s,r)=>s+r.filled,0),missing=parsedRows.reduce((s,r)=>s+r.missing.length,0),avg=parsedRows.reduce((s,r)=>s+r.pct,0)/parsedRows.length;
+ const item={period,days,rows:parsedRows.length,avg:Math.round(avg*100)/100,filled,missing,savedAt:new Date().toLocaleString('id-ID'),paste:$('paste').value};
+ const items=getHistory().filter(x=>x.period!==period);items.push(item);
+ if(setHistory(items)){renderHistory();$('status').textContent='Riwayat '+period+' berhasil disimpan pada browser ini.'}
+}
+function backupJson(){
+ const data={app:'ANEV SINGKAT ABK',version:2,createdAt:new Date().toISOString(),days,paste:$('paste').value,history:getHistory()};
+ downloadBlob(JSON.stringify(data,null,2),'application/json;charset=utf-8','Backup_ANEV_ABK_'+new Date().toISOString().slice(0,10)+'.json');
+ $('status').textContent='File backup JSON berhasil dibuat.';
+}
+function restoreJson(file){
+ const reader=new FileReader();
+ reader.onload=()=>{
+  try{
+   const data=JSON.parse(reader.result);
+   if(!data||typeof data!=='object'||typeof data.paste!=='string')throw new Error('Format backup tidak dikenali atau tidak memiliki data tempelan.');
+   if(!confirm('Restore akan mengganti data tempelan saat ini dan riwayat lokal. Lanjutkan?'))return;
+   days=(Number(data.days)>=1&&Number(data.days)<=31)?Number(data.days):31;
+   const isCurrentCutoff=days===new Date().getDate()&&! [28,29,30,31].includes(days);
+   setDayRange(days,isCurrentCutoff?'current':'month');
+   $('paste').value=data.paste;
+   if(Array.isArray(data.history))setHistory(data.history.filter(x=>x&&typeof x.period==='string'));
+   try{localStorage.setItem(DRAFT_KEY,JSON.stringify({days,paste:data.paste}))}catch(e){}
+   renderHistory();if($('paste').value.trim())analyze();$('status').textContent='Restore selesai. Data dan riwayat dari backup berhasil dimuat.';
+  }catch(e){$('status').textContent='Restore gagal: '+e.message}
+ };
+ reader.onerror=()=>{$('status').textContent='File backup tidak dapat dibaca.'};
+ reader.readAsText(file);
+}
+function setDayRange(n, mode='month'){
+ days=Math.max(1,Math.min(31,Number(n)||31));
+ document.querySelectorAll('.month').forEach(b=>b.classList.toggle('active',mode==='month'&&Number(b.dataset.days)===days));
+ $('currentMonthBtn').classList.toggle('active',mode==='current');
+ if(mode==='current'){
+   const now=new Date();
+   $('monthNote').textContent=`BULAN INI: menghitung tanggal 1–${days} (${now.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})}).`;
+ }else{
+   $('monthNote').textContent=`Menghitung tanggal 1–${days}.`;
+ }
+}
+document.querySelectorAll('.month').forEach(btn=>btn.addEventListener('click',()=>{setDayRange(Number(btn.dataset.days),'month');if($('paste').value.trim())analyze()}));
+$('currentMonthBtn').addEventListener('click',()=>{const now=new Date();setDayRange(now.getDate(),'current');if($('paste').value.trim())analyze();else $('status').textContent=`Mode BULAN INI aktif: pemeriksaan akan menghitung tanggal 1 sampai ${now.getDate()} saja.`;});
+$('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark-mode');$('themeToggle').textContent=dark?'☀ Mode terang':'☾ Mode gelap';$('themeToggle').setAttribute('aria-pressed',String(dark));try{localStorage.setItem('anevAbkTheme',dark?'dark':'light')}catch(e){}});
+$('analyze').addEventListener('click',analyze);
+$('clear').addEventListener('click',()=>{
+ $('paste').value='';parsedRows=[];filteredRows=[];validationMessages=[];
+ $('overall').textContent='—%';$('overallDetail').textContent='Belum ada data';$('rowsCount').textContent='0';$('cellsCount').textContent='0';$('filledCount').textContent='0';
+ $('results').innerHTML='<tr><td colspan="4" class="empty">Tempel data Excel, lalu klik “Periksa pengisian”.</td></tr>';
+ $('status').textContent='Data dibersihkan.';renderDashboard();renderProgressChart();renderReport();renderValidation();try{localStorage.removeItem(DRAFT_KEY)}catch(e){}
+});
+$('demo').addEventListener('click',()=>{let head=['Satker',...Array.from({length:31},(_,i)=>i+1)];let a=['SIWAS',...Array.from({length:31},(_,i)=>[2,7].includes(i+1)?'':'✓')];let b=['SIPROPAM',...Array.from({length:31},(_,i)=>[1,5,12].includes(i+1)?'':'✓')];let divider=['038050005000000000 BAGOPS',...Array(31).fill('')];$('paste').value=[head,a,divider,b].map(r=>r.join('\t')).join('\n');analyze()});
+$('file').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{$('paste').value=await f.text();analyze()}catch(err){$('status').textContent='File gagal dibaca.'}e.target.value=''});
+$('copyResults').addEventListener('click',async()=>{if(!parsedRows.length){$('status').textContent='Belum ada hasil untuk disalin.';return}const text=[['Nama Satker','Tanggal kosong','Persentase'].join('\t'),...parsedRows.map(r=>[r.name,r.missing.join(', '),`${fmt(r.pct)}%`].join('\t'))].join('\n');await copyText(text);$('status').textContent='Hasil disalin. Tempelkan ke Excel.'});
+$('copySummary').addEventListener('click',async()=>{if(!parsedRows.length){$('status').textContent='Belum ada hasil untuk disalin.';return}const text=parsedRows.map(r=>`${r.name}\t${r.missing.length?r.missing.join(', '):'Lengkap'}\t${fmt(r.pct)}%`).join('\n');await copyText(text);$('status').textContent='Ringkasan tanggal kosong disalin.'});
+$('searchSatker').addEventListener('input',renderResults);$('statusFilter').addEventListener('change',renderResults);$('sortFilter').addEventListener('change',renderResults);
+$('exportExcel').addEventListener('click',exportExcel);
+$('printPdf').addEventListener('click',()=>{if(!parsedRows.length){$('status').textContent='Periksa data terlebih dahulu sebelum membuat PDF.';return}window.print()});
+$('copyReport').addEventListener('click',async()=>{if(!parsedRows.length){$('status').textContent='Periksa data terlebih dahulu untuk membuat laporan.';return}const plain=$('reportContent').innerText;await copyText(plain);$('status').textContent='Narasi laporan ANEV berhasil disalin.'});
+$('backupJson').addEventListener('click',backupJson);
+$('restoreJson').addEventListener('change',e=>{const f=e.target.files[0];if(f)restoreJson(f);e.target.value=''});
+$('saveHistory').addEventListener('click',saveHistory);
+$('exportHistory').addEventListener('click',()=>{const h=getHistory();if(!h.length){$('status').textContent='Belum ada riwayat untuk diekspor.';return}const rows=[['Periode','Hari','Jumlah satker','Rata-rata %','Sel terisi','Sel kosong','Disimpan'],...h.map(x=>[x.period,x.days,x.rows,fmt(x.avg)+'%',x.filled,x.missing,x.savedAt||''])];const csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\r\n');downloadBlob(csv,'text/csv;charset=utf-8','Riwayat_ANEV_ABK.csv')});
+// Restore last draft and theme preference on startup, without auto-running calculations unexpectedly.
+try{
+ const saved=JSON.parse(localStorage.getItem(DRAFT_KEY)||'null');
+ if(saved&&typeof saved.paste==='string'){$('paste').value=saved.paste;days=(Number(saved.days)>=1&&Number(saved.days)<=31)?Number(saved.days):31;const isCurrentCutoff=days===new Date().getDate()&&![28,29,30,31].includes(days);setDayRange(days,isCurrentCutoff?'current':'month')}
+ if(localStorage.getItem('anevAbkTheme')!=='light'){document.body.classList.add('dark-mode');$('themeToggle').textContent='☀ Mode terang';$('themeToggle').setAttribute('aria-pressed','true')}else{$('themeToggle').textContent='☾ Mode gelap';$('themeToggle').setAttribute('aria-pressed','false')}
+}catch(e){}
+$('historyMonth').value=new Date().toISOString().slice(0,7);
+if($('currentMonthBtn'))$('currentMonthBtn').classList.remove('active');renderHistory();renderDashboard();renderProgressChart();renderReport();renderValidation();
+
+// Presentasi pimpinan enam slide, dibangun langsung dari hasil pemeriksaan aktif.
+(()=>{
+ const mode=$('presentationMode'),btn=$('presentationBtn'),exit=$('exitPresentation');let slide=0,timer=null;
+ const esc=v=>escapeHtml(String(v??''));
+ function table(rows){return '<table class="pres-table"><thead><tr><th>Satker</th><th>Terisi</th><th>Kosong</th><th>Persen</th></tr></thead><tbody>'+ (rows.length?rows.map(r=>`<tr><td>${esc(r.name)}</td><td>${r.filled}</td><td>${r.missing.length}</td><td>${fmt(r.pct)}%</td></tr>`).join(''):'<tr><td colspan="4">Belum ada data</td></tr>')+'</tbody></table>'}
+ function isPolsek(r){return /polsek/i.test(r.name)}
+ function updatePresentation(){
+   const n=parsedRows.length,filled=parsedRows.reduce((sum,r)=>sum+(Number(r.filled)||0),0),total=n*days,missing=Math.max(0,total-filled),pct=total?Math.max(0,Math.min(100,filled/total*100)):0;
+   const complete=parsedRows.filter(r=>r.pct>=100).length;
+   $('presentationPercent').textContent=n?fmt(pct)+'%':'—%';$('presentationFilled').textContent=n?`${filled.toLocaleString('id-ID')} dari ${total.toLocaleString('id-ID')} sel tanggal terisi`:'Belum ada data';
+   $('presentationSatker').textContent=n.toLocaleString('id-ID');$('presentationComplete').textContent=complete.toLocaleString('id-ID');$('presentationMissing').textContent=missing.toLocaleString('id-ID');$('presentationCaption').textContent=n?`${complete} dari ${n} satker lengkap · ${missing} sel tanggal perlu ditindaklanjuti`:'Tempel dan periksa data untuk menampilkan capaian.';
+   $('presentationArc').style.strokeDashoffset=String(640.9-(640.9*pct/100));$('presentationArc').style.stroke=pct>=100?'#63d79a':pct>=80?'#73c6ff':'#ffb45e';
+   const units=parsedRows.filter(r=>!isPolsek(r)).sort((a,b)=>b.pct-a.pct),polseks=parsedRows.filter(isPolsek).sort((a,b)=>b.pct-a.pct);
+   $('presUnitTable').innerHTML=table(units);$('presPolsekTable').innerHTML=table(polseks);
+   function rankTable(rows){return '<table class="pres-table"><thead><tr><th>#</th><th>Satker</th><th>%</th></tr></thead><tbody>'+(rows.length?rows.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.name)}</td><td>${fmt(r.pct)}%</td></tr>`).join(''):'<tr><td colspan="3">Belum ada data</td></tr>')+'</tbody></table>'}
+   $('presUnitRanking').innerHTML=rankTable(units);$('presPolsekRanking').innerHTML=rankTable(polseks);
+   const counts=Array.from({length:days},(_,i)=>({day:i+1,count:parsedRows.filter(r=>r.missing.includes(i+1)).length})).sort((a,b)=>b.count-a.count||a.day-b.day);
+   $('presDateRanking').innerHTML='<table class="pres-table"><thead><tr><th>Peringkat</th><th>Tanggal</th><th>Satker belum mengisi</th></tr></thead><tbody>'+counts.slice(0,Math.min(10,counts.length)).map((x,i)=>`<tr><td>${i+1}</td><td>${x.day}</td><td>${x.count}</td></tr>`).join('')+'</tbody></table>';
+   const worst=[...parsedRows].sort((a,b)=>a.pct-b.pct).slice(0,5),topDates=counts.slice(0,3).filter(x=>x.count>0);
+   $('presConclusion').innerHTML=n?`<p><b>Kesimpulan.</b> Tingkat pengisian gabungan mencapai <b>${fmt(pct)}%</b>. Sebanyak <b>${complete}</b> dari <b>${n}</b> satker telah lengkap, sementara terdapat <b>${missing}</b> sel tanggal yang masih kosong.</p><p><b>Prioritas tindak lanjut:</b></p><ol><li>Satker dengan capaian terendah agar segera melengkapi tanggal yang kosong: ${worst.length?worst.map(r=>`${esc(r.name)} (${fmt(r.pct)}%)`).join('; '):'tidak ada'}.</li><li>Fokus pengecekan pada tanggal yang paling banyak kosong: ${topDates.length?topDates.map(x=>`${x.day} (${x.count} satker)`).join(', '):'tidak ada tanggal kosong'}.</li><li>Sat / Bag / Si / Sie dan jajaran Polsek agar melakukan verifikasi ulang; kendala teknis dikoordinasikan dengan operator terkait.</li><li>Lakukan pemeriksaan ulang setelah pembaruan data untuk memastikan seluruh tanggal telah terisi dengan benar.</li></ol>`:'Belum ada data yang diperiksa. Tempel data Excel dan tekan Periksa Pengisian sebelum memulai presentasi.';
+   $('presOverallBars').innerHTML=`<div class="pres-bar-row"><span>Terisi</span><div class="pres-bar-track"><div class="pres-bar-fill" style="width:${pct}%"></div></div><b>${fmt(pct)}%</b></div><div class="pres-bar-row"><span>Belum terisi</span><div class="pres-bar-track"><div class="pres-bar-fill" style="width:${total?missing/total*100:0}%;background:linear-gradient(90deg,#ffb45e,#f57979)"></div></div><b>${fmt(total?missing/total*100:0)}%</b></div>`;
+ }
+ function showSlide(i){slide=Math.max(0,Math.min(5,i));mode.querySelectorAll('.pres-slide').forEach((el,j)=>el.classList.toggle('current',j===slide));$('presDots').textContent=`SLIDE ${slide+1} / 6`; $('presPrev').disabled=slide===0;$('presNext').disabled=slide===5;}
+ function stopAuto(){if(timer){clearInterval(timer);timer=null}$('presAuto').textContent='▶ Putar otomatis'}
+ function open(){updatePresentation();showSlide(0);mode.classList.add('active');mode.setAttribute('aria-hidden','false');document.body.classList.add('presentation-open');}
+ function close(){stopAuto();mode.classList.remove('active');mode.setAttribute('aria-hidden','true');document.body.classList.remove('presentation-open');btn.focus({preventScroll:true});}
+ btn.addEventListener('click',open);exit.addEventListener('click',close);$('presPrev').addEventListener('click',()=>showSlide(slide-1));$('presNext').addEventListener('click',()=>showSlide(slide+1));$('presAuto').addEventListener('click',()=>{if(timer){stopAuto();return}$('presAuto').textContent='Ⅱ Jeda';timer=setInterval(()=>showSlide((slide+1)%6),7000)});
+ document.addEventListener('keydown',e=>{if(!mode.classList.contains('active'))return;if(e.key==='Escape'){close()}else if(e.key==='ArrowRight')showSlide((slide+1)%6);else if(e.key==='ArrowLeft')showSlide((slide+5)%6)});
+})();
+
+// PIN entry gate: desktop uses keyboard; mobile displays an on-screen numeric keypad.
+(()=>{
+ const gate=document.getElementById('pinGate'),form=document.getElementById('pinForm'),input=document.getElementById('pinInput'),error=document.getElementById('pinError');
+ const mobile=window.matchMedia('(max-width: 700px)').matches;
+ if(mobile){input.readOnly=true;input.setAttribute('aria-readonly','true');}
+ document.getElementById('pinKeypad').addEventListener('click',e=>{
+   const b=e.target.closest('button');if(!b)return;
+   if(b.dataset.digit!==undefined){if(input.value.length<4)input.value+=b.dataset.digit;error.textContent='';}
+   else if(b.dataset.action==='clear'){input.value='';error.textContent='';}
+   else if(b.dataset.action==='backspace'){input.value=input.value.slice(0,-1);error.textContent='';}
+ });
+ input.addEventListener('input',()=>{input.value=input.value.replace(/\D/g,'').slice(0,4);error.textContent='';});
+ form.addEventListener('submit',e=>{e.preventDefault();if(input.value==='1945'){gate.style.display='none';document.querySelector('.wrap').style.visibility='visible';input.value='';error.textContent='';try{sessionStorage.setItem('anevAbkPinUnlocked','1')}catch(_){}}else{error.textContent='PIN salah. Silakan coba lagi.';input.value='';if(!mobile)input.focus();}});
+ const lockBtn=document.getElementById('lockDashboardBtn');
+ lockBtn.addEventListener('click',()=>{document.querySelector('.wrap').style.visibility='hidden';gate.style.display='flex';input.value='';error.textContent='';try{sessionStorage.removeItem('anevAbkPinUnlocked')}catch(_){};input.focus({preventScroll:true});});
+ // Always require PIN again when the page is opened or refreshed.
+ document.querySelector('.wrap').style.visibility='hidden';input.focus({preventScroll:true});
+})();
+
+</script>
+</body>
+</html>
