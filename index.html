@@ -42,6 +42,17 @@ footer{color:#456b8d;font-size:.8rem;text-align:center;margin-top:18px}
 @media(max-width:700px){.wrap{padding:17px 12px 100px}.card{padding:15px}.stats{grid-template-columns:1fr}.header-right{width:100%;justify-content:flex-end;gap:10px}.bagren-logo{width:58px;height:72px}.total{text-align:left;flex:1;min-width:0;width:auto}.brandmark{left:8px;bottom:8px;padding:6px}.globe{width:34px;height:34px}.brandtext{font-size:.65rem}.watermark{right:8px;bottom:8px;font-size:.65rem;padding:7px}.sub{font-size:.9rem}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 
+
+/* Countdown ANEV bulanan — menggunakan jam lokal perangkat */
+.anev-countdown{flex:0 1 310px;min-width:255px;margin:0 auto;padding:13px 16px 12px;border:1px solid rgba(184,139,45,.34);border-radius:17px;background:linear-gradient(145deg,rgba(255,250,231,.96),rgba(255,255,255,.88));box-shadow:0 8px 24px rgba(111,83,20,.10),inset 0 1px 0 rgba(255,255,255,.9);text-align:center;color:#6b4b12;backdrop-filter:blur(12px)}
+.anev-countdown-label{font-size:.77rem;font-weight:900;letter-spacing:.075em;text-transform:uppercase;line-height:1.35}
+.anev-countdown-units{display:flex;align-items:flex-start;justify-content:center;gap:7px;margin-top:8px;font-family:"Bahnschrift","Segoe UI",monospace;font-variant-numeric:tabular-nums}
+.anev-countdown-unit{min-width:44px}.anev-countdown-unit strong{display:block;font-size:1.5rem;line-height:1.1;font-weight:900}.anev-countdown-unit small{display:block;margin-top:4px;font-family:"Segoe UI",Arial,sans-serif;font-size:.62rem;letter-spacing:.07em;font-weight:800;opacity:.78}.anev-countdown-colon{font-size:1.2rem;font-weight:900;line-height:1.1;opacity:.6}
+.anev-countdown-note{font-size:.68rem;margin-top:8px;opacity:.76;font-weight:700}
+body.dark-mode .anev-countdown{background:linear-gradient(145deg,rgba(58,48,28,.94),rgba(27,39,53,.95));border-color:rgba(214,166,79,.48);color:#f2cf7d;box-shadow:0 8px 25px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.06)}
+@media(max-width:900px){.anev-countdown{order:3;flex:1 1 100%;max-width:440px;margin:0 auto}.header-right{margin-left:auto}}
+@media(max-width:480px){.anev-countdown{min-width:0;width:100%;padding:11px 8px}.anev-countdown-unit{min-width:38px}.anev-countdown-unit strong{font-size:1.28rem}.anev-countdown-units{gap:5px}.anev-countdown-label{font-size:.72rem}}
+
 .title-group{min-width:0}.title-line{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.tribrata{width:48px;height:58px;flex:none;filter:drop-shadow(0 2px 2px #174d8633)}
 .results-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:14px 0 10px}.results-label{font-weight:800;color:#174b85}.theme-toggle{background:#173b60;color:#fff;border:1px solid #345a7d;border-radius:11px;padding:9px 13px;font-weight:800;white-space:nowrap}
 body.dark-mode{--ink:#e5eef8;--muted:#a7bdd2;background-color:#10243a;background-image:linear-gradient(rgba(126,177,222,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(126,177,222,.075) 1px,transparent 1px),linear-gradient(135deg,#0c1726 0%,#122840 52%,#1b3b5e 100%);background-size:26px 26px,26px 26px,100% 100%;color:var(--ink)}
@@ -170,7 +181,7 @@ body.dark-mode tbody tr:hover{background:rgba(65,100,137,.25)}
 body.dark-mode .results-label{color:#d5e8fb}
 body.dark-mode textarea,body.dark-mode .filterbar input,body.dark-mode .filterbar select,body.dark-mode .history-controls input{background:rgba(13,29,47,.72);color:#e5eef8;border-color:rgba(151,183,215,.22)}
 body.dark-mode .secondary,body.dark-mode .month{background:rgba(40,63,86,.72);color:#d9eaff;border-color:rgba(151,183,215,.22)}
-body.dark-mode .month.active{background:linear-gradient(135deg,#2169b5,#438fda);color:#fff}
+body.dark-mode .month.active,body.dark-mode #currentMonthBtn.active{background:linear-gradient(135deg,#2169b5,#438fda);color:#fff}
 body.dark-mode .brandmark,body.dark-mode .watermark{background:rgba(21,39,59,.72);border-color:rgba(160,190,222,.18);color:#dcecff;box-shadow:0 12px 32px rgba(0,0,0,.18)}
 body.dark-mode .brandtext{color:#dcecff}
 @media(max-width:700px){
@@ -224,7 +235,7 @@ button::before,.filelabel::before{
 }
 .primary{background:linear-gradient(145deg,rgba(80,163,238,.96),rgba(30,104,190,.94));border-color:rgba(255,255,255,.55);box-shadow:0 8px 20px rgba(38,116,194,.24),inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 0 rgba(13,66,127,.2)}
 .secondary,.month{background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(225,239,253,.56));border-color:rgba(255,255,255,.92);box-shadow:0 5px 15px rgba(34,74,116,.08),inset 0 1px 0 rgba(255,255,255,.98)}
-.month.active{background:linear-gradient(145deg,rgba(90,169,239,.98),rgba(28,100,184,.96));box-shadow:0 7px 18px rgba(33,105,181,.25),inset 0 1px 0 rgba(255,255,255,.62)}
+.month.active,#currentMonthBtn.active{background:linear-gradient(145deg,rgba(90,169,239,.98),rgba(28,100,184,.96));box-shadow:0 7px 18px rgba(33,105,181,.25),inset 0 1px 0 rgba(255,255,255,.62)}
 button:hover,.filelabel:hover{filter:brightness(1.035);box-shadow:0 10px 22px rgba(37,81,127,.15),inset 0 1.5px 0 rgba(255,255,255,.8)}
 button:active,.filelabel:active{transform:translateY(1px) scale(.975);box-shadow:inset 0 2px 7px rgba(18,57,95,.16),0 2px 7px rgba(37,81,127,.08)}
 .tablewrap{background:linear-gradient(145deg,rgba(255,255,255,.58),rgba(222,238,255,.29));border-color:rgba(255,255,255,.96);box-shadow:0 14px 34px rgba(40,81,124,.09),inset 0 1px 0 rgba(255,255,255,.98)}
@@ -404,7 +415,7 @@ body.dark-mode .tablewrap tbody td.full {
 .progress-value{text-align:right;font-size:.84rem;font-weight:800;font-variant-numeric:tabular-nums}
 .report-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
 .report-content{line-height:1.65;color:var(--ink)}.report-content p{margin:8px 0}.report-section{padding:12px 14px;border-radius:14px;background:rgba(246,250,255,.48);border:1px solid rgba(185,210,237,.55);margin:10px 0}
-.report-section h3{font-size:.94rem;margin:0 0 7px}.report-section ul{margin:6px 0;padding-left:21px}.report-meta{font-size:.86rem;color:var(--muted)}
+.report-section h3{font-size:1.05rem;margin:0 0 7px;font-weight:800}.report-head h3{font-size:1.05rem;margin:0 0 7px;font-weight:800}.report-section ul{margin:6px 0;padding-left:21px}.report-meta{font-size:.86rem;color:var(--muted)}
 body.dark-mode .chart-panel,body.dark-mode .report-section{background:rgba(25,44,65,.52);border-color:rgba(160,190,222,.18)}
 body.dark-mode .progress-track{background:rgba(155,185,215,.18)}
 @media(max-width:600px){.progress-row{grid-template-columns:minmax(90px,1fr) minmax(65px,1.2fr) 40px;gap:7px}.chart-panel{padding:12px}.report-head{display:block}.report-head button{margin-top:10px}}
@@ -530,6 +541,11 @@ body.dark-mode .abk-portal-button{background:rgba(24,42,62,.78)!important;border
 @media(max-width:700px){#pinGate{padding:18px}.pin-panel{padding:25px 20px 22px;border-radius:23px}.pin-logo{width:88px;height:94px;margin-bottom:12px}.pin-keypad{display:grid}#pinInput{letter-spacing:.38em;height:50px}.pin-submit{height:45px}}
 
 
+/* Watermark transparan pada layar PIN, tanpa panel/window */
+.pin-watermark{position:fixed;right:18px;bottom:12px;color:rgba(235,244,255,.58);font-size:11px;letter-spacing:.06em;font-weight:600;pointer-events:none;user-select:none;text-align:right}
+@media(max-width:700px){.pin-watermark{right:10px;bottom:8px;font-size:9px}}
+#pasteClipboard{order:0}
+#currentMonthBtn.active{color:#fff;border-color:#2169b5;box-shadow:0 7px 18px rgba(33,105,181,.25)}
 /* Mode presentasi pimpinan: layar penuh bergaya slide persentase */
 #presentationBtn{letter-spacing:.01em}
 .presentation-mode{display:none;position:fixed;inset:0;z-index:20000;overflow:auto;color:#eaf4ff;background:radial-gradient(ellipse at 50% 35%,#254d75 0%,#142c46 48%,#091827 100%);font-family:"Segoe UI",Tahoma,Arial,sans-serif;padding:clamp(22px,4vw,52px);}
@@ -557,6 +573,47 @@ body.presentation-open{overflow:hidden}
 @media(max-width:600px){.presentation-mode{padding:18px}.presentation-brand{top:18px;left:18px}.presentation-exit{top:15px;right:15px;padding:8px 10px;font-size:.78rem}.presentation-main{padding-top:75px}.presentation-stats{grid-template-columns:1fr;max-width:360px}.pres-nav{bottom:35px}.pres-table-wrap{max-height:55vh}.pres-bar-row{grid-template-columns:minmax(80px,110px) 1fr 52px;gap:6px}.pres-table th,.pres-table td{padding:7px 8px}.presentation-stats>div{display:flex;align-items:center;justify-content:space-between;text-align:right;padding:12px 16px}.presentation-stats span{margin:0;text-align:left;max-width:55%}.presentation-meter{width:min(66vw,280px);margin:18px 0}.presentation-footer{font-size:.55rem;bottom:10px}}
 @media print{.presentation-mode{display:none!important}}
 
+
+/* Executive Command Center + calendar heatmap */
+/* Layout refinement: full-height priorities and clear separation before report */
+#cmdPriorities .heat-detail-list{max-height:clamp(360px,62vh,760px);overflow-y:auto;padding-right:4px;scrollbar-gutter:stable}
+#cmdPriorities .heat-unit{min-height:48px}
+#commandCenter{margin-bottom:20px}
+#reportCard{margin-top:20px}
+@media(max-width:760px){#cmdPriorities .heat-detail-list{max-height:55vh}}
+.command-center{margin-top:18px;padding:clamp(16px,2vw,24px);border:1px solid var(--line);border-radius:22px;background:var(--glass);box-shadow:var(--shadow);backdrop-filter:blur(18px)}
+.command-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}.command-head h2{margin:0}.command-kicker{font-size:.72rem;font-weight:850;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-bottom:6px}
+.command-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}.command-metric{border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--surface,rgba(255,255,255,.05));min-width:0}.command-metric span{display:block;color:var(--muted);font-size:.78rem;font-weight:700}.command-metric strong{display:block;font-size:clamp(1.45rem,3vw,2.15rem);line-height:1.2;margin-top:8px;overflow-wrap:anywhere}.command-metric small{display:block;color:var(--muted);margin-top:5px;font-size:.75rem}.command-progress{height:12px;border-radius:99px;background:var(--line);overflow:hidden;margin:12px 0}.command-progress>span{height:100%;display:block;width:0;background:linear-gradient(90deg,#60a5fa,#34d399);border-radius:inherit;transition:width .7s ease}.command-bottom{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px}.command-panel{border:1px solid var(--line);border-radius:16px;padding:16px;min-width:0}.command-panel h3{margin:0 0 12px;font-size:1rem}.heatmap-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px}.heat-day{appearance:none;border:1px solid var(--line);border-radius:10px;min-height:54px;padding:6px 3px;cursor:pointer;color:var(--ink);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;transition:transform .15s,border-color .15s}.heat-day:hover{transform:translateY(-2px)}.heat-day.selected{outline:2px solid var(--ink);outline-offset:1px}.heat-day b{font-size:.95rem}.heat-day small{font-size:.68rem;font-weight:800}.heat-day.level0{background:rgba(52,211,153,.15);border-color:rgba(52,211,153,.45)}.heat-day.level1{background:rgba(250,204,21,.20);border-color:rgba(250,204,21,.55)}.heat-day.level2{background:rgba(251,146,60,.22);border-color:rgba(251,146,60,.58)}.heat-day.level3{background:rgba(248,113,113,.24);border-color:rgba(248,113,113,.6)}.heat-legend{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;color:var(--muted);font-size:.74rem}.heat-legend span{display:inline-flex;align-items:center;gap:5px}.heat-dot{width:10px;height:10px;border-radius:3px;display:inline-block}.heat-detail{margin-top:12px;border-top:1px solid var(--line);padding-top:12px}.heat-detail-list{display:flex;flex-direction:column;gap:7px;max-height:240px;overflow:auto}.heat-unit{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:8px 10px;border-radius:10px;background:var(--card);border:1px solid var(--line);font-size:.82rem}.heat-unit strong{color:#fb923c;white-space:nowrap}.command-empty{color:var(--muted);font-size:.85rem;padding:12px 0}
+@media(max-width:760px){.command-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.command-bottom{grid-template-columns:1fr}.heat-day{min-height:47px}.heatmap-grid{gap:5px}}
+@media print{.command-center{break-inside:avoid;box-shadow:none;backdrop-filter:none}.heat-day{min-height:35px}}
+
+
+/* Anev Multi Bulan */
+.multi-modal{position:fixed;inset:0;z-index:1000;background:#06172dcc;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(8px)}.multi-modal.open{display:flex}.multi-dialog{width:min(100%,1000px);max-height:92vh;overflow:auto;background:#f7fbff;color:#17324d;border:1px solid #ffffffa8;border-radius:22px;box-shadow:0 25px 90px #0005;padding:22px}.multi-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.multi-head h2{font-size:1.25rem}.multi-drop{border:2px dashed #8bb8df;border-radius:17px;padding:28px 16px;text-align:center;background:#edf7ff;margin:15px 0}.multi-drop.dragover{background:#d7edff;border-color:#2168b5}.multi-files{display:grid;gap:8px;margin:12px 0}.multi-file{display:flex;align-items:center;gap:10px;border:1px solid #d8e7f5;border-radius:11px;padding:10px;background:white}.multi-file span{flex:1;min-width:0;overflow-wrap:anywhere}.multi-results{display:none}.multi-results.show{display:block}.multi-select{border:1px solid #bfd7ec;border-radius:10px;padding:9px;background:white;color:#17324d;font:inherit}.multi-tablewrap{overflow:auto;border:1px solid #d5e4f2;border-radius:12px;margin-top:10px}.multi-table{min-width:900px;font-size:.82rem}.multi-table th{position:static}.multi-chart{width:100%;min-height:240px;border:1px solid #d8e7f5;border-radius:14px;background:white;margin-top:12px}.multi-chart svg{width:100%;height:auto;display:block}.multi-notice{font-size:.86rem;color:#5c7690;line-height:1.5}.multi-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.multi-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}.multi-kpi{border:1px solid #d8e7f5;border-radius:12px;padding:12px;background:white}.multi-kpi small{display:block;color:#668099}.multi-kpi strong{font-size:1.2rem}.multi-modal button{white-space:normal}.multi-print-only{display:none}@media print{body.multi-printing>*:not(#multiMonthModal){display:none!important}body.multi-printing #multiMonthModal{display:flex!important;position:static;background:white;padding:0;overflow:visible}body.multi-printing .multi-dialog{width:100%;max-height:none;overflow:visible;box-shadow:none;border:0;padding:0;background:white;color:#111}body.multi-printing #multiUploadPane,body.multi-printing #multiMonthClose,body.multi-printing .multi-actions,body.multi-printing .multi-notice{display:none!important}body.multi-printing .multi-results{display:block!important}body.multi-printing .multi-tablewrap{overflow:visible;border:0}body.multi-printing .multi-table{min-width:0;font-size:8pt}body.multi-printing .multi-table th{position:static;background:#eaf4ff!important;color:#174b85!important}body.multi-printing .multi-chart{break-inside:avoid}body.multi-printing .multi-kpis{grid-template-columns:repeat(3,1fr)}body.multi-printing .multi-table tr{break-inside:avoid}}body.dark-mode .multi-dialog{background:#172b40;color:#e5eef8;border-color:#34516a}body.dark-mode .multi-drop{background:#203950;border-color:#456d8e}body.dark-mode .multi-file,body.dark-mode .multi-kpi,body.dark-mode .multi-chart,body.dark-mode .multi-tablewrap{background:#172b40;border-color:#34516a}body.dark-mode .multi-select{background:#102236;color:#e5eef8;border-color:#34516a}body.dark-mode .multi-notice{color:#a7bdd2}body.dark-mode .multi-table{background:#172b40;color:#e5eef8}body.dark-mode .multi-table th{background:#24425e;color:#e2f1ff}body.dark-mode .multi-table td{border-bottom-color:#34516a}@media(max-width:650px){.multi-modal{padding:7px}.multi-dialog{padding:14px;max-height:96vh;border-radius:16px}.multi-kpis{grid-template-columns:1fr}.multi-drop{padding:20px 10px}}
+
+
+/* Aksen emas gelap khusus subjudul di window Laporan ANEV Otomatis */
+#reportCard .report-section h3,
+#reportCard .report-head h3 { color: #B7791F; }
+body.dark-mode #reportCard .report-section h3,
+body.dark-mode #reportCard .report-head h3 { color: #D6A64F; }
+@media print {
+  #reportCard .report-section h3,
+  #reportCard .report-head h3 { color: #946313 !important; }
+}
+
+</style>
+<style>
+
+/* Pengaturan pojok kanan atas: mode di atas, kunci tepat di bawah; tepi kanan sejajar watermark */
+.corner-controls{position:fixed!important;top:14px!important;right:14px!important;left:auto!important;bottom:auto!important;z-index:10050!important;display:flex!important;flex-direction:column!important;align-items:flex-end!important;gap:8px!important;width:max-content!important;max-width:calc(100vw - 24px)!important}
+.corner-controls .theme-toggle{position:static!important;inset:auto!important;width:44px!important;height:44px!important;min-height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;font-size:23px!important;line-height:1!important;padding:0!important;white-space:nowrap!important;border-radius:13px!important}
+.corner-controls .lock-dashboard{position:static!important;inset:auto!important;width:44px!important;height:44px!important;min-height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important;box-sizing:border-box!important;padding:9px!important;font-size:0!important;white-space:nowrap!important;border-radius:13px!important}
+.corner-controls .lock-dashboard svg{width:22px!important;height:22px!important;flex:none!important}
+body.dark-mode .corner-controls .theme-toggle{background:linear-gradient(145deg,rgba(66,107,151,.96),rgba(25,57,91,.95))!important;color:#fff!important}
+@media(max-width:700px){.corner-controls{top:8px!important;right:8px!important;gap:6px!important}.corner-controls .theme-toggle,.corner-controls .lock-dashboard{width:38px!important;min-width:38px!important;min-height:38px!important;height:38px!important;padding:7px!important;border-radius:11px!important}.corner-controls .theme-toggle{font-size:21px!important}.corner-controls .lock-dashboard svg{width:20px!important;height:20px!important}}
+@media print{.corner-controls{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -574,11 +631,22 @@ body.presentation-open{overflow:hidden}
     </div>
     <button class="pin-submit" type="submit">Masuk Dashboard</button>
   </form>
+  <div class="pin-watermark">Made By Satria | Bagren Polres Sragen</div>
 </div>
 <div class="wrap">
 <header>
-  <div class="title-group"><div class="title-line"><h1 data-text="ANEV SINGKAT ABK">ANEV SINGKAT ABK</h1></div><p class="sub">Pemeriksa kelengkapan pengisian harian · Tempel data langsung dari Excel</p><div class="actions no-print" style="margin-top:12px"><button type="button" class="primary" id="presentationBtn">▣ Mode Presentasi Pimpinan</button></div></div>
-  <div class="header-right"><a class="abk-portal-button no-print" href="https://abk.polri.go.id/" target="_blank" rel="noopener noreferrer" aria-label="Buka portal SI-ABK Polri" title="Buka portal SI-ABK Polri"><img src="https://tribratanews.sumut.polri.go.id/wp-content/uploads/2026/03/tribrata_PNG_12-removebg-preview-1.png" alt="Logo Tribrata"></a><img class="bagren-logo" src="https://restabesmakassar.sulsel.polri.go.id/wp-content/uploads/2026/04/logo-perencanaan.png" alt="Logo Perencanaan BAGREN" title="Logo Perencanaan BAGREN"><div class="total"><small>TOTAL PERSENTASE PENGISIAN</small><strong id="overall">—%</strong><small id="overallDetail">Belum ada data</small></div><button type="button" id="lockDashboardBtn" class="lock-dashboard no-print" aria-label="Kunci dashboard dan kembali ke halaman PIN" title="Kunci dashboard"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><circle cx="12" cy="15" r="1"></circle></svg></button></div>
+  <div class="title-group"><div class="title-line"><h1 data-text="ANEV SINGKAT ABK">ANEV SINGKAT ABK</h1></div><p class="sub">Pemeriksa kelengkapan pengisian harian · Tempel data langsung dari Excel</p><div class="actions no-print" style="margin-top:12px"><button type="button" class="primary" id="presentationBtn">▣ Mode Presentasi Pimpinan</button><button type="button" class="secondary" id="multiMonthOpen">▦ Anev Multi Bulan</button></div></div>
+  <div class="anev-countdown" id="anevCountdown" role="timer" aria-live="off" aria-label="Hitung mundur menuju ANEV Bulanan">
+    <div class="anev-countdown-label" id="anevCountdownLabel">Sisa hari menuju ANEV Bulanan</div>
+    <div class="anev-countdown-units" aria-hidden="true">
+      <div class="anev-countdown-unit"><strong id="anevDays">00</strong><small>HARI</small></div><span class="anev-countdown-colon">:</span>
+      <div class="anev-countdown-unit"><strong id="anevHours">00</strong><small>JAM</small></div><span class="anev-countdown-colon">:</span>
+      <div class="anev-countdown-unit"><strong id="anevMinutes">00</strong><small>MENIT</small></div><span class="anev-countdown-colon">:</span>
+      <div class="anev-countdown-unit"><strong id="anevSeconds">00</strong><small>DETIK</small></div>
+    </div>
+    <div class="anev-countdown-note" id="anevCountdownNote">Mengikuti kalender dan jam perangkat ini</div>
+  </div>
+  <div class="header-right"><a class="abk-portal-button no-print" href="https://abk.polri.go.id/" target="_blank" rel="noopener noreferrer" aria-label="Buka portal SI-ABK Polri" title="Buka portal SI-ABK Polri"><img src="https://tribratanews.sumut.polri.go.id/wp-content/uploads/2026/03/tribrata_PNG_12-removebg-preview-1.png" alt="Logo Tribrata"></a><img class="bagren-logo" src="https://restabesmakassar.sulsel.polri.go.id/wp-content/uploads/2026/04/logo-perencanaan.png" alt="Logo Perencanaan BAGREN" title="Logo Perencanaan BAGREN"><div class="total"><small>TOTAL PERSENTASE PENGISIAN</small><strong id="overall">—%</strong><small id="overallDetail">Belum ada data</small></div></div>
 </header>
 <section class="card">
   <h2>1. Pilih format bulan</h2>
@@ -591,7 +659,7 @@ body.presentation-open{overflow:hidden}
   <p class="hint">Di Excel, salin seluruh tabel mulai dari <b>B1 sampai AF55</b>, lalu tempel di kotak ini. Format salinan Excel (tab antar kolom) akan dibaca otomatis. Baris pertama dianggap sebagai header tanggal, dan kolom pertama setiap baris data dianggap nama satker. Tanda seperti ✓, ✔, √, X, atau isi teks dihitung terisi; sel kosong dihitung belum diisi.</p>
   <textarea id="paste" spellcheck="false" placeholder="Klik di sini lalu tekan Ctrl+V untuk menempelkan data dari Excel..."></textarea>
   <div class="actions">
-    <button class="primary" id="analyze">Periksa pengisian</button><button class="secondary" id="demo">Muat contoh data</button><button class="secondary" id="clear">Bersihkan</button>
+    <button class="primary" id="analyze">Periksa pengisian</button><button class="secondary" id="pasteClipboard" type="button" title="Tempel teks dari clipboard">Tempel</button><button class="secondary" id="demo">Muat contoh data</button><button class="secondary" id="clear">Bersihkan</button>
     <label class="filelabel secondary" for="file" style="display:inline-flex;align-items:center">Buka file CSV/TSV</label><input id="file" type="file" accept=".csv,.tsv,.txt" hidden>
   </div>
   <p class="hint">Baris Pembatas BAG/Polsek tidak dihitung dan Baris dengan nama “Satker” .</p>
@@ -613,6 +681,20 @@ body.presentation-open{overflow:hidden}
     <div id="progressChart" class="progress-chart"><p class="hint">Grafik akan tampil setelah data diperiksa.</p></div>
   </div>
 </section>
+<section class="command-center" id="commandCenter">
+  <div class="command-head"><div><div class="command-kicker">Executive Command Center</div><h2>Ringkasan Eksekutif SI-ABK</h2><p class="hint">Ikhtisar untuk pimpinan dan peta tanggal yang membutuhkan perhatian.</p></div><span id="commandStatus" class="hint">Menunggu data diperiksa</span></div>
+  <div class="command-grid">
+    <div class="command-metric"><span>Pengisian gabungan</span><strong id="cmdOverall">—%</strong><small id="cmdOverallNote">Belum ada data</small></div>
+    <div class="command-metric"><span>Satker lengkap</span><strong id="cmdComplete">0</strong><small id="cmdCompleteNote">Dari 0 satker</small></div>
+    <div class="command-metric"><span>Perlu tindak lanjut</span><strong id="cmdFollowup">0</strong><small id="cmdFollowupNote">Satker belum 100%</small></div>
+    <div class="command-metric"><span>Sel tanggal kosong</span><strong id="cmdMissing">0</strong><small id="cmdMissingNote">Pada periode diperiksa</small></div>
+  </div>
+  <div class="command-progress" aria-label="Persentase pengisian keseluruhan"><span id="cmdProgressFill"></span></div>
+  <div class="command-bottom">
+    <div class="command-panel"><h3>Prioritas perhatian</h3><div id="cmdPriorities" class="command-empty">Tempel dan periksa data untuk menampilkan prioritas.</div></div>
+    <div class="command-panel"><h3>Kalender heatmap kekosongan</h3><p class="hint">Pilih tanggal untuk melihat satker yang masih kosong pada tanggal tersebut.</p><div id="heatmapGrid" class="heatmap-grid"><p class="command-empty">Heatmap akan tampil setelah data diperiksa.</p></div><div class="heat-legend"><span><i class="heat-dot" style="background:#34d399"></i> 0 kosong</span><span><i class="heat-dot" style="background:#facc15"></i> Rendah</span><span><i class="heat-dot" style="background:#fb923c"></i> Sedang</span><span><i class="heat-dot" style="background:#f87171"></i> Tinggi</span></div><div id="heatmapDetail" class="heat-detail"><p class="command-empty">Pilih tanggal untuk melihat detail.</p></div></div>
+  </div>
+</section>
 <div class="print-only formal-report-head" aria-hidden="true">
   <div class="formal-rule"></div>
   <h2>LAPORAN HASIL ANALISIS DAN EVALUASI (ANEV)</h2>
@@ -623,6 +705,10 @@ body.presentation-open{overflow:hidden}
 <section class="card" id="reportCard">
   <div class="report-head"><div><h2>4. Laporan ANEV otomatis</h2><p class="hint">Narasi dibuat dari hasil pemeriksaan saat ini dan dapat disalin ke dokumen laporan.</p></div><button type="button" class="secondary no-print" id="copyReport">Salin narasi laporan</button></div>
   <div id="reportContent" class="report-content"><p class="hint">Periksa data terlebih dahulu untuk membuat laporan otomatis.</p></div>
+  <div class="report-section" id="whatsappReportSection">
+    <div class="report-head"><div><h3>📱 Laporan Whatsapp Kilat</h3><p class="hint">Format pesan siap kirim yang otomatis mencantumkan semua satker yang belum lengkap.</p></div><button type="button" class="secondary no-print" id="copyWhatsApp">Salin Pesan WhatsApp</button></div>
+    <div id="whatsappReportContent" class="report-content"><p class="hint">Periksa data terlebih dahulu untuk membuat pesan WhatsApp.</p></div>
+  </div>
 </section>
 <section class="card" id="validationCard">
   <h2>Validasi data otomatis</h2>
@@ -644,7 +730,7 @@ body.presentation-open{overflow:hidden}
   <h2>3. Hasil pemeriksaan</h2>
   <div class="stats"><div class="stat"><span>Jumlah satker/baris dihitung</span><strong id="rowsCount">0</strong></div><div class="stat"><span>Total sel tanggal yang seharusnya diisi</span><strong id="cellsCount">0</strong></div><div class="stat"><span>Sel tanggal sudah terisi</span><strong id="filledCount">0</strong></div></div>
   <p class="hint">Kolom “Tanggal kosong” menampilkan hasil seperti <b>2, 7</b>. Persentase per satker dihitung dari jumlah tanggal terisi ÷ jumlah hari pada format bulan yang dipilih. Persentase total adalah gabungan seluruh satker yang dihitung.</p>
-  <div class="results-toolbar"><span class="results-label">Rincian pengisian satker</span><button type="button" id="themeToggle" class="theme-toggle" aria-pressed="false">☾ Mode gelap</button></div>
+  <div class="results-toolbar"><span class="results-label">Rincian pengisian satker</span></div>
   <div class="filterbar no-print"><input id="searchSatker" type="search" placeholder="Cari nama/kode satker..." aria-label="Cari satker"><select id="statusFilter" aria-label="Filter status"><option value="all">Semua status</option><option value="complete">Lengkap 100%</option><option value="incomplete">Belum 100%</option><option value="low">Di bawah 80%</option></select><select id="sortFilter" aria-label="Urutkan hasil"><option value="source">Urutan data asli</option><option value="pct-desc">Persentase tertinggi</option><option value="pct-asc">Persentase terendah</option><option value="name">Nama satker A–Z</option></select></div>
   <div class="tablewrap"><table><thead><tr><th>Nama Satker</th><th>Tanggal kosong</th><th>Terisi</th><th>Persentase</th></tr></thead><tbody id="results"><tr><td colspan="4" class="empty">Tempel data Excel, lalu klik “Periksa pengisian”.</td></tr></tbody></table></div>
   <div class="actions no-print"><button class="primary" id="copyResults">Salin hasil (tab-delimited)</button><button class="secondary" id="copySummary">Salin ringkasan tanggal kosong</button><button class="primary" id="exportExcel">Export Excel (.xls)</button><button class="secondary" id="printPdf">Cetak / Simpan PDF</button><button class="secondary" id="backupJson">Backup JSON</button><label class="filelabel secondary" for="restoreJson" style="display:inline-flex;align-items:center">Restore JSON</label><input id="restoreJson" type="file" accept=".json,application/json" hidden></div><p id="status" class="hint" aria-live="polite"></p>
@@ -661,6 +747,10 @@ body.presentation-open{overflow:hidden}
 </div>
 <div class="brandmark" aria-label="Globe berputar, BAGREN Polres Sragen"><div class="globe"><div class="globe-lines"></div></div><div class="brandtext">BAGREN<br>POLRES SRAGEN</div></div>
 <div class="watermark">Bripda Satria Putra Pratama</div>
+<div id="cornerControls" class="corner-controls no-print" aria-label="Pengaturan tampilan dan keamanan">
+  <button type="button" id="themeToggle" class="theme-toggle" aria-label="Ganti mode terang atau gelap" title="Ganti mode terang atau gelap" aria-pressed="false">☾</button>
+  <button type="button" id="lockDashboardBtn" class="lock-dashboard" aria-label="Kunci dashboard dan kembali ke halaman PIN" title="Kunci dashboard"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><circle cx="12" cy="15" r="1"></circle></svg></button>
+</div>
 <div id="presentationMode" class="presentation-mode" aria-hidden="true">
   <button type="button" id="exitPresentation" class="presentation-exit" aria-label="Keluar dari mode presentasi">✕ Keluar Presentasi</button>
   <div class="presentation-brand">BAGREN · POLRES SRAGEN <span>ANEV SINGKAT ABK</span></div>
@@ -675,6 +765,28 @@ body.presentation-open{overflow:hidden}
   <div class="pres-nav"><button type="button" id="presPrev">← Sebelumnya</button><span id="presDots" class="pres-dots">SLIDE 1 / 6</span><button type="button" id="presNext">Berikutnya →</button><button type="button" id="presAuto">▶ Putar otomatis</button></div>
   <div class="presentation-footer">BRIPDA SATRIA PUTRA PRATAMA · BAGREN POLRES SRAGEN</div>
 </div>
+
+<div id="multiMonthModal" class="multi-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="multiMonthTitle">
+ <div class="multi-dialog">
+  <div class="multi-head"><div><h2 id="multiMonthTitle">Anev Multi Bulan</h2><div class="multi-notice">Unggah hingga 12 file Excel. Bulan dikenali dari nama file, lalu data disusun menjadi tabel ranking dan line chart terpisah.</div></div><button type="button" class="secondary" id="multiMonthClose" aria-label="Tutup">✕ Tutup</button></div>
+  <section id="multiUploadPane">
+   <div id="multiDrop" class="multi-drop"><div style="font-size:2rem">📊</div><strong>Seret dan lepaskan file Excel di sini</strong><p class="multi-notice">atau pilih file dari komputer · .xlsx, .xls, .csv, .tsv · maksimal 12 file</p><button type="button" class="primary" id="multiChoose">▣ Pilih File</button><input id="multiFilesInput" type="file" accept=".xlsx,.xls,.csv,.tsv,.txt" multiple hidden></div>
+   <div class="multi-actions"><button type="button" class="secondary" id="multiClearFiles">Bersihkan daftar</button><span id="multiFileCount" class="multi-notice">Belum ada file dipilih</span></div><div id="multiFilesList" class="multi-files"></div>
+   <p class="multi-notice">Nama file perlu memuat nama bulan, misalnya <b>ANEV_JANUARI.xlsx</b> atau <b>Rekap ABK Sep 2026.xlsx</b>. Jika ada bulan yang tidak dikenali atau duplikat, sistem meminta koreksi sebelum memproses. Pembacaan .xlsx/.xls memerlukan pustaka ExcelJS/SheetJS dari internet jika belum tersedia di browser.</p>
+   <div class="multi-actions"><button type="button" class="primary" id="multiProcess">Proses Data</button></div><div id="multiStatus" class="multi-notice" role="status"></div>
+  </section>
+  <section id="multiResultsPane" class="multi-results">
+   <div class="multi-kpis"><div class="multi-kpi"><small>File berhasil diproses</small><strong id="multiKpiFiles">0</strong></div><div class="multi-kpi"><small>Satker Bag/Sat/Si/Sie</small><strong id="multiKpiUnits">0</strong></div><div class="multi-kpi"><small>Jumlah Polsek</small><strong id="multiKpiPolsek">0</strong></div></div>
+   <div class="multi-actions"><label>Ranking berdasarkan bulan <select id="multiRankMonth" class="multi-select"></select></label><label>Grafik tren <select id="multiChartGroup" class="multi-select"><option value="unit">Rata-rata Bag/Sat/Si/Sie</option><option value="polsek">Rata-rata Polsek</option><option value="single">Tren satker terpilih</option></select></label><label>Filter tabel satker <select id="multiChartSatker" class="multi-select"><option value="__all__">Semua satker</option></select></label></div>
+   <h3>Persentase Capaian Bag / Sat / Si / Sie</h3><div id="multiUnitTable" class="multi-tablewrap"></div>
+   <h3 style="margin-top:20px">Persentase Capaian Polsek</h3><div id="multiPolsekTable" class="multi-tablewrap"></div>
+   <h3 style="margin-top:20px">Line Chart — Tren Persentase Pengisian</h3><div id="multiChart" class="multi-chart"></div><p class="multi-notice">Bulan yang belum diunggah ditampilkan sebagai — dan tidak dihitung sebagai 0%. Nilai persentase dihitung ulang dari sel tanggal terisi mengikuti aturan dashboard utama.</p>
+   <div class="multi-actions"><button type="button" class="primary" id="multiExportExcel">Ekspor Tabel Excel</button><button type="button" class="secondary" id="multiExportPdf">Ekspor / Simpan PDF</button><button type="button" class="secondary" id="multiBackUpload">Kembali ke unggah</button></div>
+  </section>
+ </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
 <script>
 'use strict';
 let days=31, parsedRows=[], filteredRows=[], sourceRowCount=0, validationMessages=[];
@@ -756,11 +868,33 @@ function renderResults(){
  applyFilters();
  $('results').innerHTML=filteredRows.length?filteredRows.map(r=>`<tr><td>${escapeHtml(r.name)}</td><td class="${r.missing.length?'missing':'full'}">${r.missing.length?r.missing.join(', '):'Lengkap'}</td><td>${r.filled} / ${days}</td><td class="pct ${r.pct>=100?'full':''}">${fmt(r.pct)}%</td></tr>`).join(''):`<tr><td colspan="4" class="empty">${parsedRows.length?'Tidak ada satker yang sesuai pencarian/filter.':'Tidak ada baris satker yang terbaca. Pastikan kolom pertama berisi nama satker.'}</td></tr>`;
 }
+function renderExecutiveCommandCenter(){
+ const n=parsedRows.length, total=n*days, filled=parsedRows.reduce((sum,r)=>sum+r.filled,0), missing=parsedRows.reduce((sum,r)=>sum+r.missing.length,0), complete=parsedRows.filter(r=>r.pct>=100).length, follow=n-complete, pct=total?filled/total*100:0;
+ $('cmdOverall').textContent=n?fmt(pct)+'%':'—%';$('cmdOverallNote').textContent=n?`${filled.toLocaleString('id-ID')} dari ${total.toLocaleString('id-ID')} sel terisi`:'Belum ada data';
+ $('cmdComplete').textContent=complete.toLocaleString('id-ID');$('cmdCompleteNote').textContent=`${n?fmt(complete/n*100):'0'}% dari ${n} satker`;
+ $('cmdFollowup').textContent=follow.toLocaleString('id-ID');$('cmdFollowupNote').textContent=n?`${fmt(follow/n*100)}% belum mencapai 100%`:'Satker belum 100%';
+ $('cmdMissing').textContent=missing.toLocaleString('id-ID');$('cmdMissingNote').textContent=`Tanggal 1–${days}`;$('cmdProgressFill').style.width=`${Math.max(0,Math.min(100,pct))}%`;
+ $('commandStatus').textContent=n?`${n} satker dianalisis · tanggal 1–${days}`:'Menunggu data diperiksa';
+ const bottom=[...parsedRows].filter(r=>r.pct<100).sort((a,b)=>a.pct-b.pct||b.missing.length-a.missing.length);
+ $('cmdPriorities').innerHTML=n?(bottom.length?'<div class="heat-detail-list">'+bottom.map((r,i)=>`<div class="heat-unit"><span>${i+1}. ${escapeHtml(r.name)}<br><small>${r.missing.length?`Kosong: ${r.missing.join(', ')}`:'Perlu verifikasi'}</small></span><strong>${fmt(r.pct)}%</strong></div>`).join('')+'</div>':'<p class="command-empty">Semua satker telah mencapai 100% pada periode ini.</p>'):'<p class="command-empty">Tempel dan periksa data untuk menampilkan prioritas.</p>';
+ const counts=Array.from({length:days},(_,i)=>({day:i+1,count:parsedRows.filter(r=>r.missing.includes(i+1)).length}));const max=Math.max(1,...counts.map(x=>x.count));
+ const selected=Number($('heatmapGrid').dataset.selectedDay)||counts.find(x=>x.count>0)?.day||1;
+ $('heatmapGrid').innerHTML=n?counts.map(x=>{const ratio=x.count/max,level=x.count===0?0:ratio<=.25?1:ratio<=.6?2:3;return `<button type="button" class="heat-day level${level}${x.day===selected?' selected':''}" data-heat-day="${x.day}" aria-label="Tanggal ${x.day}, ${x.count} satker kosong"><b>${x.day}</b><small>${x.count} kosong</small></button>`}).join(''):'<p class="command-empty">Heatmap akan tampil setelah data diperiksa.</p>';
+ if(n)renderHeatmapDetail(selected);
+}
+function renderHeatmapDetail(day){
+ const grid=$('heatmapGrid');if(grid)grid.dataset.selectedDay=String(day);
+ const rows=parsedRows.filter(r=>r.missing.includes(Number(day))).sort((a,b)=>a.name.localeCompare(b.name,'id'));
+ document.querySelectorAll('[data-heat-day]').forEach(b=>b.classList.toggle('selected',Number(b.dataset.heatDay)===Number(day)));
+ $('heatmapDetail').innerHTML=`<strong>Tanggal ${day}</strong> · ${rows.length} satker belum mengisi`+(rows.length?'<div class="heat-detail-list" style="margin-top:9px">'+rows.map(r=>`<div class="heat-unit"><span>${escapeHtml(r.name)}</span><strong>Belum diisi</strong></div>`).join('')+'</div>':'<p class="command-empty">Tidak ada kekosongan pada tanggal ini.</p>');
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-heat-day]');if(b)renderHeatmapDetail(Number(b.dataset.heatDay));});
 function renderDashboard(){
  const n=parsedRows.length,avg=n?parsedRows.reduce((s,r)=>s+r.pct,0)/n:0,complete=parsedRows.filter(r=>r.pct>=100).length,follow= n-complete,missing=parsedRows.reduce((s,r)=>s+r.missing.length,0);
  $('avgPct').textContent=n?fmt(avg)+'%':'—%';$('completeCount').textContent=complete.toLocaleString('id-ID');$('followupCount').textContent=follow.toLocaleString('id-ID');$('missingTotal').textContent=missing.toLocaleString('id-ID');
  const top=[...parsedRows].sort((a,b)=>b.pct-a.pct||a.name.localeCompare(b.name,'id')).slice(0,10);
  $('ranking').innerHTML=top.length?'<h3 style="font-size:.95rem;margin:8px 0 0;color:var(--ink)">10 satker teratas</h3>'+top.map((r,i)=>`<div class="rank-row"><div class="rank-name">${i+1}. ${escapeHtml(r.name)}</div><div class="rank-track"><div class="rank-fill" style="width:${Math.max(0,Math.min(100,r.pct))}%"></div></div><div class="rank-pct">${fmt(r.pct)}%</div></div>`).join(''):'<p class="hint">Hasil ranking akan tampil setelah data diperiksa.</p>';
+ renderExecutiveCommandCenter();
 }
 function buildReportText(){
  const n=parsedRows.length;
@@ -786,7 +920,47 @@ function buildReportText(){
  out.push(`<p class="report-meta">Catatan: laporan ini disusun otomatis berdasarkan data yang ditempelkan dan hasil pemeriksaan pada aplikasi. Pastikan kesesuaian dengan data sumber sebelum digunakan sebagai laporan resmi.</p>`);
  return out.join('');
 }
-function renderReport(){ $('reportContent').innerHTML=buildReportText()||'<p class="hint">Periksa data terlebih dahulu untuk membuat laporan otomatis.</p>'; const p=$('printPeriod'); if(p){ const d=new Date(); p.textContent=d.toLocaleDateString('id-ID',{month:'long',year:'numeric'}); } }
+function buildWhatsAppText(){
+ const n=parsedRows.length;
+ if(!n)return '';
+ const now=new Date();
+ const selectedPeriod=$('historyMonth')?.value||now.toISOString().slice(0,7);
+ const periodDate=new Date(selectedPeriod+'-01T12:00:00');
+ const period=Number.isNaN(periodDate.getTime())?now.toLocaleDateString('id-ID',{month:'long',year:'numeric'}):periodDate.toLocaleDateString('id-ID',{month:'long',year:'numeric'});
+ const incomplete=[...parsedRows].filter(r=>r.pct<100).sort((a,b)=>a.name.localeCompare(b.name,'id'));
+ const lines=[];
+ lines.push('*📊 MONITORING PENGISIAN SI-ABK*');
+ lines.push('*POLRES SRAGEN — '+period.toLocaleUpperCase('id-ID')+'*');
+ lines.push('');
+ lines.push('Yth. Kasat/Kabag/Kasi/Kapolsek beserta operator SI-ABK.');
+ lines.push('');
+ lines.push('Mohon izin menyampaikan hasil monitoring pengisian SI-ABK bulan '+period+'. Berdasarkan hasil pemantauan, masih terdapat beberapa satker yang pengisiannya belum mencapai 100%.');
+ lines.push('');
+ lines.push('*📋 DAFTAR SATKER YANG BELUM LENGKAP*');
+ lines.push('');
+ if(incomplete.length){
+   incomplete.forEach((r,i)=>lines.push(`${i+1}. *${r.name}* — Terisi: ${fmt(r.pct)}% — Kosong: ${r.missing.length?r.missing.join(', '):'perlu verifikasi'}`));
+ }else{
+   lines.push('Seluruh satker telah mencapai 100%. Tidak ada satker yang tercatat belum lengkap.');
+ }
+ lines.push('');
+ lines.push('*Total satker belum lengkap: '+incomplete.length+' satker.*');
+ lines.push('');
+ lines.push('Sehubungan dengan hal tersebut, mohon bantuan masing-masing satker untuk melakukan pengecekan dan melengkapi pengisian pada tanggal yang masih kosong agar capaian SI-ABK dapat mencapai 100%.');
+ lines.push('');
+ lines.push('Bagi satker yang telah menyelesaikan pengisian, mohon dapat melakukan pengecekan kembali untuk memastikan seluruh tanggal telah terisi dengan benar.');
+ lines.push('');
+ lines.push('Demikian disampaikan. Terima kasih atas perhatian dan kerja sama rekan-rekan.');
+ lines.push('');
+ lines.push('*BAGREN POLRES SRAGEN*');
+ return lines.join('\n');
+}
+function renderReport(){
+ $('reportContent').innerHTML=buildReportText()||'<p class="hint">Periksa data terlebih dahulu untuk membuat laporan otomatis.</p>';
+ const wa=buildWhatsAppText();
+ $('whatsappReportContent').innerHTML=wa?`<pre class="whatsapp-preview" style="white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.65;margin:0">${escapeHtml(wa)}</pre>`:'<p class="hint">Periksa data terlebih dahulu untuk membuat pesan WhatsApp.</p>';
+ const p=$('printPeriod'); if(p){ const d=new Date(); p.textContent=d.toLocaleDateString('id-ID',{month:'long',year:'numeric'}); }
+}
 function renderProgressChart(){
  const n=parsedRows.length;
  if(!n){$('progressChart').innerHTML='<p class="hint">Grafik akan tampil setelah data diperiksa.</p>';return;}
@@ -839,6 +1013,25 @@ function restoreJson(file){
  reader.onerror=()=>{$('status').textContent='File backup tidak dapat dibaca.'};
  reader.readAsText(file);
 }
+$('pasteClipboard').addEventListener('click',async()=>{
+  const area=$('paste');
+  try{
+    if(navigator.clipboard && navigator.clipboard.readText){
+      const text=await navigator.clipboard.readText();
+      if(!text.trim()){$('status').textContent='Clipboard kosong. Salin data dari Excel terlebih dahulu.';return;}
+      area.value=text;area.focus();$('status').textContent='Data berhasil ditempel dari clipboard.';area.dispatchEvent(new Event('input',{bubbles:true}));
+    }else{
+      area.focus();
+      const text=prompt('Tempelkan hasil salinan Excel di sini (Ctrl+V), lalu tekan OK:');
+      if(text===null)return;
+      area.value=text;$('status').textContent=text.trim()?'Data berhasil ditempel.':'Clipboard kosong.';
+    }
+  }catch(err){
+    area.focus();
+    $('status').textContent='Browser menolak akses clipboard. Klik kolom data lalu tekan Ctrl+V, atau izinkan akses clipboard.';
+    try{area.select();}catch(e){}
+  }
+});
 function setDayRange(n, mode='month'){
  days=Math.max(1,Math.min(31,Number(n)||31));
  document.querySelectorAll('.month').forEach(b=>b.classList.toggle('active',mode==='month'&&Number(b.dataset.days)===days));
@@ -852,7 +1045,7 @@ function setDayRange(n, mode='month'){
 }
 document.querySelectorAll('.month').forEach(btn=>btn.addEventListener('click',()=>{setDayRange(Number(btn.dataset.days),'month');if($('paste').value.trim())analyze()}));
 $('currentMonthBtn').addEventListener('click',()=>{const now=new Date();setDayRange(now.getDate(),'current');if($('paste').value.trim())analyze();else $('status').textContent=`Mode BULAN INI aktif: pemeriksaan akan menghitung tanggal 1 sampai ${now.getDate()} saja.`;});
-$('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark-mode');$('themeToggle').textContent=dark?'☀ Mode terang':'☾ Mode gelap';$('themeToggle').setAttribute('aria-pressed',String(dark));try{localStorage.setItem('anevAbkTheme',dark?'dark':'light')}catch(e){}});
+$('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark-mode');$('themeToggle').textContent=dark?'☀':'☾';$('themeToggle').setAttribute('aria-label',dark?'Ganti ke mode terang':'Ganti ke mode gelap');$('themeToggle').title=dark?'Ganti ke mode terang':'Ganti ke mode gelap';$('themeToggle').setAttribute('aria-pressed',String(dark));try{localStorage.setItem('anevAbkTheme',dark?'dark':'light')}catch(e){}});
 $('analyze').addEventListener('click',analyze);
 $('clear').addEventListener('click',()=>{
  $('paste').value='';parsedRows=[];filteredRows=[];validationMessages=[];
@@ -868,6 +1061,7 @@ $('searchSatker').addEventListener('input',renderResults);$('statusFilter').addE
 $('exportExcel').addEventListener('click',exportExcel);
 $('printPdf').addEventListener('click',()=>{if(!parsedRows.length){$('status').textContent='Periksa data terlebih dahulu sebelum membuat PDF.';return}window.print()});
 $('copyReport').addEventListener('click',async()=>{if(!parsedRows.length){$('status').textContent='Periksa data terlebih dahulu untuk membuat laporan.';return}const plain=$('reportContent').innerText;await copyText(plain);$('status').textContent='Narasi laporan ANEV berhasil disalin.'});
+$('copyWhatsApp').addEventListener('click',async()=>{if(!parsedRows.length){$('status').textContent='Periksa data terlebih dahulu untuk membuat pesan WhatsApp.';return}await copyText(buildWhatsAppText());$('status').textContent='Pesan Whatsapp Kilat berhasil disalin dan siap ditempel ke WhatsApp.'});
 $('backupJson').addEventListener('click',backupJson);
 $('restoreJson').addEventListener('change',e=>{const f=e.target.files[0];if(f)restoreJson(f);e.target.value=''});
 $('saveHistory').addEventListener('click',saveHistory);
@@ -876,7 +1070,7 @@ $('exportHistory').addEventListener('click',()=>{const h=getHistory();if(!h.leng
 try{
  const saved=JSON.parse(localStorage.getItem(DRAFT_KEY)||'null');
  if(saved&&typeof saved.paste==='string'){$('paste').value=saved.paste;days=(Number(saved.days)>=1&&Number(saved.days)<=31)?Number(saved.days):31;const isCurrentCutoff=days===new Date().getDate()&&![28,29,30,31].includes(days);setDayRange(days,isCurrentCutoff?'current':'month')}
- if(localStorage.getItem('anevAbkTheme')!=='light'){document.body.classList.add('dark-mode');$('themeToggle').textContent='☀ Mode terang';$('themeToggle').setAttribute('aria-pressed','true')}else{$('themeToggle').textContent='☾ Mode gelap';$('themeToggle').setAttribute('aria-pressed','false')}
+ if(localStorage.getItem('anevAbkTheme')!=='light'){document.body.classList.add('dark-mode');$('themeToggle').textContent='☀';$('themeToggle').setAttribute('aria-label','Ganti ke mode terang');$('themeToggle').title='Ganti ke mode terang';$('themeToggle').setAttribute('aria-pressed','true')}else{$('themeToggle').textContent='☾';$('themeToggle').setAttribute('aria-label','Ganti ke mode gelap');$('themeToggle').title='Ganti ke mode gelap';$('themeToggle').setAttribute('aria-pressed','false')}
 }catch(e){}
 $('historyMonth').value=new Date().toISOString().slice(0,7);
 if($('currentMonthBtn'))$('currentMonthBtn').classList.remove('active');renderHistory();renderDashboard();renderProgressChart();renderReport();renderValidation();
@@ -928,6 +1122,66 @@ if($('currentMonthBtn'))$('currentMonthBtn').classList.remove('active');renderHi
  lockBtn.addEventListener('click',()=>{document.querySelector('.wrap').style.visibility='hidden';gate.style.display='flex';input.value='';error.textContent='';try{sessionStorage.removeItem('anevAbkPinUnlocked')}catch(_){};input.focus({preventScroll:true});});
  // Always require PIN again when the page is opened or refreshed.
  document.querySelector('.wrap').style.visibility='hidden';input.focus({preventScroll:true});
+})();
+
+
+// Anev Multi Bulan — feature isolated from the main monthly checker.
+(()=>{
+ const months=[['januari',0],['jan',0],['februari',1],['feb',1],['maret',2],['mar',2],['april',3],['apr',3],['mei',4],['may',4],['juni',5],['jun',5],['juli',6],['jul',6],['agustus',7],['agu',7],['ags',7],['aug',7],['september',8],['sept',8],['sep',8],['oktober',9],['okt',9],['oct',9],['november',10],['nov',10],['desember',11],['des',11],['dec',11]];
+ const monthNames=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+ const $m=id=>document.getElementById(id);let chosen=[],monthData={},lastResults=null;
+ function monthFromName(name){const base=String(name).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');for(const [word,index] of months){const re=new RegExp('(^|[^a-z])'+word+'([^a-z]|$)','i');if(re.test(base))return index;}return -1;}
+ function showModal(){ $m('multiMonthModal').classList.add('open');$m('multiMonthModal').setAttribute('aria-hidden','false'); }
+ function closeModal(){ $m('multiMonthModal').classList.remove('open');$m('multiMonthModal').setAttribute('aria-hidden','true'); }
+ function listFiles(){ $m('multiFileCount').textContent=`${chosen.length} dari 12 file dipilih`; $m('multiFilesList').innerHTML=chosen.map((f,i)=>{const mi=monthFromName(f.name);return `<div class="multi-file"><span><b>${escapeHtml(f.name)}</b><br><small>${mi<0?'<span style="color:#b45309">Bulan belum dikenali</span>':escapeHtml(monthNames[mi])} · ${(f.size/1024).toFixed(1)} KB</small></span><button class="secondary" type="button" data-multi-remove="${i}">Hapus</button></div>`}).join('');$m('multiFilesList').querySelectorAll('[data-multi-remove]').forEach(b=>b.onclick=()=>{chosen.splice(Number(b.dataset.multiRemove),1);listFiles();}); }
+ function addFiles(files){const incoming=[...files];if(chosen.length+incoming.length>12){$m('multiStatus').textContent='Maksimal 12 file. Pilih file lebih sedikit.';return;}const existing=new Set(chosen.map(f=>f.name));for(const f of incoming){if(!existing.has(f.name)){chosen.push(f);existing.add(f.name);}}listFiles();$m('multiStatus').textContent='';}
+ function readFile(file){return new Promise((resolve,reject)=>{const ext=file.name.split('.').pop().toLowerCase();if(['csv','tsv','txt'].includes(ext)){const r=new FileReader();r.onload=()=>{const txt=String(r.result||'');resolve(txt.split(/\r?\n/).filter(x=>x.trim()).map(line=>line.split(ext==='csv'?',':'\t')));};r.onerror=reject;r.readAsText(file);return;}if(!window.XLSX){reject(new Error('Pustaka pembaca Excel belum tersedia. Sambungkan internet lalu buka ulang halaman, atau unggah CSV/TSV.'));return;}const r=new FileReader();r.onload=e=>{try{const wb=XLSX.read(e.target.result,{type:'array',raw:true});const sheet=wb.Sheets[wb.SheetNames[0]];resolve(XLSX.utils.sheet_to_json(sheet,{header:1,defval:'',raw:false}));}catch(err){reject(err)}};r.onerror=reject;r.readAsArrayBuffer(file);});}
+ function excluded(row){return typeof isExcludedRow==='function'?isExcludedRow(row):(!norm(row[0])||/^satker$/i.test(norm(row[0]))||EXCLUDED_CODES.some(c=>norm(row[0]).includes(c)));}
+ function parseMonthRows(rows,mi){rows=rows.filter(r=>Array.isArray(r));if(rows.length<2)throw new Error('Tidak ada data satker yang cukup.');const header=rows[0]||[];let cols=[];for(let c=1;c<header.length;c++){const n=Number(norm(header[c]).replace(/[^\d]/g,''));if(n>=1&&n<=31)cols.push({col:c,day:n});}if(!cols.length){for(let c=1;c<Math.min(header.length,32);c++)cols.push({col:c,day:c});}const monthDays=new Date(2026,mi+1,0).getDate();cols=cols.filter(x=>x.day<=monthDays);const records=[];for(const r of rows.slice(1)){if(excluded(r))continue;const name=norm(r[0]);if(!name)continue;let filled=0;cols.forEach(c=>{if(isFilled(r[c.col]))filled++;});const pct=Math.round(filled/monthDays*10000)/100;records.push({name,filled,pct,missing:monthDays-filled});}return records;}
+ function groupIsPolsek(r){return /polsek/i.test(r.name);}
+ function makeDatasets(){const allNames=new Map();Object.keys(monthData).forEach(k=>monthData[k].forEach(r=>{const key=r.name.trim().toLocaleLowerCase('id-ID');if(!allNames.has(key))allNames.set(key,{name:r.name,months:Array(12).fill(null),group:groupIsPolsek(r)?'polsek':'unit'});allNames.get(key).months[Number(k)]=r.pct;}));const all=[...allNames.values()];return {unit:all.filter(r=>r.group==='unit'),polsek:all.filter(r=>r.group==='polsek'),all};}
+ function renderMultiTable(rows){const rankMonth=Number($m('multiRankMonth').value||0);const sorted=[...rows].sort((a,b)=>((b.months[rankMonth]??-1)-(a.months[rankMonth]??-1))||a.name.localeCompare(b.name,'id'));return `<table class="multi-table"><thead><tr><th>Ranking ${escapeHtml(monthNames[rankMonth])}</th><th>Satker</th>${monthNames.map(m=>`<th>${m.slice(0,3).toUpperCase()}</th>`).join('')}</tr></thead><tbody>${sorted.map((r,i)=>`<tr><td>${r.months[rankMonth]==null?'—':i+1}</td><td>${escapeHtml(r.name)}</td>${r.months.map(v=>`<td>${v==null?'—':fmt(v)+'%'}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="14">Belum ada data.</td></tr>'}</tbody></table>`;}
+ function avgFor(rows){return monthNames.map((_,i)=>{const vals=rows.map(r=>r.months[i]).filter(v=>v!=null);return vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null;});}
+ function drawLineChart(){if(!lastResults)return;const type=$m('multiChartGroup').value;let rows=type==='polsek'?lastResults.polsek:type==='single'?lastResults.all.filter(r=>r.name===$m('multiChartSatker').value):lastResults.unit;const vals=type==='single'?(rows[0]?.months||Array(12).fill(null)):avgFor(rows);const valid=vals.filter(v=>v!=null);if(!valid.length){$m('multiChart').innerHTML='<p class="multi-notice" style="padding:18px">Belum ada data untuk grafik kelompok ini.</p>';return;}const min=Math.max(0,Math.floor(Math.min(...valid)-5)),max=Math.min(100,Math.ceil(Math.max(...valid)+2));const w=850,h=300,left=54,right=20,top=24,bottom=48,plotW=w-left-right,plotH=h-top-bottom;const y=v=>top+(max-v)/(max-min||1)*plotH;const x=i=>left+i*plotW/11;let grid='';for(let j=0;j<=4;j++){const v=min+(max-min)*j/4,yy=y(v);grid+=`<line x1="${left}" y1="${yy}" x2="${w-right}" y2="${yy}" stroke="#dce7f2"/><text x="${left-8}" y="${yy+4}" text-anchor="end" font-size="11" fill="#607b95">${v.toFixed(0)}%</text>`;}let path='',dots='',labels='';vals.forEach((v,i)=>{labels+=`<text x="${x(i)}" y="${h-18}" text-anchor="middle" font-size="10" fill="#607b95">${monthNames[i].slice(0,3)}</text>`;if(v!=null){path+=(path?' L ':'M ')+x(i)+' '+y(v);dots+=`<circle cx="${x(i)}" cy="${y(v)}" r="4" fill="#2376c8"><title>${monthNames[i]}: ${fmt(v)}%</title></circle>`;}});$m('multiChart').innerHTML=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Grafik garis tren persentase bulanan">${grid}<path d="${path}" fill="none" stroke="#2376c8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>${dots}${labels}<text x="${w/2}" y="${h-2}" text-anchor="middle" font-size="11" fill="#607b95">Bulan</text></svg>`;}
+ function renderResults(){lastResults=makeDatasets();$m('multiKpiFiles').textContent=Object.keys(monthData).length;$m('multiKpiUnits').textContent=lastResults.unit.length;$m('multiKpiPolsek').textContent=lastResults.polsek.length;$m('multiRankMonth').innerHTML=Object.keys(monthData).sort((a,b)=>a-b).map(k=>`<option value="${k}">${monthNames[Number(k)]}</option>`).join('');$m('multiChartSatker').innerHTML='<option value="__all__">Semua satker</option>'+lastResults.all.map(r=>`<option value="${escapeHtml(r.name)}">${escapeHtml(r.name)}</option>`).join('');renderFilteredTables();drawLineChart();$m('multiUploadPane').style.display='none';$m('multiResultsPane').classList.add('show');}
+ function renderFilteredTables(){if(!lastResults)return;const selected=$m('multiChartSatker').value;const units=selected==='__all__'?lastResults.unit:lastResults.unit.filter(r=>r.name===selected);const polseks=selected==='__all__'?lastResults.polsek:lastResults.polsek.filter(r=>r.name===selected);$m('multiUnitTable').innerHTML=renderMultiTable(units);$m('multiPolsekTable').innerHTML=renderMultiTable(polseks);$m('multiUnitTable').previousElementSibling.style.display=units.length?'':'none';$m('multiPolsekTable').previousElementSibling.style.display=polseks.length?'':'none';}
+ async function processFiles(){if(!chosen.length){$m('multiStatus').textContent='Pilih minimal satu file terlebih dahulu.';return;}const mapping=new Map();for(const f of chosen){const mi=monthFromName(f.name);if(mi<0){$m('multiStatus').textContent=`Nama file “${f.name}” belum memuat nama bulan yang dikenali.`;return;}if(mapping.has(mi)){ $m('multiStatus').textContent=`Ada dua file untuk bulan ${monthNames[mi]}. Hapus salah satu atau ubah nama file.`;return;}mapping.set(mi,f);}const button=$m('multiProcess');button.disabled=true;button.textContent='Memproses…';$m('multiStatus').textContent='Membaca file dan menghitung persentase…';monthData={};try{for(const [mi,f] of mapping){const rows=await readFile(f);monthData[mi]=parseMonthRows(rows,mi);}renderResults();$m('multiStatus').textContent='';}catch(e){$m('multiStatus').textContent='Gagal memproses: '+e.message;}finally{button.disabled=false;button.textContent='Proses Data';}}
+ function exportMultiExcel(){if(!lastResults)return;const tableHtml=(title,rows)=>`<h2>${title}</h2>${renderMultiTable(rows)}`;const html=`<html><head><meta charset="utf-8"></head><body><h1>ANEV MULTI BULAN</h1><p>Persentase dihitung ulang dari sel tanggal terisi. — = bulan belum tersedia.</p>${tableHtml('Bag / Sat / Si / Sie',lastResults.unit)}${tableHtml('Polsek',lastResults.polsek)}</body></html>`;downloadBlob('\ufeff'+html,'application/vnd.ms-excel;charset=utf-8','Anev_Multi_Bulan.xls');}
+ $m('multiMonthOpen').addEventListener('click',showModal);$m('multiMonthClose').addEventListener('click',closeModal);$m('multiMonthModal').addEventListener('click',e=>{if(e.target===$m('multiMonthModal'))closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});$m('multiChoose').onclick=()=>$m('multiFilesInput').click();$m('multiFilesInput').addEventListener('change',e=>{addFiles(e.target.files);e.target.value='';});$m('multiClearFiles').onclick=()=>{chosen=[];listFiles();$m('multiStatus').textContent='';};$m('multiProcess').onclick=processFiles;$m('multiBackUpload').onclick=()=>{$m('multiResultsPane').classList.remove('show');$m('multiUploadPane').style.display='block';};$m('multiRankMonth').addEventListener('change',()=>{if(lastResults){$m('multiUnitTable').innerHTML=renderMultiTable(lastResults.unit);$m('multiPolsekTable').innerHTML=renderMultiTable(lastResults.polsek);}});$m('multiChartGroup').addEventListener('change',drawLineChart);$m('multiChartSatker').addEventListener('change',()=>{renderFilteredTables();if($m('multiChartSatker').value!=='__all__')$m('multiChartGroup').value='single';else if($m('multiChartGroup').value==='single')$m('multiChartGroup').value='unit';drawLineChart();});$m('multiExportExcel').onclick=exportMultiExcel;$m('multiExportPdf').onclick=()=>{document.body.classList.add('multi-printing');window.print();setTimeout(()=>document.body.classList.remove('multi-printing'),500);};const drop=$m('multiDrop');['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('dragover');}));['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('dragover');}));drop.addEventListener('drop',e=>addFiles(e.dataTransfer.files));
+})();
+
+
+// Countdown ANEV rutin tanggal 1 setiap bulan, mengikuti waktu lokal komputer/ponsel.
+(function initAnevCountdown(){
+  const $id = id => document.getElementById(id);
+  const pad = n => String(n).padStart(2, '0');
+  const monthNames = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+  function updateAnevCountdown(){
+    const now = new Date();
+    const isAnevDay = now.getDate() === 1;
+    let target;
+    if (isAnevDay) {
+      target = new Date(now.getFullYear(), now.getMonth(), 1, 0, 0, 0, 0);
+    } else {
+      target = new Date(now.getFullYear(), now.getMonth() + 1, 1, 0, 0, 0, 0);
+    }
+    let remaining = isAnevDay ? 0 : Math.max(0, target.getTime() - now.getTime());
+    const day = Math.floor(remaining / 86400000); remaining %= 86400000;
+    const hour = Math.floor(remaining / 3600000); remaining %= 3600000;
+    const minute = Math.floor(remaining / 60000); remaining %= 60000;
+    const second = Math.floor(remaining / 1000);
+    $id('anevDays').textContent = pad(day);
+    $id('anevHours').textContent = pad(hour);
+    $id('anevMinutes').textContent = pad(minute);
+    $id('anevSeconds').textContent = pad(second);
+    $id('anevCountdownLabel').textContent = isAnevDay ? 'ANEV BULANAN HARI INI' : 'Sisa hari menuju ANEV Bulanan';
+    $id('anevCountdownNote').textContent = isAnevDay
+      ? 'Jadwal rutin tanggal 1 • ' + monthNames[now.getMonth()] + ' ' + now.getFullYear()
+      : 'Jadwal berikutnya: 1 ' + monthNames[target.getMonth()] + ' ' + target.getFullYear() + ' • waktu perangkat';
+  }
+  updateAnevCountdown();
+  window.setInterval(updateAnevCountdown, 1000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) updateAnevCountdown(); });
 })();
 
 </script>
