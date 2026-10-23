@@ -526,6 +526,8 @@ body.dark-mode .abk-portal-button{background:rgba(24,42,62,.78)!important;border
 .lock-dashboard{position:fixed!important;top:16px!important;right:16px!important;z-index:10050!important;width:44px;height:44px;flex:none!important}
 @media(max-width:700px){.lock-dashboard{top:10px!important;right:10px!important;width:38px;height:38px;padding:8px;border-radius:11px}}
 @media print{.lock-dashboard{display:none!important}}
+/* Panel Username SI-ABK */
+.credentials-modal{position:fixed;inset:0;z-index:10060;display:none;align-items:center;justify-content:center;padding:16px;background:#06172dcc;backdrop-filter:blur(8px)}.credentials-modal.open{display:flex}.credentials-dialog{width:min(100%,1120px);max-height:92vh;display:flex;flex-direction:column;overflow:hidden;background:#f7fbff;color:#17324d;border:1px solid #ffffffa8;border-radius:20px;box-shadow:0 25px 90px #0005}.credentials-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;border-bottom:1px solid #d8e7f5}.credentials-head h2{margin:0;font-size:1.2rem}.credentials-body{padding:12px 18px;overflow:auto}.credentials-note{font-size:.82rem;color:#5c7690;margin:0 0 10px;line-height:1.45}.credentials-tablewrap{overflow:auto;border:1px solid #d5e4f2;border-radius:12px}.credentials-table{width:100%;border-collapse:collapse;min-width:720px;font-size:.84rem}.credentials-table th{position:sticky;top:0;background:#e6f2ff;color:#174b85;text-align:left;padding:10px;z-index:1}.credentials-table td{padding:7px 9px;border-top:1px solid #dce8f4}.credentials-table td:first-child{font-family:ui-monospace,monospace;white-space:nowrap}.credentials-table input{width:100%;min-width:120px;border:1px solid #bfd3e5;border-radius:8px;padding:8px;background:white;color:#17324d;font:inherit}.credentials-table .email-input{min-width:170px}.credentials-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;border-top:1px solid #d8e7f5}.credentials-foot small{color:#5c7690}.credentials-close{border:0;background:transparent;color:inherit;font-size:1.5rem;line-height:1;cursor:pointer;padding:4px 8px;border-radius:8px}.credentials-close:hover{background:#94a3b822}body.dark-mode .credentials-dialog{background:#172b40;color:#e5eef8;border-color:#34516a}body.dark-mode .credentials-head,body.dark-mode .credentials-foot{border-color:#34516a}body.dark-mode .credentials-note,body.dark-mode .credentials-foot small{color:#a7bdd2}body.dark-mode .credentials-tablewrap{border-color:#34516a}body.dark-mode .credentials-table th{background:#24425e;color:#e2f1ff}body.dark-mode .credentials-table td{border-color:#34516a}body.dark-mode .credentials-table input{background:#102236;color:#e5eef8;border-color:#45627c}@media(max-width:600px){.credentials-modal{padding:6px}.credentials-dialog{max-height:96vh;border-radius:14px}.credentials-head{padding:14px}.credentials-body{padding:9px}.credentials-foot{padding:10px;align-items:flex-start;flex-direction:column}.credentials-foot button{align-self:flex-end}}
 /* PIN gate: dashboard remains hidden until PIN is accepted */
 #pinGate{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:22px;background:radial-gradient(ellipse at top,#214d78 0%,#101c2b 52%,#080d15 100%);color:#eef6ff;font-family:"Segoe UI",Arial,sans-serif}
 .pin-panel{width:min(100%,390px);padding:30px 26px 26px;border:1px solid #ffffff26;border-radius:26px;background:linear-gradient(145deg,#ffffff17,#ffffff08);box-shadow:0 24px 70px #0008,inset 0 1px #ffffff20;text-align:center;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
@@ -602,17 +604,55 @@ body.dark-mode #reportCard .report-head h3 { color: #D6A64F; }
   #reportCard .report-head h3 { color: #946313 !important; }
 }
 
+
+/* Mode akun: pembatasan tampilan khusus akun Umum */
+body.mode-public #reportCard,
+body.mode-public #presentationBtn{display:none!important}
+body.mode-public .watermark{letter-spacing:.14em;font-weight:900}
+/* Identitas watermark mengikuti akun aktif */
+body.mode-operator .watermark{max-width:min(420px,calc(100vw - 24px));white-space:normal}
+
 </style>
 <style>
 
 /* Pengaturan pojok kanan atas: mode di atas, kunci tepat di bawah; tepi kanan sejajar watermark */
 .corner-controls{position:fixed!important;top:14px!important;right:14px!important;left:auto!important;bottom:auto!important;z-index:10050!important;display:flex!important;flex-direction:column!important;align-items:flex-end!important;gap:8px!important;width:max-content!important;max-width:calc(100vw - 24px)!important}
 .corner-controls .theme-toggle{position:static!important;inset:auto!important;width:44px!important;height:44px!important;min-height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;font-size:23px!important;line-height:1!important;padding:0!important;white-space:nowrap!important;border-radius:13px!important}
+.corner-controls{display:flex!important;flex-direction:column!important;align-items:center!important;gap:8px!important}
 .corner-controls .lock-dashboard{position:static!important;inset:auto!important;width:44px!important;height:44px!important;min-height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important;box-sizing:border-box!important;padding:9px!important;font-size:0!important;white-space:nowrap!important;border-radius:13px!important}
 .corner-controls .lock-dashboard svg{width:22px!important;height:22px!important;flex:none!important}
+.username-panel-btn{flex:0 0 auto;width:44px;height:44px;display:flex;align-items:center;justify-content:center;padding:9px;border:1px solid #ffffff38;border-radius:13px;background:linear-gradient(145deg,#ffffff20,#ffffff0a);color:var(--text,#eaf4ff);box-shadow:0 5px 16px #0002;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.username-panel-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.username-panel-btn:hover{transform:translateY(-1px);background:#4c8edb30}.username-panel-btn:active{transform:scale(.94)}
+body:not(.mode-admin) #usernamePanelOpen{display:none!important}
+@media(max-width:700px){.corner-controls{gap:6px!important}.corner-controls .theme-toggle,.corner-controls .lock-dashboard,.username-panel-btn{width:38px!important;min-width:38px!important;min-height:38px!important;height:38px!important;padding:7px!important;border-radius:11px!important}.username-panel-btn svg{width:20px;height:20px}}
+@media print{#usernamePanelOpen{display:none!important}}
 body.dark-mode .corner-controls .theme-toggle{background:linear-gradient(145deg,rgba(66,107,151,.96),rgba(25,57,91,.95))!important;color:#fff!important}
 @media(max-width:700px){.corner-controls{top:8px!important;right:8px!important;gap:6px!important}.corner-controls .theme-toggle,.corner-controls .lock-dashboard{width:38px!important;min-width:38px!important;min-height:38px!important;height:38px!important;padding:7px!important;border-radius:11px!important}.corner-controls .theme-toggle{font-size:21px!important}.corner-controls .lock-dashboard svg{width:20px!important;height:20px!important}}
 @media print{.corner-controls{display:none!important}}
+
+</style>
+<style>
+/* Perapian tombol mode tema: hilangkan bayangan/fading ke bawah */
+.corner-controls .theme-toggle,
+.corner-controls .theme-toggle:hover,
+.corner-controls .theme-toggle:focus,
+.corner-controls .theme-toggle:active{
+  box-shadow:none!important;
+  filter:none!important;
+  text-shadow:none!important;
+}
+
+/* Login transition: identitas SI-ABK POLRI TOOLS */
+#loginTransition{position:fixed;inset:0;z-index:100001;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at center,rgba(26,73,117,.98),rgba(7,16,29,.99) 72%);color:#f8fbff;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .85s ease,visibility .85s ease;font-family:Segoe UI,Arial,sans-serif}
+#loginTransition.show{opacity:1;visibility:visible}
+.login-transition-card{position:relative;text-align:center;padding:38px 46px;border:1px solid rgba(190,224,255,.32);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035));box-shadow:0 0 55px rgba(57,153,255,.13),inset 0 1px rgba(255,255,255,.15);backdrop-filter:blur(18px);animation:loginRise .65s cubic-bezier(.2,.75,.25,1) both}
+.login-transition-kicker{font-size:.72rem;letter-spacing:.32em;color:#9dcfff;font-weight:800;margin-bottom:13px}
+.login-transition-title{font-size:clamp(1.8rem,5vw,3.1rem);font-weight:900;letter-spacing:.09em;line-height:1.1;margin:0;text-shadow:0 0 22px rgba(87,171,255,.2)}
+.login-transition-line{height:2px;width:min(260px,75%);margin:20px auto 0;background:linear-gradient(90deg,transparent,#79c7ff,transparent);transform-origin:center;animation:loginLine 1.4s ease-in-out both}
+.login-transition-sub{font-size:.76rem;letter-spacing:.22em;color:#b9d8f3;margin-top:14px}
+@keyframes loginRise{from{transform:translateY(12px) scale(.985);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+@keyframes loginLine{0%{transform:scaleX(.1);opacity:0}45%{transform:scaleX(1);opacity:1}100%{transform:scaleX(.8);opacity:.8}}
+@media(prefers-reduced-motion:reduce){#loginTransition,.login-transition-card,.login-transition-line{animation:none;transition:opacity .2s ease}}
 
 </style>
 </head>
@@ -621,7 +661,7 @@ body.dark-mode .corner-controls .theme-toggle{background:linear-gradient(145deg,
   <form class="pin-panel" id="pinForm" autocomplete="off">
     <img class="pin-logo" src="https://restabesmakassar.sulsel.polri.go.id/wp-content/uploads/2026/04/logo-perencanaan.png" alt="Logo Perencanaan BAGREN">
     <p class="pin-title" id="pinPrompt">Masukkan PIN untuk memulai Fitur</p>
-    <input id="pinInput" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="••••" aria-label="Masukkan PIN" autocomplete="off" required>
+    <input id="pinInput" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="••••••" aria-label="Masukkan PIN enam digit" autocomplete="off" required>
     <div class="pin-error" id="pinError" aria-live="polite"></div>
     <div class="pin-keypad" id="pinKeypad" aria-label="Tombol angka PIN">
       <button class="pin-key" type="button" data-digit="1">1</button><button class="pin-key" type="button" data-digit="2">2</button><button class="pin-key" type="button" data-digit="3">3</button>
@@ -633,6 +673,7 @@ body.dark-mode .corner-controls .theme-toggle{background:linear-gradient(145deg,
   </form>
   <div class="pin-watermark">Made By Satria | Bagren Polres Sragen</div>
 </div>
+<div id="loginTransition" aria-hidden="true"><div class="login-transition-card"><div class="login-transition-kicker">AUTHENTICATION SUCCESSFUL</div><h1 class="login-transition-title">SI-ABK<br>POLRI TOOLS</h1><div class="login-transition-line"></div><div class="login-transition-sub">BAGREN · POLRES SRAGEN</div></div></div>
 <div class="wrap">
 <header>
   <div class="title-group"><div class="title-line"><h1 data-text="ANEV SINGKAT ABK">ANEV SINGKAT ABK</h1></div><p class="sub">Pemeriksa kelengkapan pengisian harian · Tempel data langsung dari Excel</p><div class="actions no-print" style="margin-top:12px"><button type="button" class="primary" id="presentationBtn">▣ Mode Presentasi Pimpinan</button><button type="button" class="secondary" id="multiMonthOpen">▦ Anev Multi Bulan</button></div></div>
@@ -750,6 +791,7 @@ body.dark-mode .corner-controls .theme-toggle{background:linear-gradient(145deg,
 <div id="cornerControls" class="corner-controls no-print" aria-label="Pengaturan tampilan dan keamanan">
   <button type="button" id="themeToggle" class="theme-toggle" aria-label="Ganti mode terang atau gelap" title="Ganti mode terang atau gelap" aria-pressed="false">☾</button>
   <button type="button" id="lockDashboardBtn" class="lock-dashboard" aria-label="Kunci dashboard dan kembali ke halaman PIN" title="Kunci dashboard"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><circle cx="12" cy="15" r="1"></circle></svg></button>
+  <button type="button" id="usernamePanelOpen" class="username-panel-btn" aria-label="Buka tabel Username SI-ABK" title="Tabel Username SI-ABK"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h8l4 4V21H6z"></path><path d="M14 3.5V8h4M8.5 11h7M8.5 14.5h7M8.5 18h7"></path></svg></button>
 </div>
 <div id="presentationMode" class="presentation-mode" aria-hidden="true">
   <button type="button" id="exitPresentation" class="presentation-exit" aria-label="Keluar dari mode presentasi">✕ Keluar Presentasi</button>
@@ -785,9 +827,43 @@ body.dark-mode .corner-controls .theme-toggle{background:linear-gradient(145deg,
   </section>
  </div>
 </div>
+<div id="usernameCredentialsModal" class="credentials-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="usernameCredentialsTitle">
+ <section class="credentials-dialog">
+  <header class="credentials-head"><div><h2 id="usernameCredentialsTitle">Username SI-ABK per Satfung</h2><div class="credentials-note" style="margin:5px 0 0">Edit kolom Password dan Email, lalu tekan Simpan.</div></div><button type="button" id="usernameCredentialsClose" class="credentials-close" aria-label="Tutup panel" title="Tutup">×</button></header>
+  <div class="credentials-body"><p class="credentials-note">Data disimpan di browser/perangkat ini (localStorage), tidak disinkronkan ke perangkat lain. Karena tabel memuat kata sandi, gunakan hanya pada perangkat yang dipercaya.</p><div class="credentials-tablewrap"><table class="credentials-table"><thead><tr><th>USERNAME</th><th>PASSWORD</th><th>SATFUNG</th><th>EMAIL</th></tr></thead><tbody id="usernameCredentialsBody"></tbody></table></div></div>
+  <footer class="credentials-foot"><small id="usernameCredentialsStatus" role="status">Perubahan belum disimpan.</small><button type="button" class="primary" id="usernameCredentialsSave">Simpan</button></footer>
+ </section>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
 <script>
+// Panel kredensial SI-ABK khusus Admin. Perubahan password/email disimpan lokal di browser.
+const usernameCredentialsSeed = [
+['038050000000000000','TALA2024','POLRES SRAGEN',''],
+['038050001000000000','Pres1s12024#','SIWAS',''],['038050002000000000','Pres1s12024#','SIPROPAM',''],['038050003000000000','Pres1s12024#','SIKEU',''],['038050004000000000','Pres1s12024#','SIUM',''],
+['038050005001000000','Pres1s12024#','SUBBAGBINOPS',''],['038050005002000000','Pres1s12024#','SUBBAGDALOPS',''],['038050005003000000','Pres1s12024#','SUBAGKERMA',''],
+['038050006001000000','TALA2024','SUBBAGRENPROGAR',''],['038050006003000000','TALA2024','SUBBAGSTRAJEMEN DAN RB',''],['038050006002000000','TALA2024','SUBBAGDALPROGAR',''],
+['038050007001000000','Pres1s12024#','SUBBAGBINKAR',''],['038050007002000000','Pres1s12024#','SUBBAGWATPERS',''],['038050007003000000','Pres1s12024#','SUBBAGDALPERS',''],
+['038050022000000000','Pres1s12024#','SIKUM',''],['038050008000000000','Pres1s12024#','SPKT',''],['038050009000000000','Pres1s12024#','SATINTELKAM',''],['038050010000000000','Pres1s12024#','SATRESKRIM',''],['038050011000000000','Pres1s12024#','SATRESNARKOBA',''],['038050012000000000','Pres1s12024#','SATBINMAS',''],['038050013000000000','Pres1s12024#','SATSAMAPTA',''],['038050014000000000','Pres1s12024#','SATLANTAS',''],['038050017000000000','Pres1s12024#','SATTAHTI',''],['038050018000000000','Pres1s12024#','Si TIK',''],['038050020000000000','Pres1s12024#','BAG LOG',''],['038050002000000000','TALA2024','SUBBAGBEKPAL',''],['038050020002000000','Pres1s12024#','SUBBAGFASKON',''],['038050023000000000','Pres1s12024#','SI DOKES',''],['038050021000000000','TALA2024','SI HUMAS',''],['038050019000000000','Pres1s12024#','POLSEK',''],
+['038050019001000000','Pres1s12024#','POLSEK KARANGMALANG',''],['038050019002000000','Pres1s12024#','POLSEK MASARAN',''],['038050019003000000','Pres1s12024#','POLSEK KEDAWUNG',''],['038050019004000000','Pres1s12024#','POLSEK SIDOHARJO',''],['038050019005000000','Pres1s12024#','POLSEK GEMOLONG',''],['038050019006000000','Pres1s12024#','POLSEK SB.LAWANG',''],['038050019007000000','Pres1s12024#','POLSEK MIRI',''],['038050019008000000','Pres1s12024#','POLSEK KALIJAMBE',''],['038050019009000000','Pres1s12024#','POLSEK PLUPUH',''],['038050019010000000','Pres1s12024#','POLSEK TANON',''],['038050019011000000','Pres1s12024#','POLSEK GONDANG',''],['038050019012000000','Pres1s12024#','POLSEK SAMBUNGMACAN',''],['038050019013000000','Pres1s12024#','POLSEK NGRAMPAL',''],['038050019014000000','Pres1s12024#','POLSEK SAMBIREJO',''],['038050019015000000','Pres1s12024#','POLSEK TANGEN',''],['038050019016000000','Pres1s12024#','POLSEK MONDOKAN',''],['038050019017000000','Pres1s12024#','POLSEK JENAR',''],['038050019018000000','Pres1s12024#','POLSEK GESI',''],['038050019019000000','Pres1s12024#','POLSEK SUKODONO',''],['038050019020000000','Pres1s12024#','POLSEK SRAGEN','']
+];
+(function initUsernameCredentialsPanel(){
+ const modal=document.getElementById('usernameCredentialsModal'); if(!modal)return;
+ const tbody=document.getElementById('usernameCredentialsBody'), status=document.getElementById('usernameCredentialsStatus');
+ let records; try{const saved=localStorage.getItem('anevAbkUsernameCredentials');records=saved?JSON.parse(saved):null;}catch(e){records=null;}
+ if(!Array.isArray(records)||!records.length)records=usernameCredentialsSeed.map(r=>({username:r[0],password:r[1],satfung:r[2],email:r[3]}));
+ const escCell=v=>String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ function render(){tbody.innerHTML=records.map((r,i)=>`<tr><td>${escCell(r.username)}</td><td><input type="text" autocomplete="off" aria-label="Password ${escCell(r.satfung)}" data-index="${i}" data-field="password" value="${escCell(r.password)}"></td><td>${escCell(r.satfung)}</td><td><input class="email-input" type="email" autocomplete="off" aria-label="Email ${escCell(r.satfung)}" data-index="${i}" data-field="email" value="${escCell(r.email)}" placeholder="Email (opsional)"></td></tr>`).join('');}
+ function open(){if(document.body.dataset.accountMode!=='admin')return;render();modal.classList.add('open');modal.setAttribute('aria-hidden','false');status.textContent='Perubahan belum disimpan.';document.body.style.overflow='hidden';}
+ function close(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+ document.getElementById('usernamePanelOpen').addEventListener('click',open);
+ document.getElementById('usernameCredentialsClose').addEventListener('click',close);
+ modal.addEventListener('click',e=>{if(e.target===modal)close();});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))close();});
+ tbody.addEventListener('input',e=>{const el=e.target;if(!el.matches('input[data-index][data-field]'))return;records[Number(el.dataset.index)][el.dataset.field]=el.value;status.textContent='Perubahan belum disimpan.';});
+ document.getElementById('usernameCredentialsSave').addEventListener('click',()=>{try{localStorage.setItem('anevAbkUsernameCredentials',JSON.stringify(records));status.textContent='Data berhasil disimpan di browser ini.';}catch(e){status.textContent='Gagal menyimpan. Periksa pengaturan penyimpanan browser.';}});
+})();
 'use strict';
 let days=31, parsedRows=[], filteredRows=[], sourceRowCount=0, validationMessages=[];
 const $=id=>document.getElementById(id);
@@ -1105,21 +1181,92 @@ if($('currentMonthBtn'))$('currentMonthBtn').classList.remove('active');renderHi
  document.addEventListener('keydown',e=>{if(!mode.classList.contains('active'))return;if(e.key==='Escape'){close()}else if(e.key==='ArrowRight')showSlide((slide+1)%6);else if(e.key==='ArrowLeft')showSlide((slide+5)%6)});
 })();
 
+// Audio login per akun: admin ambient soundtrack 60 detik berulang; operator digital opening; umum login success.
+let loginAudioContext=null, adminMusicTimer=null, adminMusicNodes=[];
+function loginAudio(){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;if(!loginAudioContext)loginAudioContext=new AC();if(loginAudioContext.state==='suspended')loginAudioContext.resume();return loginAudioContext;}
+function stopAdminMusic(){if(adminMusicTimer){clearInterval(adminMusicTimer);adminMusicTimer=null;}adminMusicNodes.forEach(n=>{try{n.stop?.();}catch(_){}});adminMusicNodes=[];}
+function playLoginSound(mode){
+ try{
+  const c=loginAudio();if(!c)return;const now=c.currentTime;
+  if(mode==='admin'){
+   stopAdminMusic();
+   // Synthesized, royalty-free ambient digital soundtrack: 60-second evolving loop, no external file.
+   const master=c.createGain();master.gain.value=.19;master.connect(c.destination);
+   const pad=(freq,start,dur,vol)=>{const o=c.createOscillator(),g=c.createGain(),lp=c.createBiquadFilter();o.type='sine';o.frequency.value=freq;lp.type='lowpass';lp.frequency.value=850;g.gain.setValueAtTime(.0001,start);g.gain.linearRampToValueAtTime(vol,start+1.5);g.gain.setValueAtTime(vol,start+Math.max(1.6,dur-1));g.gain.linearRampToValueAtTime(.0001,start+dur);o.connect(lp);lp.connect(g);g.connect(master);o.start(start);o.stop(start+dur+.05);adminMusicNodes.push(o);};
+   const playCycle=(base)=>{const chords=[[110,164.81,220],[98,146.83,196],[130.81,196,261.63],[87.31,130.81,174.61]];chords.forEach((ch,i)=>ch.forEach((f,j)=>pad(f,base+i*15,17,.035/(j+1))));for(let i=0;i<24;i++){const f=[440,523.25,659.25,783.99,659.25,523.25][i%6];pad(f,base+i*2.5,2.2,.012);}};
+   playCycle(now+.05);adminMusicTimer=setInterval(()=>{if(document.body.dataset.accountMode==='admin'&&!document.hidden)playCycle(c.currentTime+.1);},60000);
+  }else if(mode==='operator'){
+   // Opening digital: ascending sine tones + crisp high-frequency ping.
+   [392,523.25,659.25,880].forEach((f,i)=>{const t=now+i*.105,o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.setValueAtTime(f,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.12,t+.018);g.gain.exponentialRampToValueAtTime(.0001,t+.19);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+.21);});
+  }else{
+   // Friendly successful-login confirmation.
+   [523.25,659.25,783.99].forEach((f,i)=>{const t=now+i*.13,o=c.createOscillator(),g=c.createGain();o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(.105,t+.025);g.gain.exponentialRampToValueAtTime(.0001,t+.24);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+.26);});
+  }
+ }catch(_){/* audio tidak mengganggu login */}
+}
+
 // PIN entry gate: desktop uses keyboard; mobile displays an on-screen numeric keypad.
 (()=>{
- const gate=document.getElementById('pinGate'),form=document.getElementById('pinForm'),input=document.getElementById('pinInput'),error=document.getElementById('pinError');
+ const gate=document.getElementById('pinGate'),form=document.getElementById('pinForm'),input=document.getElementById('pinInput'),error=document.getElementById('pinError'),transition=document.getElementById('loginTransition');
  const mobile=window.matchMedia('(max-width: 700px)').matches;
  if(mobile){input.readOnly=true;input.setAttribute('aria-readonly','true');}
  document.getElementById('pinKeypad').addEventListener('click',e=>{
    const b=e.target.closest('button');if(!b)return;
-   if(b.dataset.digit!==undefined){if(input.value.length<4)input.value+=b.dataset.digit;error.textContent='';}
+   if(b.dataset.digit!==undefined){if(input.value.length<6)input.value+=b.dataset.digit;error.textContent='';}
    else if(b.dataset.action==='clear'){input.value='';error.textContent='';}
    else if(b.dataset.action==='backspace'){input.value=input.value.slice(0,-1);error.textContent='';}
  });
- input.addEventListener('input',()=>{input.value=input.value.replace(/\D/g,'').slice(0,4);error.textContent='';});
- form.addEventListener('submit',e=>{e.preventDefault();if(input.value==='1945'){gate.style.display='none';document.querySelector('.wrap').style.visibility='visible';input.value='';error.textContent='';try{sessionStorage.setItem('anevAbkPinUnlocked','1')}catch(_){}}else{error.textContent='PIN salah. Silakan coba lagi.';input.value='';if(!mobile)input.focus();}});
+ input.addEventListener('input',()=>{input.value=input.value.replace(/\D/g,'').slice(0,6);error.textContent='';});
+ const watermark=document.querySelector('.watermark');
+ const accountModes={
+   '151204':{key:'admin',name:'ADMIN · Bripda Satria',watermark:'Bripda Satria Putra Pratama'},
+   '022002':{key:'operator',name:'OPERATOR · Bripda Marantika Luky Adhi Nugroho',watermark:'Bripda Marantika Luky A.N'},
+   '777777':{key:'public',name:'MODE UMUM',watermark:'PUBLIC'}
+ };
+ function applyMode(mode){
+   document.body.classList.remove('mode-admin','mode-operator','mode-public');
+   document.body.classList.add('mode-'+mode.key);
+   document.body.dataset.accountMode=mode.key;
+   window.anevAccountMode=mode.key;
+   watermark.textContent=mode.watermark;
+   const prompt=document.getElementById('pinPrompt');
+   prompt.textContent='Masukkan PIN untuk memulai Fitur';
+   const badge=document.getElementById('accountModeLabel');
+   if(badge)badge.textContent=mode.name;
+ }
+ form.addEventListener('submit',e=>{
+   e.preventDefault();
+   const mode=accountModes[input.value];
+   if(mode){
+     applyMode(mode);
+     input.value='';error.textContent='';
+     playLoginSound(mode.key);
+     gate.style.transition='opacity .45s ease, visibility .45s ease';
+     gate.style.opacity='0';gate.style.visibility='hidden';gate.style.pointerEvents='none';
+     transition.classList.add('show');transition.setAttribute('aria-hidden','false');
+     try{sessionStorage.setItem('anevAbkPinUnlocked','1');sessionStorage.setItem('anevAbkAccountMode',mode.key)}catch(_){}
+     window.setTimeout(()=>{
+       gate.style.display='none';
+       document.querySelector('.wrap').style.visibility='visible';
+       transition.classList.remove('show');transition.setAttribute('aria-hidden','true');
+       window.setTimeout(()=>{transition.style.display='none';},900);
+     },1900);
+   }else{
+     error.textContent='PIN salah. Silakan coba lagi.';input.value='';if(!mobile)input.focus();
+   }
+ });
  const lockBtn=document.getElementById('lockDashboardBtn');
- lockBtn.addEventListener('click',()=>{document.querySelector('.wrap').style.visibility='hidden';gate.style.display='flex';input.value='';error.textContent='';try{sessionStorage.removeItem('anevAbkPinUnlocked')}catch(_){};input.focus({preventScroll:true});});
+ lockBtn.addEventListener('click',()=>{
+   stopAdminMusic();
+   document.querySelector('.wrap').style.visibility='hidden';
+   gate.style.display='flex';gate.style.opacity='1';gate.style.visibility='visible';gate.style.pointerEvents='auto';input.value='';error.textContent='';
+   transition.style.display='flex';transition.classList.remove('show');transition.setAttribute('aria-hidden','true');
+   document.body.classList.remove('mode-admin','mode-operator','mode-public');
+   delete document.body.dataset.accountMode;window.anevAccountMode='';
+   watermark.textContent='Bripda Satria Putra Pratama';
+   try{sessionStorage.removeItem('anevAbkPinUnlocked');sessionStorage.removeItem('anevAbkAccountMode')}catch(_){}
+   input.focus({preventScroll:true});
+ });
  // Always require PIN again when the page is opened or refreshed.
  document.querySelector('.wrap').style.visibility='hidden';input.focus({preventScroll:true});
 })();
@@ -1182,6 +1329,34 @@ if($('currentMonthBtn'))$('currentMonthBtn').classList.remove('active');renderHi
   updateAnevCountdown();
   window.setInterval(updateAnevCountdown, 1000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) updateAnevCountdown(); });
+})();
+
+
+// Efek suara tombol khusus akun ADMIN: bunyi klik digital tebal, tanpa file eksternal.
+(()=>{
+ let audioCtx=null;
+ function playAdminClick(){
+   try{
+     const AC=window.AudioContext||window.webkitAudioContext;
+     if(!AC)return;
+     if(!audioCtx)audioCtx=new AC();
+     if(audioCtx.state==='suspended')audioCtx.resume();
+     const t=audioCtx.currentTime;
+     // Bunyi body rendah + transient pendek agar terasa seperti tombol fisik.
+     const osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
+     osc.type='sine';osc.frequency.setValueAtTime(145,t);osc.frequency.exponentialRampToValueAtTime(62,t+0.085);
+     gain.gain.setValueAtTime(0.0001,t);gain.gain.exponentialRampToValueAtTime(0.32,t+0.008);gain.gain.exponentialRampToValueAtTime(0.0001,t+0.12);
+     osc.connect(gain);gain.connect(audioCtx.destination);osc.start(t);osc.stop(t+0.13);
+     const click=audioCtx.createOscillator(), cg=audioCtx.createGain();
+     click.type='triangle';click.frequency.setValueAtTime(900,t);click.frequency.exponentialRampToValueAtTime(260,t+0.025);
+     cg.gain.setValueAtTime(0.0001,t);cg.gain.exponentialRampToValueAtTime(0.09,t+0.002);cg.gain.exponentialRampToValueAtTime(0.0001,t+0.035);
+     click.connect(cg);cg.connect(audioCtx.destination);click.start(t);click.stop(t+0.04);
+   }catch(_){/* Audio tidak boleh mengganggu fungsi tombol */}
+ }
+ document.addEventListener('click',e=>{
+   if(document.body.dataset.accountMode!=='admin')return;
+   if(e.target.closest('button,[role="button"],.filelabel'))playAdminClick();
+ },true);
 })();
 
 </script>
